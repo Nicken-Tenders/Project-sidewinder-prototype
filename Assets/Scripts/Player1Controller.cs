@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player1Controller : MonoBehaviour
 {
     public GameObject Player;
+    public Animator animator;
     public float walkSpeed = 4;
 
     void Start()
@@ -67,5 +68,11 @@ public class Player1Controller : MonoBehaviour
         {
             Debug.Log("Select!");
         }
+    }
+
+    void LP()
+    {
+        //animate
+        //put out the proper boxes
     }
 }
