@@ -7,10 +7,11 @@ public class Player1Controller : MonoBehaviour
     public GameObject Player;
     public Animator animator;
     public float walkSpeed = 4;
+    public BoxCollider2D LPHit;
 
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -34,7 +35,7 @@ public class Player1Controller : MonoBehaviour
 
         if (Input.GetButtonDown("LP"))
         {
-            Debug.Log("LP!");
+            LPAnim();
         }
         if (Input.GetButtonDown("HP"))
         {
@@ -70,9 +71,18 @@ public class Player1Controller : MonoBehaviour
         }
     }
 
-    void LP()
+    void LPAnim()
     {
-        //animate
+        animator.SetTrigger("LP");
         //put out the proper boxes
+    }
+
+    public void LPHitOn()
+    {
+        LPHit.enabled = true;
+    }
+    public void LPHitOff()
+    {
+        LPHit.enabled = false;
     }
 }
