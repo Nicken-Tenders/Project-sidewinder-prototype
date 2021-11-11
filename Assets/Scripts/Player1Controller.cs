@@ -7,6 +7,7 @@ public class Player1Controller : MonoBehaviour
     public GameObject PlayerMiddle;
     public Animator animator;
     public float walkSpeed = 4;
+    public bool isCrouching;
 
     public BoxCollider2D LPHit;
     public BoxCollider2D HPHit;
@@ -28,7 +29,7 @@ public class Player1Controller : MonoBehaviour
     {
         if (Input.GetButton("Down"))
         {
-            Debug.Log("Down!");
+            CrouchAnim();
         }
         if (Input.GetButtonDown("Up"))
         {
@@ -49,15 +50,15 @@ public class Player1Controller : MonoBehaviour
         }
         if (Input.GetButtonDown("HP"))
         {
-            Debug.Log("HP!");
+            HPAnim();
         }
         if (Input.GetButtonDown("LK"))
         {
-            Debug.Log("LK!");
+            LKAnim();
         }
         if (Input.GetButtonDown("HK"))
         {
-            Debug.Log("HK!");
+            HKAnim();
         }
         if (Input.GetButton("MLeft") && !Input.GetButton("MRight"))
         {
@@ -137,7 +138,7 @@ public class Player1Controller : MonoBehaviour
     {
         LKHit.enabled = true;
     }
-    public void KPHitOff()
+    public void LKHitOff()
     {
         LKHit.enabled = false;
     }
@@ -157,6 +158,14 @@ public class Player1Controller : MonoBehaviour
     public void HKHitOff()
     {
         HKHit.enabled = false;
+    }
+    #endregion
+
+    #region Crouch
+    void CrouchAnim()
+    {
+        animator.SetTrigger("Crouch");
+        isCrouching = true;
     }
     #endregion
 
