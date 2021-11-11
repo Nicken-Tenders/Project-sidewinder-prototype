@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class Player1Controller : MonoBehaviour
 {
-    public GameObject Player;
+    public GameObject PlayerMiddle;
     public Animator animator;
     public float walkSpeed = 4;
+
     public BoxCollider2D LPHit;
+    public BoxCollider2D HPHit;
+    public BoxCollider2D LKHit;
+    public BoxCollider2D HKHit;
+    public BoxCollider2D CLPHit;
+    public BoxCollider2D CHPHit;
+    public BoxCollider2D CLKHit;
+    public BoxCollider2D CHKHit;
+
+    public bool ActBool = true;
 
     void Start()
     {
@@ -51,11 +61,17 @@ public class Player1Controller : MonoBehaviour
         }
         if (Input.GetButton("MLeft") && !Input.GetButton("MRight"))
         {
-            Player.transform.Translate(Vector2.left * walkSpeed * Time.deltaTime);
+            if (ActBool == true)
+            {
+                PlayerMiddle.transform.Translate(Vector2.left * walkSpeed * Time.deltaTime);
+            }
         }
         if (Input.GetButton("MRight") && !Input.GetButton("MLeft"))
         {
-            Player.transform.Translate(Vector2.right * walkSpeed * Time.deltaTime);
+            if (ActBool == true)
+            {
+                PlayerMiddle.transform.Translate(Vector2.right * walkSpeed * Time.deltaTime);
+            }
         }
         if (Input.GetButtonDown("Jump"))
         {
@@ -71,10 +87,16 @@ public class Player1Controller : MonoBehaviour
         }
     }
 
+    public void CanAct()
+    {
+        ActBool = true;
+    }
+
+    #region LP
     void LPAnim()
     {
         animator.SetTrigger("LP");
-        //put out the proper boxes
+        ActBool = false;
     }
 
     public void LPHitOn()
@@ -85,4 +107,124 @@ public class Player1Controller : MonoBehaviour
     {
         LPHit.enabled = false;
     }
+    #endregion
+
+    #region HP
+    void HPAnim()
+    {
+        animator.SetTrigger("HP");
+        ActBool = false;
+    }
+
+    public void HPHitOn()
+    {
+        HPHit.enabled = true;
+    }
+    public void HPHitOff()
+    {
+        HPHit.enabled = false;
+    }
+    #endregion
+
+    #region LK
+    void LKAnim()
+    {
+        animator.SetTrigger("LK");
+        ActBool = false;
+    }
+
+    public void LKHitOn()
+    {
+        LKHit.enabled = true;
+    }
+    public void KPHitOff()
+    {
+        LKHit.enabled = false;
+    }
+    #endregion
+
+    #region HK
+    void HKAnim()
+    {
+        animator.SetTrigger("HK");
+        ActBool = false;
+    }
+
+    public void HKHitOn()
+    {
+        HKHit.enabled = true;
+    }
+    public void HKHitOff()
+    {
+        HKHit.enabled = false;
+    }
+    #endregion
+
+    #region CLP
+    void CLPAnim()
+    {
+        animator.SetTrigger("CLP");
+        ActBool = false;
+    }
+
+    public void CLPHitOn()
+    {
+        CLPHit.enabled = true;
+    }
+    public void CLPHitOff()
+    {
+        CLPHit.enabled = false;
+    }
+    #endregion
+
+    #region CHP
+    void CHPAnim()
+    {
+        animator.SetTrigger("CHP");
+        ActBool = false;
+    }
+
+    public void CHPHitOn()
+    {
+        CHPHit.enabled = true;
+    }
+    public void CHPHitOff()
+    {
+        CHPHit.enabled = false;
+    }
+    #endregion
+
+    #region CLK
+    void CLKAnim()
+    {
+        animator.SetTrigger("CLK");
+        ActBool = false;
+    }
+
+    public void CLKHitOn()
+    {
+        CLKHit.enabled = true;
+    }
+    public void CLKHitOff()
+    {
+        CLKHit.enabled = false;
+    }
+    #endregion
+
+    #region CHK
+    void CHKAnim()
+    {
+        animator.SetTrigger("CHK");
+        ActBool = false;
+    }
+
+    public void CHKHitOn()
+    {
+        CHKHit.enabled = true;
+    }
+    public void CHKHitOff()
+    {
+        CHKHit.enabled = false;
+    }
+    #endregion
 }
