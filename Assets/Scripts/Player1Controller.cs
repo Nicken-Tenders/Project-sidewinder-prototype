@@ -8,6 +8,9 @@ public class Player1Controller : MonoBehaviour
     public Animator animator;
     public float walkSpeed = 4;
     public bool isCrouching;
+    public bool isGrounded = true;
+    public Rigidbody2D rb;
+    public SpriteRenderer sr;
 
     public BoxCollider2D LPHit;
     public BoxCollider2D HPHit;
@@ -18,18 +21,15 @@ public class Player1Controller : MonoBehaviour
     public BoxCollider2D CLKHit;
     public BoxCollider2D CHKHit;
 
-    public bool ActBool = true;
-
-    void Start()
-    {
-
-    }
+    public bool moveBool = true;
+    public bool actBool = true;
 
     void Update()
     {
-        if (Input.GetButton("Down"))
+        if (Input.GetButtonDown("Down"))
         {
-            CrouchAnim();
+            //CrouchAnim();
+            sr.sprite("Crouch3");
         }
         if (Input.GetButtonDown("Up"))
         {
@@ -46,37 +46,65 @@ public class Player1Controller : MonoBehaviour
 
         if (Input.GetButtonDown("LP"))
         {
-            LPAnim();
+            if (Input.GetButton("Down"))
+            {
+                CLPAnim();
+            }
+            else
+            {
+                LPAnim();
+            }
         }
         if (Input.GetButtonDown("HP"))
         {
-            HPAnim();
+            if (Input.GetButton("Down"))
+            {
+                CHPAnim();
+            }
+            else
+            {
+                HPAnim();
+            }
         }
         if (Input.GetButtonDown("LK"))
         {
-            LKAnim();
+            if (Input.GetButton("Down"))
+            {
+                CLKAnim();
+            }
+            else
+            {
+                LKAnim();
+            }
         }
         if (Input.GetButtonDown("HK"))
         {
-            HKAnim();
+            if (Input.GetButton("Down"))
+            {
+                CHKAnim();
+            }
+            else
+            {
+                HKAnim();
+            }
         }
         if (Input.GetButton("MLeft") && !Input.GetButton("MRight"))
         {
-            if (ActBool == true)
+            if (moveBool == true)
             {
                 PlayerMiddle.transform.Translate(Vector2.left * walkSpeed * Time.deltaTime);
             }
         }
         if (Input.GetButton("MRight") && !Input.GetButton("MLeft"))
         {
-            if (ActBool == true)
+            if (moveBool == true)
             {
                 PlayerMiddle.transform.Translate(Vector2.right * walkSpeed * Time.deltaTime);
             }
         }
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
-            Debug.Log("Jump!");
+            Jump();
         }
         if (Input.GetButtonDown("Start"))
         {
@@ -90,14 +118,14 @@ public class Player1Controller : MonoBehaviour
 
     public void CanAct()
     {
-        ActBool = true;
+        moveBool = true;
     }
 
     #region LP
     void LPAnim()
     {
         animator.SetTrigger("LP");
-        ActBool = false;
+        moveBool = false;
     }
 
     public void LPHitOn()
@@ -114,7 +142,7 @@ public class Player1Controller : MonoBehaviour
     void HPAnim()
     {
         animator.SetTrigger("HP");
-        ActBool = false;
+        moveBool = false;
     }
 
     public void HPHitOn()
@@ -131,7 +159,7 @@ public class Player1Controller : MonoBehaviour
     void LKAnim()
     {
         animator.SetTrigger("LK");
-        ActBool = false;
+        moveBool = false;
     }
 
     public void LKHitOn()
@@ -148,7 +176,7 @@ public class Player1Controller : MonoBehaviour
     void HKAnim()
     {
         animator.SetTrigger("HK");
-        ActBool = false;
+        moveBool = false;
     }
 
     public void HKHitOn()
@@ -162,18 +190,19 @@ public class Player1Controller : MonoBehaviour
     #endregion
 
     #region Crouch
+    /*
     void CrouchAnim()
     {
         animator.SetTrigger("Crouch");
-        isCrouching = true;
     }
+    */
     #endregion
 
     #region CLP
     void CLPAnim()
     {
         animator.SetTrigger("CLP");
-        ActBool = false;
+        moveBool = false;
     }
 
     public void CLPHitOn()
@@ -190,7 +219,7 @@ public class Player1Controller : MonoBehaviour
     void CHPAnim()
     {
         animator.SetTrigger("CHP");
-        ActBool = false;
+        moveBool = false;
     }
 
     public void CHPHitOn()
@@ -207,7 +236,7 @@ public class Player1Controller : MonoBehaviour
     void CLKAnim()
     {
         animator.SetTrigger("CLK");
-        ActBool = false;
+        moveBool = false;
     }
 
     public void CLKHitOn()
@@ -224,7 +253,7 @@ public class Player1Controller : MonoBehaviour
     void CHKAnim()
     {
         animator.SetTrigger("CHK");
-        ActBool = false;
+        moveBool = false;
     }
 
     public void CHKHitOn()
@@ -234,6 +263,14 @@ public class Player1Controller : MonoBehaviour
     public void CHKHitOff()
     {
         CHKHit.enabled = false;
+    }
+    #endregion
+
+    #region Jump
+    void Jump()
+    {
+        animator.SetTrigger("Jump");
+        rb.AddForce(transform.up * 30f);
     }
     #endregion
 }
