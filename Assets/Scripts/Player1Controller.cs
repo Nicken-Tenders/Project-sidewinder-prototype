@@ -29,7 +29,7 @@ public class Player1Controller : MonoBehaviour
         if (Input.GetButtonDown("Down"))
         {
             //CrouchAnim();
-            sr.sprite("Crouch3");
+            //sr.sprite("Crouch3");
         }
         if (Input.GetButtonDown("Up"))
         {
