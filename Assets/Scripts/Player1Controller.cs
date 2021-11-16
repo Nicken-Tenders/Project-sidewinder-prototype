@@ -11,6 +11,7 @@ public class Player1Controller : MonoBehaviour
     public bool isGrounded = true;
     public Rigidbody2D rb;
     public SpriteRenderer sr;
+    public int yump;
 
     public BoxCollider2D LPHit;
     public BoxCollider2D HPHit;
@@ -114,6 +115,8 @@ public class Player1Controller : MonoBehaviour
         {
             Debug.Log("Select!");
         }
+
+        //new Vector2;
     }
 
     public void CanAct()
@@ -270,7 +273,8 @@ public class Player1Controller : MonoBehaviour
     void Jump()
     {
         animator.SetTrigger("Jump");
-        rb.AddForce(transform.up * 30f);
+        rb.AddForce(transform.up * yump);
+        moveBool = false;
     }
     #endregion
 }
