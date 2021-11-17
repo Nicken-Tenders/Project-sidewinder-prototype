@@ -115,8 +115,6 @@ public class Player1Controller : MonoBehaviour
         {
             Debug.Log("Select!");
         }
-
-        //new Vector2;
     }
 
     public void CanAct()
