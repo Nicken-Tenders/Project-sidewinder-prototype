@@ -9,15 +9,25 @@ public class MiddlePoint : MonoBehaviour
     public GameObject camera;
     public float side;
 
+    public Transform focusPoint;
+
     // Update is called once per frame
     void Update()
     {
-        camera.gameObject.transform.position = player1.gameObject.transform.position + (player1.transform.position - player2.transform.position) / 2;
+        float x = (player1.gameObject.transform.position.x + player2.transform.position.x) / 2;
+        float y = (player1.gameObject.transform.position.y + player2.transform.position.y) / 2;
 
-        if (Mathf.Sign(player1.transform.position.x - player2.transform.position.x) == -1f)
+        focusPoint.position = new Vector3(x, y, focusPoint.position.z);
+
+        if (player1.gameObject.transform.position.x > player2.transform.position.x)
         {
-            //player1.transform.localScale = Vector3(1, 1, -1);
-            //player2.transform.localScale;
+            player1.transform.localScale = new Vector3(-1, 1, 1);
+            player2.transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            player1.transform.localScale = new Vector3(1, 1, 1);
+            player2.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 }

@@ -117,7 +117,7 @@ public class Player1Controller : MonoBehaviour
         }
     }
 
-    public void CanAct()
+    public void CanMove()
     {
         moveBool = true;
     }
@@ -274,5 +274,23 @@ public class Player1Controller : MonoBehaviour
         rb.AddForce(transform.up * yump);
         moveBool = false;
     }
+    #endregion
+
+    #region JumpForward
+    //void JumpForward()
+    //{
+        //animator.SetTrigger("JumpForward");
+        //rb.Addforce(walkSpeed, yump);
+        //moveBool = false;
+    //}
+    #endregion
+
+    #region JumpBackward
+    /*void JumpBackward()
+    {
+        animator.SetTrigger("JumpBackward");
+        rb.Addforce(-walkSpeed, yump);
+        moveBool = false;
+    }*/
     #endregion
 }
