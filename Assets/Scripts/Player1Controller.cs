@@ -10,7 +10,6 @@ public class Player1Controller : MonoBehaviour
     public bool isCrouching;
     public bool isGrounded = true;
     public Rigidbody2D rb;
-    public SpriteRenderer sr;
     public int yump;
 
     public BoxCollider2D LPHit;
@@ -29,8 +28,7 @@ public class Player1Controller : MonoBehaviour
     {
         if (Input.GetButtonDown("Down"))
         {
-            //CrouchAnim();
-            //sr.sprite("Crouch3");
+            CrouchAnim();
         }
         if (Input.GetButtonDown("Up"))
         {
@@ -191,12 +189,10 @@ public class Player1Controller : MonoBehaviour
     #endregion
 
     #region Crouch
-    /*
     void CrouchAnim()
     {
         animator.SetTrigger("Crouch");
     }
-    */
     #endregion
 
     #region CLP
