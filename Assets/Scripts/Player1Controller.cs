@@ -6,11 +6,12 @@ public class Player1Controller : MonoBehaviour
 {
     public GameObject PlayerMiddle;
     public Animator animator;
+    public Rigidbody2D rb;
+    public LayerMask groundMask;
     public float walkSpeed = 4;
     public bool isCrouching;
-    public bool isGrounded = true;
-    public Rigidbody2D rb;
-    public int yump;
+    public float yump;
+    public BoxCollider2D spriteCol;
 
     public BoxCollider2D LPHit;
     public BoxCollider2D HPHit;
@@ -28,11 +29,11 @@ public class Player1Controller : MonoBehaviour
     {
         if (Input.GetButtonDown("Down"))
         {
-            CrouchAnim();
+            //CrouchAnim();
         }
         if (Input.GetButtonDown("Up"))
         {
-            Debug.Log("Up!");
+
         }
         if (Input.GetButtonDown("Accept"))
         {
@@ -89,19 +90,19 @@ public class Player1Controller : MonoBehaviour
         }
         if (Input.GetButton("MLeft") && !Input.GetButton("MRight"))
         {
-            if (moveBool == true)
+            if (moveBool == true && IsGrounded() == true)
             {
                 PlayerMiddle.transform.Translate(Vector2.left * walkSpeed * Time.deltaTime);
             }
         }
         if (Input.GetButton("MRight") && !Input.GetButton("MLeft"))
         {
-            if (moveBool == true)
+            if (moveBool == true && IsGrounded() == true)
             {
                 PlayerMiddle.transform.Translate(Vector2.right * walkSpeed * Time.deltaTime);
             }
         }
-        if (Input.GetButtonDown("Jump") && isGrounded == true)
+        if (Input.GetButtonDown("Jump") && IsGrounded() == true)
         {
             Jump();
         }
@@ -266,27 +267,26 @@ public class Player1Controller : MonoBehaviour
     #region Jump
     void Jump()
     {
-        animator.SetTrigger("Jump");
-        rb.AddForce(transform.up * yump);
-        moveBool = false;
+            //animator.SetTrigger("Jump");
+        if (Input.GetButton("MRight") && !Input.GetButton("MLeft"))
+        {
+            //rb.velocity = Vector2.zero;
+            rb.AddForce(new Vector2(walkSpeed * 100, yump));
+            //rb.AddForce(new Vector2(1, yump));
+        }
+        else if (Input.GetButton("MLeft") && !Input.GetButton("MRight"))
+        {
+            rb.AddForce(transform.right * -walkSpeed * 500 + transform.up * yump);
+        }
+        else
+        {
+            rb.AddForce(transform.up * yump);
+        }
     }
     #endregion
 
-    #region JumpForward
-    //void JumpForward()
-    //{
-        //animator.SetTrigger("JumpForward");
-        //rb.Addforce(walkSpeed, yump);
-        //moveBool = false;
-    //}
-    #endregion
-
-    #region JumpBackward
-    /*void JumpBackward()
+    private bool IsGrounded()
     {
-        animator.SetTrigger("JumpBackward");
-        rb.Addforce(-walkSpeed, yump);
-        moveBool = false;
-    }*/
-    #endregion
+        return Physics2D.BoxCast(spriteCol.bounds.center, spriteCol.bounds.size, 0, Vector2.down, 0.1f, groundMask);
+    }
 }
