@@ -10,10 +10,16 @@ public class Player1Controller : MonoBehaviour
     public LayerMask groundMask;
     public float walkSpeed = 4;
     public bool isCrouching;
-    public float yump;
+    public float jumpInt;
     public BoxCollider2D spriteCol;
 
+    public LayerMask hurtBox;
+    public LayerMask hitBox;
+    public LayerMask grabBox;
+
     public BoxCollider2D LPHit;
+    public Transform lpBox;
+    public Vector2 lpRange;
     public BoxCollider2D HPHit;
     public BoxCollider2D LKHit;
     public BoxCollider2D HKHit;
@@ -127,14 +133,21 @@ public class Player1Controller : MonoBehaviour
         animator.SetTrigger("LP");
         moveBool = false;
     }
-
     public void LPHitOn()
     {
-        LPHit.enabled = true;
+        Physics2D.OverlapBoxAll(lpBox.position, lpRange, 0, hurtBox);
+        //LPHit.enabled = true;
     }
     public void LPHitOff()
     {
-        LPHit.enabled = false;
+        //LPHit.enabled = false;
+    }
+    private void OnDrawGizmos()
+    {
+        if (lpBox == null)
+            return;
+
+        Gizmos.DrawWireCube(lpBox.position, lpRange);
     }
     #endregion
 
@@ -271,16 +284,16 @@ public class Player1Controller : MonoBehaviour
         if (Input.GetButton("MRight") && !Input.GetButton("MLeft"))
         {
             //rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(walkSpeed * 100, yump));
-            //rb.AddForce(new Vector2(1, yump));
+            rb.AddForce(new Vector2(walkSpeed * 100, jumpInt));
+            //rb.AddForce(new Vector2(1, jumpInt));
         }
         else if (Input.GetButton("MLeft") && !Input.GetButton("MRight"))
         {
-            rb.AddForce(transform.right * -walkSpeed * 500 + transform.up * yump);
+            rb.AddForce(transform.right * -walkSpeed * 500 + transform.up * jumpInt);
         }
         else
         {
-            rb.AddForce(transform.up * yump);
+            rb.AddForce(transform.up * jumpInt);
         }
     }
     #endregion
