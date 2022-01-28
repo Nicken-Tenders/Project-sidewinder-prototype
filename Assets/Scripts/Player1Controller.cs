@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player1Controller : MonoBehaviour
 {
-    public GameObject PlayerMiddle;
+    public GameObject playerMiddle;
     public Animator animator;
     public Rigidbody2D rb;
     public LayerMask groundMask;
@@ -96,17 +96,11 @@ public class Player1Controller : MonoBehaviour
         }
         if (Input.GetButton("MLeft") && !Input.GetButton("MRight"))
         {
-            if (moveBool == true && IsGrounded() == true)
-            {
-                PlayerMiddle.transform.Translate(Vector2.left * walkSpeed * Time.deltaTime);
-            }
+            WalkBack();
         }
         if (Input.GetButton("MRight") && !Input.GetButton("MLeft"))
         {
-            if (moveBool == true && IsGrounded() == true)
-            {
-                PlayerMiddle.transform.Translate(Vector2.right * walkSpeed * Time.deltaTime);
-            }
+            WalkForward();
         }
         if (Input.GetButtonDown("Jump") && IsGrounded() == true)
         {
@@ -122,11 +116,7 @@ public class Player1Controller : MonoBehaviour
         }
     }
 
-    public void CanMove()
-    {
-        moveBool = true;
-    }
-
+    #region Attacks
     #region LP
     void LPAnim()
     {
@@ -135,8 +125,31 @@ public class Player1Controller : MonoBehaviour
     }
     public void LPHitOn()
     {
-        Physics2D.OverlapBoxAll(lpBox.position, lpRange, 0, hurtBox);
+        Collider2D[] hitbox = Physics2D.OverlapBoxAll(lpBox.position, lpRange, 0, hurtBox);
+
+        int hitboxHit = -1;
+        Collider2D priorityHitBox = null;
+
+        foreach(Collider2D box in hitbox)
+        {
+            Debug.Log(box.transform.name + " Layer - " + box.transform.parent);
+            if(box.gameObject.layer > hitboxHit)
+            {
+                hitboxHit = box.gameObject.layer;
+                priorityHitBox = box;
+            }
+            //if(box.gameObject.layer)
+        }
+
+       
+        
         //LPHit.enabled = true;
+        LPOnHit();
+        LPHitOff();
+    }
+    public void LPOnHit()
+    {
+        //LPHit.GetComponent<BoxCollider2D>().
     }
     public void LPHitOff()
     {
@@ -276,6 +289,13 @@ public class Player1Controller : MonoBehaviour
         CHKHit.enabled = false;
     }
     #endregion
+    #endregion
+
+    #region Movement
+    public void CanMove()
+    {
+        moveBool = true;
+    }
 
     #region Jump
     void Jump()
@@ -284,22 +304,56 @@ public class Player1Controller : MonoBehaviour
         if (Input.GetButton("MRight") && !Input.GetButton("MLeft"))
         {
             //rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(walkSpeed * 100, jumpInt));
+            //rb.AddForce(new Vector2(walkSpeed * 100, jumpInt));
+            rb.velocity = new Vector2(rb.velocity.x, jumpInt);
+            //rb.AddForce(new Vector2(rb.velocity.x, jumpInt));
             //rb.AddForce(new Vector2(1, jumpInt));
         }
         else if (Input.GetButton("MLeft") && !Input.GetButton("MRight"))
         {
-            rb.AddForce(transform.right * -walkSpeed * 500 + transform.up * jumpInt);
+            //rb.AddForce(transform.right * -walkSpeed * 500 + transform.up * jumpInt);
+            rb.velocity = new Vector2(rb.velocity.x, jumpInt);
         }
         else
         {
-            rb.AddForce(transform.up * jumpInt);
+            //rb.AddForce(transform.up * jumpInt);
+            rb.velocity = new Vector2(rb.velocity.x, jumpInt);
+        }
+
+        Debug.Log(rb.velocity);
+    }
+    #endregion
+
+    #region Walks
+    void WalkForward()
+    {
+        playerMiddle.
+        rb.velocity = new Vector2(walkSpeed, rb.velocity.y);
+
+        Debug.Log("2" + rb.velocity);
+        if (moveBool == true && IsGrounded() == true)
+        {
+            //PlayerMiddle.transform.Translate(Vector2.right * walkSpeed * Time.deltaTime);
+
+        }
+    }
+    void WalkBack()
+    {
+        rb.velocity = new Vector2(-walkSpeed, rb.velocity.y);
+
+        Debug.Log("1" + rb.velocity);
+        if (moveBool == true && IsGrounded() == true)
+        {
+            //PlayerMiddle.transform.Translate(Vector2.left * walkSpeed * Time.deltaTime);
+
         }
     }
     #endregion
 
     private bool IsGrounded()
     {
-        return Physics2D.BoxCast(spriteCol.bounds.center, spriteCol.bounds.size, 0, Vector2.down, 0.1f, groundMask);
+        RaycastHit2D hit = Physics2D.BoxCast(spriteCol.bounds.center, spriteCol.bounds.size, 0, Vector2.down, 0.1f, groundMask);
+        return hit.transform != null;
     }
+    #endregion
 }

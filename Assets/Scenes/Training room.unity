@@ -927,12 +927,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863873133}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.5, y: 2.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1938107213}
-  m_RootOrder: 2
+  m_Father: {fileID: 1701426663}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &865147684
 GameObject:
@@ -1051,7 +1051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1000399747
 Transform:
   m_ObjectHideFlags: 0
@@ -1060,11 +1060,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000399746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.364, y: 2.09, z: 0}
-  m_LocalScale: {x: 1.74375, y: 0.81281245, z: 1}
+  m_LocalPosition: {x: 2.4986, y: 2.2941, z: 0}
+  m_LocalScale: {x: 1.3879168, y: 0.30054012, z: 1}
   m_Children: []
-  m_Father: {fileID: 1938107213}
-  m_RootOrder: 1
+  m_Father: {fileID: 1701426663}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1000399748
 BoxCollider2D:
@@ -1156,7 +1156,7 @@ GameObject:
   - component: {fileID: 1043261698}
   - component: {fileID: 1043261697}
   - component: {fileID: 1043261696}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Sprites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1580,7 +1580,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1457248629}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e3a896f4b628dee47ae2451df0c5be11, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1726,11 +1726,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1701426663}
   - component: {fileID: 1701426662}
-  - component: {fileID: 1701426661}
   - component: {fileID: 1701426660}
   - component: {fileID: 1701426659}
   - component: {fileID: 1701426664}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Sprites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1782,27 +1781,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.92, y: 2.94}
   m_EdgeRadius: 0
---- !u!50 &1701426661
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701426658}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 4
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
 --- !u!212 &1701426662
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1864,7 +1842,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1000399747}
+  - {fileID: 863873134}
   m_Father: {fileID: 1938107213}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1882,17 +1862,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMiddle: {fileID: 1938107212}
   animator: {fileID: 1701426659}
-  rb: {fileID: 1701426661}
+  rb: {fileID: 1938107214}
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  walkSpeed: 4.2
+  walkSpeed: 4
   isCrouching: 0
-  jumpInt: 0
+  jumpInt: 15
   spriteCol: {fileID: 1701426660}
   hurtBox:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1920
   hitBox:
     serializedVersion: 2
     m_Bits: 128
@@ -2029,6 +2009,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1938107213}
+  - component: {fileID: 1938107214}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -2048,8 +2029,27 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1701426663}
-  - {fileID: 1000399747}
-  - {fileID: 863873134}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1938107214
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938107212}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 4
+  m_Material: {fileID: 6200000, guid: e3a896f4b628dee47ae2451df0c5be11, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4

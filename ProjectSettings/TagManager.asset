@@ -14,14 +14,14 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Hit Box
-  - Hurt Box
-  - Grab Box
-  - 
-  - 
-  - 
-  - 
-  - 
+  - P2 Hit Box
+  - P2 Grab Box
+  - P2 Block Box
+  - P2 Hurt Box
+  - P1 Hit Box
+  - P1 Grab Box
+  - P1 Block Box
+  - P1 Hurt Box
   - 
   - 
   - 
