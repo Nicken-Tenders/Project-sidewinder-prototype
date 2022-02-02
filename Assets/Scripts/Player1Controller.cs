@@ -12,30 +12,28 @@ public class Player1Controller : MonoBehaviour
     public bool isCrouching;
     public float jumpInt;
     public BoxCollider2D spriteCol;
+    public DummyController ds;
 
-    public LayerMask hurtBox;
-    public LayerMask hitBox;
-    public LayerMask grabBox;
+    public CanMove cm;
 
-    public BoxCollider2D LPHit;
+    public LayerMask hitboxLayers;
+    private Collider2D priorityHitBox;
+
+    public int hitstun;
     public Transform lpBox;
     public Vector2 lpRange;
-    public BoxCollider2D HPHit;
-    public BoxCollider2D LKHit;
-    public BoxCollider2D HKHit;
-    public BoxCollider2D CLPHit;
-    public BoxCollider2D CHPHit;
-    public BoxCollider2D CLKHit;
-    public BoxCollider2D CHKHit;
+    public int lpHitstun;
 
     public bool moveBool = true;
     public bool actBool = true;
+    public int priorityLvl = -1;
 
     void Update()
     {
+        #region Menu controls
         if (Input.GetButtonDown("Down"))
         {
-            //CrouchAnim();
+            
         }
         if (Input.GetButtonDown("Up"))
         {
@@ -43,68 +41,85 @@ public class Player1Controller : MonoBehaviour
         }
         if (Input.GetButtonDown("Accept"))
         {
-            Debug.Log("Accept!");
+
         }
         if (Input.GetButtonDown("Cancel"))
         {
-            Debug.Log("Cancel!");
+
         }
+        #endregion
 
         if (Input.GetButtonDown("LP"))
         {
-            if (Input.GetButton("Down"))
+            if (IsGrounded() == true)
             {
-                CLPAnim();
-            }
-            else
-            {
-                LPAnim();
+                if (Input.GetButton("Down"))
+                {
+                    //CLPAnim();
+                }
+                else
+                {
+                    LPAnim();
+                }
             }
         }
         if (Input.GetButtonDown("HP"))
         {
-            if (Input.GetButton("Down"))
+            if (IsGrounded() == true)
             {
-                CHPAnim();
-            }
-            else
-            {
-                HPAnim();
+                if (Input.GetButton("Down"))
+                {
+                    //CHPAnim();
+                }
+                else
+                {
+                    HPAnim();
+                }
             }
         }
         if (Input.GetButtonDown("LK"))
         {
-            if (Input.GetButton("Down"))
+            if (IsGrounded() == true)
             {
-                CLKAnim();
-            }
-            else
-            {
-                LKAnim();
+                if (Input.GetButton("Down"))
+                {
+                    //CLKAnim();
+                }
+                else
+                {
+                    LKAnim();
+                }
+
             }
         }
         if (Input.GetButtonDown("HK"))
         {
-            if (Input.GetButton("Down"))
+            if (IsGrounded() == true)
             {
-                CHKAnim();
+                if (Input.GetButton("Down"))
+                {
+                    //CHKAnim();
+                }
+                else
+                {
+                    HKAnim();
+                }
             }
-            else
+        }
+        if (IsGrounded() == true && moveBool == true)
+        {
+            if (Input.GetButton("MLeft") && !Input.GetButton("MRight"))
             {
-                HKAnim();
+                WalkBack();
             }
-        }
-        if (Input.GetButton("MLeft") && !Input.GetButton("MRight"))
-        {
-            WalkBack();
-        }
-        if (Input.GetButton("MRight") && !Input.GetButton("MLeft"))
-        {
-            WalkForward();
-        }
-        if (Input.GetButtonDown("Jump") && IsGrounded() == true)
-        {
-            Jump();
+            if (Input.GetButton("MRight") && !Input.GetButton("MLeft"))
+            {
+                WalkForward();
+            }
+            if (Input.GetButtonDown("Jump"))
+            {
+                Jump();
+            }
         }
         if (Input.GetButtonDown("Start"))
         {
@@ -113,6 +128,10 @@ public class Player1Controller : MonoBehaviour
         if (Input.GetButtonDown("Select"))
         {
             Debug.Log("Select!");
+        }
+        if (CommandSequences.SequenceIsCompleted("Taunt"))
+        {
+            Taunt();
         }
     }
 
@@ -125,32 +144,45 @@ public class Player1Controller : MonoBehaviour
     }
     public void LPHitOn()
     {
-        Collider2D[] hitbox = Physics2D.OverlapBoxAll(lpBox.position, lpRange, 0, hurtBox);
+        Collider2D[] hitboxes = Physics2D.OverlapBoxAll(lpBox.position, lpRange, 0, hitboxLayers);
 
-        int hitboxHit = -1;
-        Collider2D priorityHitBox = null;
+        int layerHit = -1;
+        priorityHitBox = null;
 
-        foreach(Collider2D box in hitbox)
+        foreach (Collider2D box in hitboxes)
         {
-            Debug.Log(box.transform.name + " Layer - " + box.transform.parent);
-            if(box.gameObject.layer > hitboxHit)
+            if(box.gameObject.layer > layerHit)
             {
-                hitboxHit = box.gameObject.layer;
+                layerHit = box.gameObject.layer;
                 priorityHitBox = box;
-            }
-            //if(box.gameObject.layer)
-        }
 
-       
-        
-        //LPHit.enabled = true;
-        LPOnHit();
-        LPHitOff();
+            }
+            if (priorityHitBox.gameObject.layer == LayerMask.NameToLayer("P2 Hurt Box"))
+            {
+                LPOnHit();
+            }
+            else if (priorityHitBox.gameObject.layer == LayerMask.NameToLayer("P2 Block Box"))
+            {
+                LPOnBlock();
+            }
+            else
+            {
+                Debug.Log("null");
+            }
+        }
     }
+
     public void LPOnHit()
     {
-        //LPHit.GetComponent<BoxCollider2D>().
+        hitstun = lpHitstun;
+        Debug.Log("Player 2 got hit");
+        ds.Hitstun(hitstun);
     }
+    public void LPOnBlock()
+    {
+        Debug.Log("Player 2 Blocked");
+    }
+
     public void LPHitOff()
     {
         //LPHit.enabled = false;
@@ -162,7 +194,7 @@ public class Player1Controller : MonoBehaviour
 
         Gizmos.DrawWireCube(lpBox.position, lpRange);
     }
-    #endregion
+    #endregion LP
 
     #region HP
     void HPAnim()
@@ -173,13 +205,13 @@ public class Player1Controller : MonoBehaviour
 
     public void HPHitOn()
     {
-        HPHit.enabled = true;
+        
     }
     public void HPHitOff()
     {
-        HPHit.enabled = false;
+        
     }
-    #endregion
+    #endregion HP
 
     #region LK
     void LKAnim()
@@ -190,13 +222,13 @@ public class Player1Controller : MonoBehaviour
 
     public void LKHitOn()
     {
-        LKHit.enabled = true;
+        
     }
     public void LKHitOff()
     {
-        LKHit.enabled = false;
+        
     }
-    #endregion
+    #endregion LK
 
     #region HK
     void HKAnim()
@@ -207,13 +239,13 @@ public class Player1Controller : MonoBehaviour
 
     public void HKHitOn()
     {
-        HKHit.enabled = true;
+        
     }
     public void HKHitOff()
     {
-        HKHit.enabled = false;
+        
     }
-    #endregion
+    #endregion HK
 
     #region Crouch
     void CrouchAnim()
@@ -231,13 +263,13 @@ public class Player1Controller : MonoBehaviour
 
     public void CLPHitOn()
     {
-        CLPHit.enabled = true;
+        
     }
     public void CLPHitOff()
     {
-        CLPHit.enabled = false;
+        
     }
-    #endregion
+    #endregion CLP
 
     #region CHP
     void CHPAnim()
@@ -248,13 +280,13 @@ public class Player1Controller : MonoBehaviour
 
     public void CHPHitOn()
     {
-        CHPHit.enabled = true;
+        
     }
     public void CHPHitOff()
     {
-        CHPHit.enabled = false;
+        
     }
-    #endregion
+    #endregion CHP
 
     #region CLK
     void CLKAnim()
@@ -265,13 +297,13 @@ public class Player1Controller : MonoBehaviour
 
     public void CLKHitOn()
     {
-        CLKHit.enabled = true;
+        
     }
     public void CLKHitOff()
     {
-        CLKHit.enabled = false;
+        
     }
-    #endregion
+    #endregion CLK
 
     #region CHK
     void CHKAnim()
@@ -282,14 +314,14 @@ public class Player1Controller : MonoBehaviour
 
     public void CHKHitOn()
     {
-        CHKHit.enabled = true;
+        
     }
     public void CHKHitOff()
     {
-        CHKHit.enabled = false;
+        
     }
-    #endregion
-    #endregion
+    #endregion CHK
+    #endregion Attacks
 
     #region Movement
     public void CanMove()
@@ -320,17 +352,16 @@ public class Player1Controller : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpInt);
         }
 
-        Debug.Log(rb.velocity);
+        //Debug.Log(rb.velocity);
     }
-    #endregion
+    #endregion Jump
 
     #region Walks
     void WalkForward()
     {
-        playerMiddle.
         rb.velocity = new Vector2(walkSpeed, rb.velocity.y);
 
-        Debug.Log("2" + rb.velocity);
+        //Debug.Log("2" + rb.velocity);
         if (moveBool == true && IsGrounded() == true)
         {
             //PlayerMiddle.transform.Translate(Vector2.right * walkSpeed * Time.deltaTime);
@@ -341,19 +372,24 @@ public class Player1Controller : MonoBehaviour
     {
         rb.velocity = new Vector2(-walkSpeed, rb.velocity.y);
 
-        Debug.Log("1" + rb.velocity);
+        //Debug.Log("1" + rb.velocity);
         if (moveBool == true && IsGrounded() == true)
         {
             //PlayerMiddle.transform.Translate(Vector2.left * walkSpeed * Time.deltaTime);
 
         }
     }
-    #endregion
+    #endregion Walks
 
     private bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(spriteCol.bounds.center, spriteCol.bounds.size, 0, Vector2.down, 0.1f, groundMask);
+        RaycastHit2D hit = Physics2D.BoxCast(spriteCol.bounds.center, spriteCol.bounds.size, 0, Vector2.down, 0.05f, groundMask);
         return hit.transform != null;
     }
-    #endregion
+    #endregion Movement
+
+    void Taunt()
+    {
+        animator.SetTrigger("Taunt");
+    }
 }
