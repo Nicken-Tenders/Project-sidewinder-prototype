@@ -16,11 +16,14 @@ public class DummyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (pc.hitstun > 0)
+        {
+            pc.hitstun--;
+        }
     }
 
     #region hitstates
-    public void Hitstun(int lpHitstun)
+    public void Hitstun(float lpHitstun)
     {
         animator.SetFloat("hitstun", pc.hitstun);
     }

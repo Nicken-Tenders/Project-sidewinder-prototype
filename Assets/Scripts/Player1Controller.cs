@@ -19,10 +19,11 @@ public class Player1Controller : MonoBehaviour
     public LayerMask hitboxLayers;
     private Collider2D priorityHitBox;
 
-    public int hitstun;
+    public float hitstun;
+
     public Transform lpBox;
     public Vector2 lpRange;
-    public int lpHitstun;
+    public float lpHitstun;
 
     public bool moveBool = true;
     public bool actBool = true;
@@ -175,7 +176,6 @@ public class Player1Controller : MonoBehaviour
     public void LPOnHit()
     {
         hitstun = lpHitstun;
-        Debug.Log("Player 2 got hit");
         ds.Hitstun(hitstun);
     }
     public void LPOnBlock()

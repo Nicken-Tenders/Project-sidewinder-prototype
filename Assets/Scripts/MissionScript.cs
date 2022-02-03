@@ -17,7 +17,7 @@ public class MissionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))//(CommandSequences.SequenceIsCompleted("Taunt"))
+        if (CommandSequences.SequenceIsCompleted("Taunt"))
         {
             StartCoroutine(Win());
         }
@@ -26,7 +26,7 @@ public class MissionScript : MonoBehaviour
     IEnumerator Win()
     {
         gamePanel.SetActive(true);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         gamePanel.SetActive(false);
     }
 }
