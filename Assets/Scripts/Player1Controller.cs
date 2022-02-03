@@ -176,7 +176,7 @@ public class Player1Controller : MonoBehaviour
     public void LPOnHit()
     {
         hitstun = lpHitstun;
-        ds.Hitstun(hitstun);
+        ds.Hitstun();//(hitstun);
     }
     public void LPOnBlock()
     {
@@ -187,7 +187,7 @@ public class Player1Controller : MonoBehaviour
     {
         //LPHit.enabled = false;
     }
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         if (lpBox == null)
             return;
