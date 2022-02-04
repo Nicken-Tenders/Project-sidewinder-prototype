@@ -24,14 +24,15 @@ public class DummyController : MonoBehaviour
         if (pc.hitstun > 0)
         {
             pc.hitstun--;
+            animator.SetFloat("hitstun", pc.hitstun);
         }
     }
 
     #region hitstates
-    public void Hitstun()//(float lpHitstun)
+    public void Hitstun(float hitstun)
     {
-        StartCoroutine(Hitflash());
-        //animator.SetFloat("hitstun", pc.hitstun);
+        //StartCoroutine(Hitflash());
+        animator.SetFloat("hitstun", hitstun);
     }
     public void Knockdown()
     {

@@ -2436,7 +2436,7 @@ MonoBehaviour:
   hitstun: 0
   lpBox: {fileID: 863873134}
   lpRange: {x: 1.4, y: 0.3}
-  lpHitstun: 0
+  lpHitstun: 60
   moveBool: 1
   actBool: 1
   priorityLvl: -1
