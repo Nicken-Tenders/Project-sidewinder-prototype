@@ -6,16 +6,11 @@ public class DummyController : MonoBehaviour
 {
     public Animator animator;
     public Player1Controller pc;
-    public SpriteRenderer sr;
-    private Color ogColor;
-    private Color hitColor;
 
     // Start is called before the first frame update
     void Start()
     {
-        ogColor = sr.color;
-        hitColor = ogColor;
-        hitColor.r = 1;
+
     }
 
     // Update is called once per frame
@@ -28,10 +23,9 @@ public class DummyController : MonoBehaviour
     }
 
     #region hitstates
-    public void Hitstun()//(float lpHitstun)
+    public void Hitstun(float lpHitstun)
     {
-        StartCoroutine(Hitflash());
-        //animator.SetFloat("hitstun", pc.hitstun);
+        animator.SetFloat("hitstun", pc.hitstun);
     }
     public void Knockdown()
     {
@@ -42,11 +36,4 @@ public class DummyController : MonoBehaviour
         animator.SetTrigger("blockstun");
     }
     #endregion
-    
-    IEnumerator Hitflash()
-    {
-        sr.color = hitColor;
-        yield return new WaitForSeconds(0.5f);
-        sr.color = ogColor;
-    }
 }

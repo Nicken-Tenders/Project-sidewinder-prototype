@@ -381,16 +381,14 @@ MonoBehaviour:
 
 
 
-    hold "S"
+    press "S"
 
-    hold "D"
+    "S" + "D",
 
-    release
-    "S"
+    "D"
 
-    press "J"
-
-
+    and
+    then "J".
 
 '
 --- !u!222 &197087876
@@ -418,7 +416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &204939403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1318,7 +1316,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1043261696}
   pc: {fileID: 1701426664}
-  sr: {fileID: 1043261699}
 --- !u!95 &1043261696
 Animator:
   serializedVersion: 3
