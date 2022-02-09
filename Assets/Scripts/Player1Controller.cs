@@ -20,10 +20,13 @@ public class Player1Controller : MonoBehaviour
     private Collider2D priorityHitBox;
 
     public float hitstun;
+    public float blockstun;
+    public float knockdown;
 
     public Transform lpBox;
     public Vector2 lpRange;
     public float lpHitstun;
+    public float lpBlockstun;
 
     public bool moveBool = true;
     public bool actBool = true;
@@ -180,7 +183,8 @@ public class Player1Controller : MonoBehaviour
     }
     public void LPOnBlock()
     {
-        Debug.Log("Player 2 Blocked");
+        blockstun = lpBlockstun;
+        ds.Hitstun(blockstun);
     }
 
     public void LPHitOff()
