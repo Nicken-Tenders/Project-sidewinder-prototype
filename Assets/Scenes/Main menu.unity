@@ -290,7 +290,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 179003643}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1255537889}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &179003645
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -467,7 +479,7 @@ GameObject:
   - component: {fileID: 250159785}
   - component: {fileID: 250159784}
   m_Layer: 5
-  m_Name: Image (4)
+  m_Name: BK&M Prompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -617,7 +629,7 @@ GameObject:
   - component: {fileID: 311018063}
   - component: {fileID: 311018062}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: BK&M Prompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -662,7 +674,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c7f4123b72cc6174bae3233f6c368460, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -990,7 +1002,7 @@ GameObject:
   - component: {fileID: 529076963}
   - component: {fileID: 529076962}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: BK&M Prompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1035,7 +1047,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 957580535704a8d4aab64f4905d5d623, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1290,7 +1302,7 @@ GameObject:
   - component: {fileID: 725007046}
   - component: {fileID: 725007045}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Controller Prompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2165,7 +2177,7 @@ GameObject:
   - component: {fileID: 1200298532}
   - component: {fileID: 1200298531}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Controller Prompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2490,13 +2502,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1255537890}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2627,7 +2639,7 @@ GameObject:
   - component: {fileID: 1326341563}
   - component: {fileID: 1326341562}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: BK&M Prompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2672,7 +2684,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2261a8363d96f824b9397e83c879cd30, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2702,7 +2714,7 @@ GameObject:
   - component: {fileID: 1468869209}
   - component: {fileID: 1468869208}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Controller Prompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3324,7 +3336,7 @@ GameObject:
   - component: {fileID: 2063040867}
   - component: {fileID: 2063040866}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Controller Prompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,6 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main menu.unity
+    guid: c5db02cce675c864c8ea964d403b4097
+  - enabled: 1
     path: Assets/Scenes/Training room.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: a167fc39d2ca19f48bd2358913076d55, type: 2}

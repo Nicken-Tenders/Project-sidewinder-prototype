@@ -31,7 +31,7 @@ public class UiManager : MonoBehaviour
     {
 
     }
-    void Quit()
+    public void Quit()
     {
         Application.Quit();
     }
