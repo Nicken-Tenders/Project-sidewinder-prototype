@@ -18,21 +18,22 @@ public class UiManager : MonoBehaviour
         
     }
 
-    void Resume()
+    public void Resume()
     {
         //Resume previous mission
         SceneManager.LoadSceneAsync("Training room");
     }
-    void Missions()
+    public void Missions()
     {
 
     }
-    void Settings()
+    public void Settings()
     {
 
     }
     public void Quit()
     {
         Application.Quit();
+        Debug.Log("App was quit");
     }
 }
