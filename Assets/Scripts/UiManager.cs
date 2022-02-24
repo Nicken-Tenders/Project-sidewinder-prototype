@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class UiManager : MonoBehaviour
 {
+    public GameObject prefPanel;
+    public GameObject quitWarnPanel;
     // Start is called before the first frame update
     void Start()
     {
-        
+        prefPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -18,6 +20,10 @@ public class UiManager : MonoBehaviour
         
     }
 
+    public void Back()
+    {
+        GetComponentInParent<GameObject>().SetActive(false);
+    }
     public void Resume()
     {
         //Resume previous mission
@@ -25,11 +31,19 @@ public class UiManager : MonoBehaviour
     }
     public void Missions()
     {
-
+        SceneManager.LoadSceneAsync("Mission select");
     }
     public void Settings()
     {
-
+        prefPanel.SetActive(true);
+    }
+    public void mainMenu()
+    {
+        SceneManager.LoadSceneAsync("Main menu");
+    }
+    public void QuitWarn()
+    {
+        quitWarnPanel.SetActive(true);
     }
     public void Quit()
     {
