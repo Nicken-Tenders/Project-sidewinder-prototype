@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player1Controller : MonoBehaviour
 {
+    public Player1 controls;
+
     public GameObject playerMiddle;
     public Animator animator;
     public Rigidbody2D rb;
@@ -32,6 +35,20 @@ public class Player1Controller : MonoBehaviour
     public bool actBool = true;
     public int priorityLvl = -1;
 
+    void Awake()
+    {
+        controls.Battle.LP.performed += ctx => LPAnim();
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+    private void OnDisable()
+    {
+        controls.Disable();
+    }
+
     void Update()
     {
         #region Menu controls
@@ -53,63 +70,63 @@ public class Player1Controller : MonoBehaviour
         }
         #endregion
 
-        if (Input.GetButtonDown("LP"))
-        {
-            if (IsGrounded() == true)
-            {
-                if (Input.GetButton("Down"))
-                {
-                    //CLPAnim();
-                }
-                else
-                {
-                    LPAnim();
-                }
-            }
-        }
-        if (Input.GetButtonDown("HP"))
-        {
-            if (IsGrounded() == true)
-            {
-                if (Input.GetButton("Down"))
-                {
-                    //CHPAnim();
-                }
-                else
-                {
-                    HPAnim();
-                }
-            }
-        }
-        if (Input.GetButtonDown("LK"))
-        {
-            if (IsGrounded() == true)
-            {
-                if (Input.GetButton("Down"))
-                {
-                    //CLKAnim();
-                }
-                else
-                {
-                    LKAnim();
-                }
+        //if (Input.GetButtonDown("LP"))
+        //{
+        //    if (IsGrounded() == true)
+        //    {
+        //        if (Input.GetButton("Down"))
+        //        {
+        //            //CLPAnim();
+        //        }
+        //        else
+        //        {
+        //            LPAnim();
+        //        }
+        //    }
+        //}
+        //if (Input.GetButtonDown("HP"))
+        //{
+        //    if (IsGrounded() == true)
+        //    {
+        //        if (Input.GetButton("Down"))
+        //        {
+        //            //CHPAnim();
+        //        }
+        //        else
+        //        {
+        //            HPAnim();
+        //        }
+        //    }
+        //}
+        //if (Input.GetButtonDown("LK"))
+        //{
+        //    if (IsGrounded() == true)
+        //    {
+        //        if (Input.GetButton("Down"))
+        //        {
+        //            //CLKAnim();
+        //        }
+        //        else
+        //        {
+        //            LKAnim();
+        //        }
 
-            }
-        }
-        if (Input.GetButtonDown("HK"))
-        {
-            if (IsGrounded() == true)
-            {
-                if (Input.GetButton("Down"))
-                {
-                    //CHKAnim();
-                }
-                else
-                {
-                    HKAnim();
-                }
-            }
-        }
+        //    }
+        //}
+        //if (Input.GetButtonDown("HK"))
+        //{
+        //    if (IsGrounded() == true)
+        //    {
+        //        if (Input.GetButton("Down"))
+        //        {
+        //            //CHKAnim();
+        //        }
+        //        else
+        //        {
+        //            HKAnim();
+        //        }
+        //    }
+        //}
         if (IsGrounded() == true && moveBool == true)
         {
             if (Input.GetButton("MLeft") && !Input.GetButton("MRight"))
@@ -141,7 +158,7 @@ public class Player1Controller : MonoBehaviour
 
     #region Attacks
     #region LP
-    void LPAnim()
+    public void LPAnim()
     {
         animator.SetTrigger("LP");
         moveBool = false;
