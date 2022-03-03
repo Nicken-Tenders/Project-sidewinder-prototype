@@ -348,15 +348,15 @@ public class @Player1 : IInputActionCollection, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Movement"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""9c63455b-e7b1-4b94-bc1f-340f5773727c"",
-                    ""expectedControlType"": ""Digital"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Hold""
                 },
                 {
                     ""name"": ""Accept"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""ee703171-1e25-450d-bd8d-d4a1a715b96d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -364,7 +364,7 @@ public class @Player1 : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Cancel"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""2cd07fc0-7c75-4674-927b-20a084f26e07"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -372,7 +372,7 @@ public class @Player1 : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Function 1"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""fdc3e60a-af80-4848-a30a-c9be98c757ce"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -380,7 +380,7 @@ public class @Player1 : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Function 2"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""12388e54-94a8-4e9b-96e4-c1f86b9b1016"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",

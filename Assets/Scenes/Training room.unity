@@ -625,17 +625,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: b15b80bfd25d7ac43a28e6a65e5d0138, type: 3}
+  m_PointAction: {fileID: 0}
+  m_MoveAction: {fileID: 0}
+  m_SubmitAction: {fileID: 0}
+  m_CancelAction: {fileID: 1520128122}
+  m_LeftClickAction: {fileID: 0}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
 --- !u!114 &349045599
@@ -1897,6 +1897,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1520128122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: -944628639613478452, guid: b15b80bfd25d7ac43a28e6a65e5d0138, type: 3}
+  m_ActionId: 2cd07fc0-7c75-4674-927b-20a084f26e07
 --- !u!1 &1533203517
 GameObject:
   m_ObjectHideFlags: 3
@@ -2470,6 +2484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45cd75ef34475ec4f98735e7b3f8a216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controls: {fileID: 0}
   playerMiddle: {fileID: 0}
   animator: {fileID: 1701426659}
   rb: {fileID: 1938107214}
@@ -2509,7 +2524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: b15b80bfd25d7ac43a28e6a65e5d0138, type: 3}
   m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
+  m_UIInputModule: {fileID: 349045598}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2522,22 +2537,18 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1701426664}
+        m_TargetAssemblyTypeName: Player1Controller, Assembly-CSharp
+        m_MethodName: LPAnim
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 72f97fc0-2e32-4483-8d52-578bc5891d6b
-    m_ActionName: Battle/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/right,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 5319bc47-1074-4d58-bae1-e4586c660db8
     m_ActionName: Battle/LP[/Keyboard/j,/XInputControllerWindows/buttonWest]
   - m_PersistentCalls:
@@ -2552,10 +2563,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f8fe335f-063c-45a3-9513-1f6527344c53
     m_ActionName: Battle/HK[/Keyboard/m,/XInputControllerWindows/buttonEast]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 2132bc5f-e54c-4a44-b6c8-2d6298048529
-    m_ActionName: UI/New action[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/right,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: ee703171-1e25-450d-bd8d-d4a1a715b96d
@@ -2574,49 +2581,25 @@ MonoBehaviour:
     m_ActionName: UI/Function 2[/Keyboard/m,/XInputControllerWindows/buttonNorth]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 0dd6ec19-0b71-4ffe-8cf7-d9c9149665b9
-    m_ActionName: Temp/Left[/Keyboard/d,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/dpad/left]
+    m_ActionId: 141fbf86-0d1a-4246-b130-aff4dd48dc28
+    m_ActionName: Battle/Walk & Dash[/Keyboard/a,/Keyboard/d,/XInputControllerWindows/dpad/left,/XInputControllerWindows1/dpad/left,/XInputControllerWindows/dpad/right,/XInputControllerWindows1/dpad/right,/XInputControllerWindows/leftStick/left,/XInputControllerWindows1/leftStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows1/leftStick/right]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 21b2e5b1-af2c-4932-977b-8116d12c0895
-    m_ActionName: Temp/Walk & Dash[/Keyboard/d,/XInputControllerWindows/dpad/left,/XInputControllerWindows/leftStick/left,/Keyboard/a,/XInputControllerWindows/dpad/right,/XInputControllerWindows/leftStick/right]
+    m_ActionId: 565988ea-a7fc-48e7-9c0b-ce5e91f393b6
+    m_ActionName: Battle/Crouch[/Keyboard/s,/XInputControllerWindows/dpad/down,/XInputControllerWindows1/dpad/down,/XInputControllerWindows/leftStick/down,/XInputControllerWindows1/leftStick/down]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: cedd9e80-ce4e-41e3-a8fe-f6de88d56b1c
-    m_ActionName: Temp/Down1[/Keyboard/s,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/dpad/down]
+    m_ActionId: 125a7705-a548-4df2-8a09-6dc33919a61a
+    m_ActionName: Battle/Jump[/Keyboard/w,/Keyboard/space,/XInputControllerWindows/dpad/up,/XInputControllerWindows1/dpad/up,/XInputControllerWindows/leftStick/up,/XInputControllerWindows1/leftStick/up]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 52a2d043-ac4f-4832-b038-2eda711cc825
-    m_ActionName: Temp/Jump[/Keyboard/w,/Keyboard/space,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/dpad/up]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8f4d5d69-0be7-4019-b09e-1aed35722081
-    m_ActionName: Temp/Left1[/Keyboard/d,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/dpad/left]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b1406938-42d8-4d6f-840a-c8970c8e6b56
-    m_ActionName: Temp/Right1[/Keyboard/a,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/dpad/right]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 66908228-5fa8-49a2-a116-f6d1166a4dc1
-    m_ActionName: Temp/Up[/Keyboard/w,/XInputControllerWindows/dpad/up,/XInputControllerWindows/leftStick/up]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 387505bf-9498-44a5-aeed-bc716ad9235e
-    m_ActionName: Temp/Down[/Keyboard/s,/XInputControllerWindows/dpad/down,/XInputControllerWindows/leftStick/down]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: da35dcdf-ab5e-4101-906b-54e6e7e198b7
-    m_ActionName: Temp/Left2[/Keyboard/a,/XInputControllerWindows/dpad/left,/XInputControllerWindows/leftStick/left]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8453a75d-4e4f-4c56-9bff-c4cd262aa353
-    m_ActionName: Temp/Right[/Keyboard/d,/XInputControllerWindows/dpad/right,/XInputControllerWindows/leftStick/right]
+    m_ActionId: 9c63455b-e7b1-4b94-bc1f-340f5773727c
+    m_ActionName: UI/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/dpad/up,/XInputControllerWindows1/dpad/up,/XInputControllerWindows/dpad/down,/XInputControllerWindows1/dpad/down,/XInputControllerWindows/dpad/left,/XInputControllerWindows1/dpad/left,/XInputControllerWindows/dpad/right,/XInputControllerWindows1/dpad/right,/XInputControllerWindows/leftStick/up,/XInputControllerWindows1/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows1/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows1/leftStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows1/leftStick/right]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Battle
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
 --- !u!1 &1775446030
 GameObject:
   m_ObjectHideFlags: 0

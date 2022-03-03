@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Player1Controller : MonoBehaviour
 {
-    public Player1 controls;
+    public PlayerInput controls;
 
     public GameObject playerMiddle;
     public Animator animator;
@@ -35,19 +35,19 @@ public class Player1Controller : MonoBehaviour
     public bool actBool = true;
     public int priorityLvl = -1;
 
-    void Awake()
-    {
-        controls.Battle.LP.performed += ctx => LPAnim();
-    }
+    //void Awake()
+    //{
+    //    controls.Battle.LP.performed += ctx => LPAnim();
+    //}
 
-    private void OnEnable()
-    {
-        controls.Enable();
-    }
-    private void OnDisable()
-    {
-        controls.Disable();
-    }
+    //private void OnEnable()
+    //{
+    //    controls.Enable();
+    //}
+    //private void OnDisable()
+    //{
+    //    controls.Disable();
+    //}
 
     void Update()
     {
@@ -158,10 +158,14 @@ public class Player1Controller : MonoBehaviour
 
     #region Attacks
     #region LP
-    public void LPAnim()
+    public void LPAnim(InputAction.CallbackContext button)
     {
-        animator.SetTrigger("LP");
-        moveBool = false;
+        Debug.Log("LPAnim Started");
+        if (button.started)
+        {
+            Debug.Log("LP registered");
+            animator.SetTrigger("LP");
+        }
     }
     public void LPHitOn()
     {
@@ -211,7 +215,9 @@ public class Player1Controller : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         if (lpBox == null)
-            return;
+        {
+            Debug.LogWarning("Can't find LP Hitbox");
+        }
 
         Gizmos.DrawWireCube(lpBox.position, lpRange);
     }
@@ -221,7 +227,6 @@ public class Player1Controller : MonoBehaviour
     void HPAnim()
     {
         animator.SetTrigger("HP");
-        moveBool = false;
     }
 
     public void HPHitOn()
@@ -238,7 +243,6 @@ public class Player1Controller : MonoBehaviour
     void LKAnim()
     {
         animator.SetTrigger("LK");
-        moveBool = false;
     }
 
     public void LKHitOn()
@@ -255,7 +259,6 @@ public class Player1Controller : MonoBehaviour
     void HKAnim()
     {
         animator.SetTrigger("HK");
-        moveBool = false;
     }
 
     public void HKHitOn()
@@ -279,7 +282,6 @@ public class Player1Controller : MonoBehaviour
     void CLPAnim()
     {
         animator.SetTrigger("CLP");
-        moveBool = false;
     }
 
     public void CLPHitOn()
@@ -296,7 +298,6 @@ public class Player1Controller : MonoBehaviour
     void CHPAnim()
     {
         animator.SetTrigger("CHP");
-        moveBool = false;
     }
 
     public void CHPHitOn()
@@ -313,7 +314,6 @@ public class Player1Controller : MonoBehaviour
     void CLKAnim()
     {
         animator.SetTrigger("CLK");
-        moveBool = false;
     }
 
     public void CLKHitOn()
@@ -330,7 +330,6 @@ public class Player1Controller : MonoBehaviour
     void CHKAnim()
     {
         animator.SetTrigger("CHK");
-        moveBool = false;
     }
 
     public void CHKHitOn()
@@ -404,7 +403,8 @@ public class Player1Controller : MonoBehaviour
 
     private bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(spriteCol.bounds.center, spriteCol.bounds.size, 0, Vector2.down, 0.05f, groundMask);
+        RaycastHit2D hit = Physics2D.BoxCast
+            (spriteCol.bounds.center, spriteCol.bounds.size, 0, Vector2.down, 0.05f, groundMask);
         return hit.transform != null;
     }
     #endregion Movement
