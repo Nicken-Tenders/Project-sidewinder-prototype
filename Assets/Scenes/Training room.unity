@@ -625,6 +625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: b15b80bfd25d7ac43a28e6a65e5d0138, type: 3}
   m_PointAction: {fileID: 0}
   m_MoveAction: {fileID: 0}
@@ -966,7 +967,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: -10}
+  m_LocalPosition: {x: 0.00000023841858, y: 2.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1775446031}
@@ -2484,7 +2485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45cd75ef34475ec4f98735e7b3f8a216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controls: {fileID: 0}
+  controls: {fileID: 1701426665}
   playerMiddle: {fileID: 0}
   animator: {fileID: 1701426659}
   rb: {fileID: 1938107214}
@@ -2510,6 +2511,31 @@ MonoBehaviour:
   moveBool: 1
   actBool: 1
   priorityLvl: -1
+  action:
+    m_Name: Action
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 3ff7f6c6-942e-43ce-896c-1e3485aed839
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 97dfa939-9f77-4b6e-8175-81b8d8ccb0ae
+      m_Path: <Keyboard>/j
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 4da4e192-32ab-4ed3-9c07-6712deab25b7
+      m_Path: <Gamepad>/buttonWest
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action
+      m_Flags: 0
+    m_Flags: 0
 --- !u!114 &1701426665
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public class Player1Controller : MonoBehaviour
 {
     public PlayerInput controls;
+    public InputControl inputControl;
 
     public GameObject playerMiddle;
     public Animator animator;
@@ -35,39 +37,58 @@ public class Player1Controller : MonoBehaviour
     public bool actBool = true;
     public int priorityLvl = -1;
 
-    //void Awake()
-    //{
-    //    controls.Battle.LP.performed += ctx => LPAnim();
-    //}
+    public InputAction action;
+    void Awake()
+    {
+        //action = new InputAction(type: InputActionType.Button, binding: "<Keyboard>/j");
 
-    //private void OnEnable()
-    //{
-    //    controls.Enable();
-    //}
-    //private void OnDisable()
-    //{
-    //    controls.Disable();
-    //}
+        action.performed +=
+            ctx => LPAnim(ctx);
+            //{
+            //    var button = (ButtonControl)ctx.control;
+            //    if (button.wasPressedThisFrame)
+            //        Debug.Log($"Button {ctx.control} was pressed");
+            //
+            //};
+
+        action.Enable();
+
+    }
+
+    private void Action_started(InputAction.CallbackContext obj)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    private void OnEnable()
+    {
+        action.Enable();
+    }
+    private void OnDisable()
+    {
+        action.Disable();
+    }
 
     void Update()
     {
+        
         #region Menu controls
-        if (Input.GetButtonDown("Down"))
-        {
-            
-        }
-        if (Input.GetButtonDown("Up"))
-        {
+        //if (Input.GetButtonDown("Down"))
+        //{
 
-        }
-        if (Input.GetButtonDown("Accept"))
-        {
+        //}
+        //if (Input.GetButtonDown("Up"))
+        //{
 
-        }
-        if (Input.GetButtonDown("Cancel"))
-        {
+        //}
+        //if (Input.GetButtonDown("Accept"))
+        //{
 
-        }
+        //}
+        //if (Input.GetButtonDown("Cancel"))
+        //{
+
+        //}
         #endregion
 
         //if (Input.GetButtonDown("LP"))
@@ -127,45 +148,49 @@ public class Player1Controller : MonoBehaviour
         //        }
         //    }
         //}
-        if (IsGrounded() == true && moveBool == true)
-        {
-            if (Input.GetButton("MLeft") && !Input.GetButton("MRight"))
-            {
-                WalkBack();
-            }
-            if (Input.GetButton("MRight") && !Input.GetButton("MLeft"))
-            {
-                WalkForward();
-            }
-            if (Input.GetButtonDown("Jump"))
-            {
-                Jump();
-            }
-        }
-        if (Input.GetButtonDown("Start"))
-        {
-            Debug.Log("Start!");
-        }
-        if (Input.GetButtonDown("Select"))
-        {
-            Debug.Log("Select!");
-        }
-        if (CommandSequences.SequenceIsCompleted("Taunt"))
-        {
-            Taunt();
-        }
+        //if (IsGrounded() == true && moveBool == true)
+        //{
+        //    if (Input.GetButton("MLeft") && !Input.GetButton("MRight"))
+        //    {
+        //        WalkBack();
+        //    }
+        //    if (Input.GetButton("MRight") && !Input.GetButton("MLeft"))
+        //    {
+        //        WalkForward();
+        //    }
+        //    if (Input.GetButtonDown("Jump"))
+        //    {
+        //        Jump();
+        //    }
+        //}
+        //if (Input.GetButtonDown("Start"))
+        //{
+        //    Debug.Log("Start!");
+        //}
+        //if (Input.GetButtonDown("Select"))
+        //{
+        //    Debug.Log("Select!");
+        //}
+        //if (CommandSequences.SequenceIsCompleted("Taunt"))
+        //{
+        //    Taunt();
+        //}
+
+
     }
 
     #region Attacks
     #region LP
-    public void LPAnim(InputAction.CallbackContext button)
+    public void LPAnim(InputAction.CallbackContext ctx)
     {
         Debug.Log("LPAnim Started");
-        if (button.started)
+        if (ctx.performed)
         {
             Debug.Log("LP registered");
             animator.SetTrigger("LP");
         }
+        else
+            Debug.Log(ctx.started);
     }
     public void LPHitOn()
     {
@@ -413,4 +438,7 @@ public class Player1Controller : MonoBehaviour
     {
         animator.SetTrigger("Taunt");
     }
+
+
+    
 }
