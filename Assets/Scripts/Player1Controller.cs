@@ -131,7 +131,6 @@ public class Player1Controller : MonoBehaviour
         //        {
         //            LKAnim();
         //        }
-
         //    }
         //}
         //if (Input.GetButtonDown("HK"))
