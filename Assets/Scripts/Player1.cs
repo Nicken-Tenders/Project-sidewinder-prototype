@@ -28,6 +28,15 @@ public partial class @Player1 : IInputActionCollection2, IDisposable
             ""id"": ""56378b1f-5e75-45bf-8ef3-7c2b505ac446"",
             ""actions"": [
                 {
+                    ""name"": ""Movement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""0a8ebe4d-a864-489f-beb8-070876726b4e"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Walk & Dash"",
                     ""type"": ""Value"",
                     ""id"": ""141fbf86-0d1a-4246-b130-aff4dd48dc28"",
@@ -355,6 +364,61 @@ public partial class @Player1 : IInputActionCollection2, IDisposable
                     ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""fbded3c9-d1fa-4dd6-a2bf-69da0324e49f"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""313198c1-29a3-48db-b5f2-10c7fe22dba8"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""31601811-b483-4fb3-ba1a-8cef5f823e27"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""1fca491f-eaf8-4f9c-b66a-1aeb9748bcc8"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""aefd4fad-adfe-4b24-bc84-ec7c86d9f16c"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -675,6 +739,7 @@ public partial class @Player1 : IInputActionCollection2, IDisposable
 }");
         // Battle
         m_Battle = asset.FindActionMap("Battle", throwIfNotFound: true);
+        m_Battle_Movement = m_Battle.FindAction("Movement", throwIfNotFound: true);
         m_Battle_WalkDash = m_Battle.FindAction("Walk & Dash", throwIfNotFound: true);
         m_Battle_Crouch = m_Battle.FindAction("Crouch", throwIfNotFound: true);
         m_Battle_Jump = m_Battle.FindAction("Jump", throwIfNotFound: true);
@@ -748,6 +813,7 @@ public partial class @Player1 : IInputActionCollection2, IDisposable
     // Battle
     private readonly InputActionMap m_Battle;
     private IBattleActions m_BattleActionsCallbackInterface;
+    private readonly InputAction m_Battle_Movement;
     private readonly InputAction m_Battle_WalkDash;
     private readonly InputAction m_Battle_Crouch;
     private readonly InputAction m_Battle_Jump;
@@ -759,6 +825,7 @@ public partial class @Player1 : IInputActionCollection2, IDisposable
     {
         private @Player1 m_Wrapper;
         public BattleActions(@Player1 wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_Battle_Movement;
         public InputAction @WalkDash => m_Wrapper.m_Battle_WalkDash;
         public InputAction @Crouch => m_Wrapper.m_Battle_Crouch;
         public InputAction @Jump => m_Wrapper.m_Battle_Jump;
@@ -775,6 +842,9 @@ public partial class @Player1 : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_BattleActionsCallbackInterface != null)
             {
+                @Movement.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnMovement;
                 @WalkDash.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnWalkDash;
                 @WalkDash.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnWalkDash;
                 @WalkDash.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnWalkDash;
@@ -800,6 +870,9 @@ public partial class @Player1 : IInputActionCollection2, IDisposable
             m_Wrapper.m_BattleActionsCallbackInterface = instance;
             if (instance != null)
             {
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
                 @WalkDash.started += instance.OnWalkDash;
                 @WalkDash.performed += instance.OnWalkDash;
                 @WalkDash.canceled += instance.OnWalkDash;
@@ -901,6 +974,7 @@ public partial class @Player1 : IInputActionCollection2, IDisposable
     }
     public interface IBattleActions
     {
+        void OnMovement(InputAction.CallbackContext context);
         void OnWalkDash(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);

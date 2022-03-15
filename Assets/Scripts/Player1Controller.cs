@@ -6,27 +6,37 @@ using UnityEngine.InputSystem.Controls;
 
 public class Player1Controller : MonoBehaviour
 {
+    //Details about the world
     public PlayerInput controls;
     public InputControl inputControl;
-
-    public GameObject playerMiddle;
-    public Animator animator;
-    public Rigidbody2D rb;
-    public LayerMask groundMask;
-    public float walkSpeed = 4;
-    public bool isCrouching;
-    public float jumpInt;
-    public BoxCollider2D spriteCol;
+    public InputAction action;
+    public InputActionAsset controlsAlt;
     public DummyController ds;
 
+    //Details about the player
+    public Animator animator;
+    public Rigidbody2D rb;
+    public BoxCollider2D spriteCol;
     public CanMove cm;
+
+    //Outgoing variables
+    public float hitstun;
+    public float blockstun;
+    public float knockdown;
+
+    //Incoming variables
+
+
+    public GameObject playerMiddle;
+    public LayerMask groundMask;
+    public float walkSpeed;
+    public bool isCrouching;
+    public float jumpInt;
+
 
     public LayerMask hitboxLayers;
     private Collider2D priorityHitBox;
 
-    public float hitstun;
-    public float blockstun;
-    public float knockdown;
 
     public Transform lpBox;
     public Vector2 lpRange;
@@ -37,7 +47,6 @@ public class Player1Controller : MonoBehaviour
     public bool actBool = true;
     public int priorityLvl = -1;
 
-    public InputAction action;
     void Awake()
     {
         //action = new InputAction(type: InputActionType.Button, binding: "<Keyboard>/j");
