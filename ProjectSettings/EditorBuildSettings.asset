@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Mission select.unity
     guid: 58a25febfd545c048ace448ee0ae5a7b
   - enabled: 1
-    path: Assets/Scenes/Training room.unity
+    path: Assets/Scenes/Training room (Old).unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a167fc39d2ca19f48bd2358913076d55, type: 2}

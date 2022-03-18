@@ -11,35 +11,7 @@
                     "id": "0a8ebe4d-a864-489f-beb8-070876726b4e",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Walk & Dash",
-                    "type": "Value",
-                    "id": "141fbf86-0d1a-4246-b130-aff4dd48dc28",
-                    "expectedControlType": "Digital",
-                    "processors": "",
-                    "interactions": "MultiTap",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Crouch",
-                    "type": "Value",
-                    "id": "565988ea-a7fc-48e7-9c0b-ce5e91f393b6",
-                    "expectedControlType": "Digital",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Jump",
-                    "type": "Value",
-                    "id": "125a7705-a548-4df2-8a09-6dc33919a61a",
-                    "expectedControlType": "Digital",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "LP",
@@ -47,8 +19,7 @@
                     "id": "5319bc47-1074-4d58-bae1-e4586c660db8",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "HP",
@@ -56,8 +27,7 @@
                     "id": "f48ef7e5-4ed1-4523-a9f3-a8a7b0446e46",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "LK",
@@ -65,8 +35,7 @@
                     "id": "524c4cbd-4ad4-4f7e-8e3b-436c2a9c0acb",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "HK",
@@ -74,8 +43,15 @@
                     "id": "f8fe335f-063c-45a3-9513-1f6527344c53",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "90781cf4-acde-4abe-9114-c257e4e57c2d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -169,182 +145,6 @@
                 },
                 {
                     "name": "WASD",
-                    "id": "7615b707-386d-48d3-8c42-20cce3520b8c",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk & Dash",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "1e36db39-36cb-4756-9039-12593f6ac116",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk & Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "ad9354c0-20b8-4c16-aab4-e579b2b6e744",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk & Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "D-Pad",
-                    "id": "5528643e-63da-4a48-98bc-ffe5ff8914c4",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk & Dash",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "049092ed-d3f4-4d56-8d67-baf8a3eaceb4",
-                    "path": "<Gamepad>/dpad/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk & Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "605a9e2e-97cd-41c4-b625-fc53fca09f5c",
-                    "path": "<Gamepad>/dpad/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk & Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "L-Stick",
-                    "id": "2779a4e0-b4fa-4fb4-a0da-864fb297a021",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk & Dash",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "69b9da69-a213-4ee1-8ef8-97c30fc810ca",
-                    "path": "<Gamepad>/leftStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk & Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "b614c07d-b23c-4bca-993b-ae78634e6b3f",
-                    "path": "<Gamepad>/leftStick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk & Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "303ffe3f-097f-4df2-b8a1-b62e1edf1fce",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "26bed68d-7231-4b83-93c6-192bb2e15019",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "affd23ec-988e-4083-9c7f-ce5b58563e0f",
-                    "path": "<Gamepad>/dpad/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3ffc314b-9ec2-4a86-934a-926db2439f86",
-                    "path": "<Gamepad>/leftStick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bcb6a7fb-d56d-4beb-abf8-3a6813f7ac22",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "71ffb48b-b9b8-4ed0-8fcd-48cabb6a39ab",
-                    "path": "<Gamepad>/dpad/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a548607d-9e2e-4431-9c78-3c7de3a5a74f",
-                    "path": "<Gamepad>/leftStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "WASD",
                     "id": "fbded3c9-d1fa-4dd6-a2bf-69da0324e49f",
                     "path": "2DVector(mode=1)",
                     "interactions": "",
@@ -397,6 +197,28 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "a987bd3c-4f1d-428b-ad4b-765fd382bd25",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "af6eef9c-8bb3-4e23-b2ff-4c3337c3d193",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -410,8 +232,7 @@
                     "id": "9c63455b-e7b1-4b94-bc1f-340f5773727c",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold",
-                    "initialStateCheck": false
+                    "interactions": "Hold"
                 },
                 {
                     "name": "Accept",
@@ -419,8 +240,7 @@
                     "id": "ee703171-1e25-450d-bd8d-d4a1a715b96d",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Cancel",
@@ -428,8 +248,7 @@
                     "id": "2cd07fc0-7c75-4674-927b-20a084f26e07",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Function 1",
@@ -437,8 +256,7 @@
                     "id": "fdc3e60a-af80-4848-a30a-c9be98c757ce",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Function 2",
@@ -446,8 +264,7 @@
                     "id": "12388e54-94a8-4e9b-96e4-c1f86b9b1016",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -703,6 +520,214 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Temp",
+            "id": "68581389-477b-456a-89c2-5cf5d525bd15",
+            "actions": [
+                {
+                    "name": "Walk & Dash",
+                    "type": "Value",
+                    "id": "5a91022f-a65a-4906-994a-bf207d2a1216",
+                    "expectedControlType": "Digital",
+                    "processors": "",
+                    "interactions": "MultiTap"
+                },
+                {
+                    "name": "Crouch",
+                    "type": "Value",
+                    "id": "2ef28f83-4e66-4758-9a20-94979333d379",
+                    "expectedControlType": "Digital",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Jump",
+                    "type": "Value",
+                    "id": "9900364b-372b-4df9-83a8-a34bd0002be6",
+                    "expectedControlType": "Digital",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "WASD",
+                    "id": "900d42b7-c3f6-48cf-b0f0-18d40f65a880",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk & Dash",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "6aa3b503-6b04-4727-bc8a-137e3a2a55c3",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk & Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "c24a13da-2979-447d-9557-b7e8d754639b",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk & Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "D-Pad",
+                    "id": "23c2d044-e84a-487e-9bb4-977c14b98d2d",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk & Dash",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "c04700c9-f118-4a99-aede-768faf105cc4",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk & Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "dddfbb52-ba97-4ec1-a6ed-7e621a9e7342",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk & Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "L-Stick",
+                    "id": "790ad449-2a3b-45f2-a3f9-858aa36c1fab",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk & Dash",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "e0ba97d7-a27d-425e-aa90-900d5f07fc34",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk & Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "2638baac-a693-4641-b6b9-e5fafe62a834",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk & Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "13c20e82-29b6-4517-8ee8-5867c4cdf703",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b762458-b63b-4db0-b011-b9ee59653250",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1441845e-35f0-448b-84dd-a8a427380709",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4c1f8f33-e74c-48ce-aaed-40fe3213ace2",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c02a8d4d-cbb3-4375-9e3a-33b31b4c0901",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "371766e5-9c48-4cc4-b5f7-3a7f79bf6c65",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "be336d08-951b-4286-8fa8-afe35aa5b1e8",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

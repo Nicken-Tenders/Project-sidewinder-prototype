@@ -5,7 +5,7 @@ using UnityEngine;
 public class DummyController : MonoBehaviour
 {
     public Animator animator;
-    public Player1Controller pc;
+    public Player1Script pc;
     public SpriteRenderer sr;
     //public Sprite
 

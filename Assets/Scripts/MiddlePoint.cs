@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class MiddlePoint : MonoBehaviour
 {
-    public GameObject player1;
-    public GameObject player2;
-    public GameObject camera;
-    public float side;
+    [HideInInspector] public GameObject player1;
+    [HideInInspector] public GameObject player2;
 
-    public Transform focusPoint;
+    [HideInInspector] public Transform focusPoint;
 
     // Update is called once per frame
     void Update()

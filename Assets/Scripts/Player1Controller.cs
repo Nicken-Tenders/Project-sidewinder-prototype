@@ -6,6 +6,8 @@ using UnityEngine.InputSystem.Controls;
 
 public class Player1Controller : MonoBehaviour
 {
+    //Old Sidewinder script
+
     //Details about the world
     public PlayerInput controls;
     public InputControl inputControl;
@@ -446,7 +448,4 @@ public class Player1Controller : MonoBehaviour
     {
         animator.SetTrigger("Taunt");
     }
-
-
-    
 }
