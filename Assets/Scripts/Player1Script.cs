@@ -15,15 +15,17 @@ public class Player1Script : MonoBehaviour
     public LayerMask hitboxLayers;
     private Collider2D priorityHitBox;
     public DummyController dc;
+    public CanMove cmScript;
 
     //Details about the player
     public Animator animator;
     public Collider2D col;
-    public Rigidbody2D rb;
+    //public Rigidbody2D rb;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float jumpHeight;
     public bool moveBool;
-    //work out a priority system
+    ///work out a priority system
+    ///or maybe work it out in the animator
     private bool canWalk;
     private bool canNormal;
     private bool canSP;
@@ -32,12 +34,15 @@ public class Player1Script : MonoBehaviour
     private bool canSuper;
 
 
+    #region LP
+    [Header("LP variables")]
     public Transform lpBox;
     public Vector2 lpRange;
     public float lpHitstun;
     public float lpBlockstun;
     public float lpHitpush;
     public float lpBlockpush;
+    #endregion LP
 
     //Outgoing variables
     private Vector2 moveVar;
@@ -55,8 +60,9 @@ public class Player1Script : MonoBehaviour
 
     public void Walk(InputAction.CallbackContext context)
     {
-        if (context.performed /*&& IsGrounded() == true*/)
+        if (context.performed )
         {
+            /*&& IsGrounded() == true*/
             Debug.Log(context.ReadValue<Vector2>());
             moveVar = context.ReadValue<Vector2>();
         }

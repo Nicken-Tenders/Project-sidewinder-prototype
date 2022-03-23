@@ -732,11 +732,5 @@
             ]
         }
     ],
-    "controlSchemes": [
-        {
-            "name": "Default",
-            "bindingGroup": "Default",
-            "devices": []
-        }
-    ]
+    "controlSchemes": []
 }
