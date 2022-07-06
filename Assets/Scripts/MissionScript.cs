@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MissionScript : MonoBehaviour
 {
     public GameObject gamePanel;
-    public Player1Controller pc;
+    public Player1Script pc;
 
     // Start is called before the first frame update
     void Start()

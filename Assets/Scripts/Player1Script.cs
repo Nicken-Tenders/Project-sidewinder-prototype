@@ -36,8 +36,7 @@ public class Player1Script : MonoBehaviour
 
     #region LP
     [Header("LP variables")]
-    public Transform lpBox;
-    public Vector2 lpRange;
+    public GameObject lpBox;
     public float lpHitstun;
     public float lpBlockstun;
     public float lpHitpush;
@@ -52,7 +51,8 @@ public class Player1Script : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.right * moveVar.x * walkSpeed * Time.deltaTime);
+        if (canWalk == true)
+            transform.Translate(Vector2.right * moveVar.x * walkSpeed * Time.deltaTime);
 
         if (CommandSequences.SequenceIsCompleted("Taunt"))
             Taunt();
@@ -60,10 +60,9 @@ public class Player1Script : MonoBehaviour
 
     public void Walk(InputAction.CallbackContext context)
     {
-        if (context.performed )
+        if (context.performed)
         {
             /*&& IsGrounded() == true*/
-            Debug.Log(context.ReadValue<Vector2>());
             moveVar = context.ReadValue<Vector2>();
         }
 
@@ -90,7 +89,7 @@ public class Player1Script : MonoBehaviour
     }
     public void LPHitOn()
     {
-        Collider2D[] hitboxes = Physics2D.OverlapBoxAll(lpBox.position, lpRange, 0, hitboxLayers);
+        Collider2D[] hitboxes = Physics2D.OverlapBoxAll(lpBox.transform.position, lpBox.transform.localScale, hitboxLayers);
 
         int layerHit = -1;
         priorityHitBox = null;
@@ -101,7 +100,6 @@ public class Player1Script : MonoBehaviour
             {
                 layerHit = box.gameObject.layer;
                 priorityHitBox = box;
-
             }
             if (priorityHitBox.gameObject.layer == LayerMask.NameToLayer("P2 Hurt Box"))
             {
@@ -113,7 +111,7 @@ public class Player1Script : MonoBehaviour
             }
             else
             {
-                Debug.Log("null");
+                //Debug.Log("null");
             }
         }
     }
