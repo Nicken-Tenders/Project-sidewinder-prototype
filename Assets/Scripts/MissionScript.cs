@@ -19,8 +19,12 @@ public class MissionScript : MonoBehaviour
     {
         if (CommandSequences.SequenceIsCompleted("Taunt"))
         {
-            StartCoroutine(Win());
+            Count();
         }
+    }
+    void Count()
+    {
+        StartCoroutine(Win());
     }
 
     IEnumerator Win()
