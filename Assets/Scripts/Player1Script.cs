@@ -15,7 +15,7 @@ public class Player1Script : MonoBehaviour
     public LayerMask hitboxLayers;
     private Collider2D priorityHitBox;
     public DummyController dc;
-    public CanMove cmScript;
+    //public CanMove cmScript;
 
     //Details about the player
     public Animator animator;
@@ -26,7 +26,7 @@ public class Player1Script : MonoBehaviour
     public bool moveBool;
     ///work out a priority system
     ///or maybe work it out in the animator
-    private bool canWalk;
+    private bool canWalk = true;
     private bool canNormal;
     private bool canSP;
     private bool canDash;
@@ -51,7 +51,7 @@ public class Player1Script : MonoBehaviour
 
     void Update()
     {
-        if (canWalk == true)
+        if (moveBool == true)
             transform.Translate(Vector2.right * moveVar.x * walkSpeed * Time.deltaTime);
 
         if (CommandSequences.SequenceIsCompleted("Taunt"))
@@ -136,12 +136,11 @@ public class Player1Script : MonoBehaviour
     }
     #endregion attacks
 
-    public void Dash()
-    {
-        Debug.Log("Dashed");
-        transform.Translate(Vector2.right * moveVar * 1000 * walkSpeed);
-        animator.SetTrigger("Dash");
-    }
+    //public void Dash()
+    //{
+    //    //Debug.Log("Dashed");
+    //    animator.SetTrigger("Dash");
+    //}
 
     private bool IsGrounded()
     {
@@ -152,5 +151,10 @@ public class Player1Script : MonoBehaviour
     public void CanMove()
     {
         moveBool = true;
+    }
+
+    public void NoMove()
+    {
+        moveBool = false;
     }
 }

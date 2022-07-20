@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MissionScript : MonoBehaviour
+public class M_236 : MonoBehaviour
 {
     public GameObject gamePanel;
     public Player1Script pc;
