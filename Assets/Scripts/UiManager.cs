@@ -17,10 +17,6 @@ public class UiManager : MonoBehaviour
         //Resume previous mission
         SceneManager.LoadSceneAsync("Training room");
     }
-    public void Missions()
-    {
-        SceneManager.LoadSceneAsync("Mission select");
-    }
     public void mainMenu()
     {
         SceneManager.LoadSceneAsync("Main menu");
