@@ -7,6 +7,8 @@ public class M_236 : MonoBehaviour
 {
     public GameObject gamePanel;
     public Player1Script pc;
+    public Text titleT;
+    public Text bodyT;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class M_236 : MonoBehaviour
 
     IEnumerator Win()
     {
+        //Disable player movement
         gamePanel.SetActive(true);
         yield return new WaitForSeconds(2);
         gamePanel.SetActive(false);
