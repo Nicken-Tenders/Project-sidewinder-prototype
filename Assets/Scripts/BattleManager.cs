@@ -11,10 +11,10 @@ public class BattleManager : MonoBehaviour
     private Vector2 moveVar;
     public Image[] dirImg;
     public Image atkImg;
-    [HideInInspector] public TextMeshProUGUI promptH;
-    [HideInInspector] public TextMeshProUGUI promptB;
-    [HideInInspector] public TextMeshProUGUI sideH;
-    [HideInInspector] public TextMeshProUGUI sideB;
+    public TextMeshProUGUI promptH;
+    public TextMeshProUGUI promptB;
+    public TextMeshProUGUI sideH;
+    public TextMeshProUGUI sideB;
 
     // Start is called before the first frame update
     void Start()
