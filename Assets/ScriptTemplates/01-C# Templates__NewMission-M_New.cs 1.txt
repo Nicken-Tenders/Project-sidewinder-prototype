@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class M_236 : MonoBehaviour
+public class #SCRIPTNAME# : MonoBehaviour
 {
     public GameObject mSelect;
     public GameObject clearP;
@@ -46,19 +46,17 @@ public class M_236 : MonoBehaviour
 
     void Update()
     {
-        if (CommandSequences.SequenceIsCompleted("Taunt"))
+        if ()
         {
             Count();
         }
     }
     void Count()
     {
-        for (int i = 0; i >= 3; i++)
+        for (int i = 0; i <= 3; i++)
         {
-            sucNum[i].enabled = true;
-            if (i >=1)
-                sucNum[i-1].enabled = false;
-
+            sucNum[i].enabled = false;
+            sucNum[i + 1].enabled = true;
             if (i >= 3)
             {
                 StartCoroutine(Win());
