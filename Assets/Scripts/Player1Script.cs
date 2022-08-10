@@ -24,6 +24,7 @@ public class Player1Script : MonoBehaviour
     [SerializeField] private float walkSpeed;
     [SerializeField] private float jumpHeight;
     public bool moveBool;
+    public bool missionMove;
     ///work out a priority system
     ///or maybe work it out in the animator
     private bool canWalk = true;
@@ -51,8 +52,11 @@ public class Player1Script : MonoBehaviour
 
     void Update()
     {
+        if (missionMove == true)
+        {
         if (moveBool == true)
             transform.Translate(Vector2.right * moveVar.x * walkSpeed * Time.deltaTime);
+        }
 
         if (CommandSequences.SequenceIsCompleted("Taunt"))
             Taunt();
@@ -85,7 +89,7 @@ public class Player1Script : MonoBehaviour
     #region LP
     public void LPAnim()
     {
-        animator.SetTrigger("LP");
+        StartCoroutine(QueueTime("LP", 3));
     }
     public void LPHitOn()
     {
@@ -156,5 +160,12 @@ public class Player1Script : MonoBehaviour
     public void NoMove()
     {
         moveBool = false;
+    }
+
+    IEnumerator QueueTime(string move, int frames)
+    {
+        animator.SetTrigger(move);
+        yield return frames;
+        animator.ResetTrigger(move);
     }
 }
