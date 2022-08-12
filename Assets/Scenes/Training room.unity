@@ -1353,7 +1353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &166733896
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2160,7 +2160,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Match the highlighted directions!
+
+
+    Remember: 6 means forward, 2 means
+    down, and neutral (meaning no direction) is 5.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -5234,14 +5238,21 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'In order to communicate more easily through text,
-
-    there is some jargon
+  m_text: 'In order to communicate more easily through text, there is some jargon
     used by the community.
 
 
-    One among the most popular is "numpad notation"
-    used to express direction.'
+    In this mission, we''ll look at "numpad notation"
+    which is used to express directions.
+
+
+    It''s modeled after the numberpad
+    on the side of some keyboards, because it has a number for each direction on
+    a joystick
+
+
+    6 means forward, 2 means down, and neutral (meaning no direction)
+    is 5! '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -6725,13 +6736,13 @@ MonoBehaviour:
       IsAxis: 0
       IsAbstractedDiretional: 1
       RealAxisButtonName: "\u2198"
-      NegativeRealAxisButtonName: Fire1
+      NegativeRealAxisButtonName: "\u2199"
       _Operator: 2
       inputEvent: 0
       Statement: 0
       value: 0
       axisDirection: 0
-      axisInversion: 0
+      axisInversion: 1
       deadline: 999
       Antecipation: -0.5
       LastVerifiedAnticipation: -999
@@ -6743,13 +6754,13 @@ MonoBehaviour:
       IsAxis: 0
       IsAbstractedDiretional: 1
       RealAxisButtonName: "\u2192"
-      NegativeRealAxisButtonName: Fire1
+      NegativeRealAxisButtonName: "\u2190"
       _Operator: 2
       inputEvent: 0
       Statement: 0
       value: 0
       axisDirection: 0
-      axisInversion: 0
+      axisInversion: 1
       deadline: 0.5
       Antecipation: -0.5
       LastVerifiedAnticipation: -999
@@ -7154,7 +7165,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1080536512}
-  - component: {fileID: 1080536513}
   m_Layer: 0
   m_Name: MovesetEssentials
   m_TagString: Untagged
@@ -7176,20 +7186,6 @@ Transform:
   m_Father: {fileID: 628529124}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1080536513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080536511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2b2e6101e2062b47b2c9efa540ab8f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gamePanel: {fileID: 0}
-  pc: {fileID: 0}
 --- !u!1 &1090522092
 GameObject:
   m_ObjectHideFlags: 0
@@ -7373,35 +7369,23 @@ MonoBehaviour:
 
     Attack'
   startH: Hadoken!
-  startB: '236s are usually one of the most important tools in a
-
-    character''s
-    toolkit.
+  startB: '236s are usually one of the most important tools in a character''s toolkit.
 
 
-    Learning how to execute the command consistently,
-
-    quickly,
-    and cleanly is one of the most important skills
-
-    you can learn on offense.'
+    Learning
+    how to execute the command consistently, quickly, and cleanly is one of the most
+    important skills you can learn on offense.'
   endH: Congratulations!
   endB: 'You did it! Good stuff!
 
 
     The timing in this trial mimics nearly every
-    fighting
-
-    game out there, from Street Fighter to Guilty Gear.
+    fighting game out there, from Street Fighter to Guilty Gear.
 
 
     By learning
-    what you did here, you''ve expanded your
-
-    skills in fighting games as a whole,
-    and gotten a leg
-
-    up on most other beginners out there!'
+    what you did here, you''ve expanded your skills in fighting games as a whole,
+    and gotten a leg up on most other beginners out there!'
 --- !u!1 &1103944838
 GameObject:
   m_ObjectHideFlags: 0
@@ -8329,19 +8313,35 @@ MonoBehaviour:
   winNum: {fileID: 0}
   pc: {fileID: 1040536905}
   manager: {fileID: 883590429}
-  sideH: 
-  sideB: 
-  startH: Numpad Notation
-  startB: 'In order to communicate more easily through text,
+  sideH: Your turn!
+  sideB: 'Match the highlighted directions!
 
-    there is some jargon
+
+    Remember: 6 means forward, 2 means
+    down, and neutral (meaning no direction) is 5.'
+  startH: Numpad Notation
+  startB: 'In order to communicate more easily through text, there is some jargon
     used by the community.
 
 
-    One among the most popular is "numpad notation"
-    used to express direction.'
-  endH: 
-  endB: 
+    In this mission, we''ll look at "numpad notation"
+    which is used to express directions.
+
+
+    It''s modeled after the numberpad
+    on the side of some keyboards, because it has a number for each direction on
+    a joystick
+
+
+    6 means forward, 2 means down, and neutral (meaning no direction)
+    is 5! '
+  endH: Be Careful!
+  endB: 'While everything on player 1''s side is fine and dandy, directions on player
+    2''s side are mirrored.
+
+
+    Just remember that 6 is always forward, even if
+    forward is to the left.'
 --- !u!1 &1335376996
 GameObject:
   m_ObjectHideFlags: 0
@@ -9169,7 +9169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1431488904
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12414,7 +12414,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Your turn!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -12441,7 +12441,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54
+  m_fontSize: 51.4
   m_fontSizeBase: 54
   m_fontWeight: 400
   m_enableAutoSizing: 1

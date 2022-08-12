@@ -9,20 +9,20 @@ public class M_NumpadNotation : MonoBehaviour
     public GameObject mSelect;
     public GameObject clearP;
     public GameObject promptP;
-    public GameObject paktc; //pressAnyKeyToContinue
+    public GameObject paktc; //PressAnyKeyToContinue
     public GameObject[] sucNumImg;
     private int sucNum;
     public Image winNum;
     public Player1Script pc;
     public BattleManager manager;
-    [Button] private void ReloadText()
+    [Button] private void LoadText()
     {
         manager.promptH.text = startH;
         manager.promptB.text = startB;
         manager.sideH.text = sideH;
         manager.sideB.text = sideB;
     }
-    [Button]private void ReloadEndText()
+    [Button]private void LoadEndText()
     {
         manager.promptH.text = endH;
         manager.promptB.text = endB;

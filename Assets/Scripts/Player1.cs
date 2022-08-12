@@ -81,7 +81,7 @@ public class @Player1 : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""26caf0d5-6e5f-423f-8269-f12f6eeafbd2"",
+                    ""id"": ""71e272c5-d50f-42cd-979a-63f59be7686d"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -214,7 +214,7 @@ public class @Player1 : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Pad"",
                     ""id"": ""bc4e9fc4-c7a3-4ca8-8c6b-f85ab70aa619"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=1)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
