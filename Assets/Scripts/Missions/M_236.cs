@@ -45,8 +45,8 @@ public class M_236 : MonoBehaviour
 
         manager.promptH.text = startH;
         manager.promptB.text = startB;
-        manager.sideH.text = sideH;
-        manager.sideB.text = sideB;
+        manager.sideH.text = null;
+        manager.sideB.text = null;
 
         promptP.SetActive(true);
         StartCoroutine(InputWait());
@@ -62,6 +62,8 @@ public class M_236 : MonoBehaviour
         //next page
         paktc.SetActive(false);
         promptP.SetActive(false);
+        manager.sideH.text = sideH;
+        manager.sideB.text = sideB;
         pc.enabled = true;
     }
 

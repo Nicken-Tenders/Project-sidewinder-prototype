@@ -2160,18 +2160,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Try to do a 236 motion!
-
-
-    Quickly:
-
-    Down
-
-    Down Forward
-
-    Forward
-
-    Attack'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -3329,7 +3318,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Congratulations!
+  m_text: Numpad Notation
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -5245,22 +5234,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You did it! Good stuff!
+  m_text: 'In order to communicate more easily through text,
+
+    there is some jargon
+    used by the community.
 
 
-    The timing in this trial mimics nearly every
-    fighting
-
-    game out there, from Street Fighter to Guilty Gear.
-
-
-    By learning
-    what you did here, you''ve expanded your
-
-    skills in fighting games as a whole,
-    and gotten a leg
-
-    up on most other beginners out there!'
+    One among the most popular is "numpad notation"
+    used to express direction.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -8296,6 +8277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1325562791}
+  - component: {fileID: 1325562792}
   m_Layer: 0
   m_Name: NumpadNotation
   m_TagString: Untagged
@@ -8317,6 +8299,49 @@ Transform:
   m_Father: {fileID: 628529124}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1325562792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325562790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14cdc81059865a24984d8a9d8a47d028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mSelect: {fileID: 2089164304}
+  clearP: {fileID: 670394662}
+  promptP: {fileID: 719177054}
+  paktc: {fileID: 28590101}
+  sucNumImg:
+  - {fileID: 845423246}
+  - {fileID: 1405886161}
+  - {fileID: 1666177048}
+  - {fileID: 612516331}
+  - {fileID: 109322191}
+  - {fileID: 603370895}
+  - {fileID: 1987504105}
+  - {fileID: 1103944838}
+  - {fileID: 890767077}
+  - {fileID: 33981849}
+  winNum: {fileID: 0}
+  pc: {fileID: 1040536905}
+  manager: {fileID: 883590429}
+  sideH: 
+  sideB: 
+  startH: Numpad Notation
+  startB: 'In order to communicate more easily through text,
+
+    there is some jargon
+    used by the community.
+
+
+    One among the most popular is "numpad notation"
+    used to express direction.'
+  endH: 
+  endB: 
 --- !u!1 &1335376996
 GameObject:
   m_ObjectHideFlags: 0
@@ -12389,7 +12414,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hadoken!
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -12416,7 +12441,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.4
+  m_fontSize: 54
   m_fontSizeBase: 54
   m_fontWeight: 400
   m_enableAutoSizing: 1
