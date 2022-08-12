@@ -12,12 +12,12 @@ public class UiManager : MonoBehaviour
 
     }
 
-    public void Resume()
+    public void Play()
     {
         //Resume previous mission
         SceneManager.LoadSceneAsync("Training room");
     }
-    public void mainMenu()
+    public void MainMenu()
     {
         SceneManager.LoadSceneAsync("Main menu");
     }
