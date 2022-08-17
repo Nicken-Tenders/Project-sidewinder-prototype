@@ -2175,7 +2175,7 @@ MonoBehaviour:
 
 
     All
-    in one fluid motion. no returning to neutral!'
+    in one fluid motion, and without returning to neutral!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
