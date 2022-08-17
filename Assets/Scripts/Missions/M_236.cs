@@ -9,23 +9,26 @@ public class M_236 : MonoBehaviour
     public GameObject mSelect;
     public GameObject clearP;
     public GameObject promptP;
-    public GameObject paktc; //pressAnyKeyToContinue
-    public GameObject[] sucNumImg;
+    public GameObject contP;
     private int sucNum;
-    public Image winNum;
+    public GameObject[] sucNumImg;
+    [SerializeField] private int winNum;
+    public GameObject[] winNumImg;
     public Player1Script pc;
-    public BattleManager manager;
+    public BattleManager bm;
+
+    #region Universal mission text
     [Button] private void LoadText()
     {
-        manager.promptH.text = startH;
-        manager.promptB.text = startB;
-        manager.sideH.text = sideH;
-        manager.sideB.text = sideB;
+        bm.promptH.text = startH;
+        bm.promptB.text = startB;
+        bm.sideH.text = sideH;
+        bm.sideB.text = sideB;
     }
     [Button]private void LoadEndText()
     {
-        manager.promptH.text = endH;
-        manager.promptB.text = endB;
+        bm.promptH.text = endH;
+        bm.promptB.text = endB;
     }
     public string sideH;
     [ResizableTextArea] public string sideB;
@@ -37,46 +40,55 @@ public class M_236 : MonoBehaviour
     [Space]
     public string endH;
     [ResizableTextArea] public string endB;
+    #endregion
 
     public void OnEnable()
     {
+        #region Universal mission enable
         pc.enabled = false;
         pc.missionMove = false;
 
-        manager.promptH.text = startH;
-        manager.promptB.text = startB;
-        manager.sideH.text = null;
-        manager.sideB.text = null;
+        bm.promptH.text = startH;
+        bm.promptB.text = startB;
+        bm.sideH.text = null;
+        bm.sideB.text = null;
 
         promptP.SetActive(true);
         StartCoroutine(InputWait());
+        foreach (GameObject img in sucNumImg)
+            img.SetActive(false);
         sucNum = 0;
         sucNumImg[0].SetActive(true);
+        foreach (GameObject img in winNumImg)
+            img.SetActive(false);
+        winNumImg[winNum].SetActive(true);
+        #endregion
     }
 
     IEnumerator InputWait()
     {
+        #region Universal mission start
         yield return new WaitForSeconds(2f);
-        paktc.SetActive(true);
-        yield return new WaitUntil(() => Input.anyKeyDown == true);
+        contP.SetActive(true);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.J) == true);
         //next page
-        paktc.SetActive(false);
+        contP.SetActive(false);
         promptP.SetActive(false);
-        manager.sideH.text = sideH;
-        manager.sideB.text = sideB;
+        bm.sideH.text = sideH;
+        bm.sideB.text = sideB;
         pc.enabled = true;
+        #endregion
     }
 
     void Update()
     {
         if (CommandSequences.SequenceIsCompleted("Taunt"))
         {
-            //Count();
             sucNum++;
             sucNumImg[sucNum].SetActive(true);
             sucNumImg[sucNum - 1].SetActive(false);
 
-            if (sucNum >= 3)
+            if (sucNum >= winNum)
             {
                 StartCoroutine(Win());
             }
@@ -85,25 +97,28 @@ public class M_236 : MonoBehaviour
 
     IEnumerator Win()
     {
-        manager.promptH.text = endH;
-        manager.promptB.text = endB;
+        #region Universal mission win
+        bm.promptH.text = endH;
+        bm.promptB.text = endB;
         clearP.SetActive(true);
         yield return new WaitForSeconds(2);
+
         pc.enabled = false;
         pc.missionMove = true;
         clearP.SetActive(false);
         promptP.SetActive(true);
         yield return new WaitForSeconds(2f);
-        paktc.SetActive(true);
-        yield return new WaitUntil(() => Input.anyKeyDown == true);
-        paktc.SetActive(false);
-        foreach (GameObject img in sucNumImg)
-            img.SetActive(false);
+
+        contP.SetActive(true);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.J) == true);
+
+        contP.SetActive(false);
         sucNum = 0;
         sucNumImg[sucNum].SetActive(true);
         mSelect.SetActive(true);
         promptP.SetActive(false);
         clearP.SetActive(false);
         gameObject.SetActive(false);
+        #endregion
     }
 }

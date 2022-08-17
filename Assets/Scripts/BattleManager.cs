@@ -9,102 +9,78 @@ public class BattleManager : MonoBehaviour
 {
     public InputActionAsset controls;
     private Vector2 moveVar;
-    public Image[] dirImg;
+    [HideInInspector] public int dirNum = 5;
+    [HideInInspector] public int misNum;
+    public Image[] dirNumImg;
     public Image atkImg;
     public TextMeshProUGUI promptH;
     public TextMeshProUGUI promptB;
     public TextMeshProUGUI sideH;
     public TextMeshProUGUI sideB;
+    public GameObject missionP;
 
     // Start is called before the first frame update
     void Start()
     {
         Application.targetFrameRate = 60;
+        missionP.SetActive(true);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (moveVar == new Vector2(-1, -1))
         {
-            dirImg[0].color = Color.red;
+            dirNum = 1;
         }
-        else
-        {
-            dirImg[0].color = Color.white;
-        }
-
         if (moveVar == new Vector2(0, -1))
         {
-            dirImg[1].color = Color.red;
+            dirNum = 2;
         }
-        else
-        {
-            dirImg[1].color = Color.white;
-        }
-
         if (moveVar == new Vector2(1, -1))
         {
-            dirImg[2].color = Color.red;
+            dirNum = 3;
         }
-        else
-        {
-            dirImg[2].color = Color.white;
-        }
-
         if (moveVar == new Vector2(-1, 0))
         {
-            dirImg[3].color = Color.red;
+            dirNum = 4;
         }
-        else
-        {
-            dirImg[3].color = Color.white;
-        }
-
         if (moveVar == new Vector2(0, 0))
         {
-            dirImg[4].color = Color.red;
+            dirNum = 5;
         }
-        else
-        {
-            dirImg[4].color = Color.white;
-        }
-
         if (moveVar == new Vector2(1, 0))
         {
-            dirImg[5].color = Color.red;
+            dirNum = 6;
         }
-        else
-        {
-            dirImg[5].color = Color.white;
-        }
-
         if (moveVar == new Vector2(-1, 1))
         {
-            dirImg[6].color = Color.red;
+            dirNum = 7;
         }
-        else
-        {
-            dirImg[6].color = Color.white;
-        }
-
         if (moveVar == new Vector2(0, 1))
         {
-            dirImg[7].color = Color.red;
+            dirNum = 8;
         }
-        else
-        {
-            dirImg[7].color = Color.white;
-        }
-
         if (moveVar == new Vector2(1, 1))
         {
-            dirImg[8].color = Color.red;
+            dirNum = 9;
         }
-        else
+
+        foreach (Image img in dirNumImg)
         {
-            dirImg[8].color = Color.white;
+            img.color = Color.white;
+            if (img == dirNumImg[misNum])
+                img.color = new Vector4(1, 1, 0.5f, 1);
+            if (img == dirNumImg[dirNum])
+                img.color = Color.red;
         }
+
+        //foreach (Image img in dirNumImg)
+        //{
+        //    img.color = Color.white;
+        //    if (img == dirNumImg[misNum])
+        //        img.color = Color.red;
+        //    Debug.Log(misNum);
+        //}
     }
 
     public void CurrentDirection(InputAction.CallbackContext context)

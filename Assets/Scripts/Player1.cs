@@ -179,6 +179,17 @@ public class @Player1 : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""up"",
+                    ""id"": ""4c84be6d-16ab-462a-a546-d9de4aeda96c"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""down"",
                     ""id"": ""31601811-b483-4fb3-ba1a-8cef5f823e27"",
                     ""path"": ""<Keyboard>/s"",

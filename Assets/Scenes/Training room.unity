@@ -156,7 +156,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -228,7 +228,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 687749645}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1216,7 +1216,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 687749645}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1625,7 +1625,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 687749645}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2160,11 +2160,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Match the highlighted directions!
+  m_text: 'Try to do a 236 motion!
 
 
-    Remember: 6 means forward, 2 means
-    down, and neutral (meaning no direction) is 5.'
+    Quickly:
+
+    Down
+
+    Down Forward
+
+    Forward
+
+    Attack
+
+
+    All
+    in one fluid motion. no returning to neutral!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -2191,7 +2202,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
+  m_fontSize: 38.9
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2995,7 +3006,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 687749645}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3040,6 +3051,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417040132}
   m_CullTransparentMesh: 1
+--- !u!1 &466046590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 466046591}
+  - component: {fileID: 466046592}
+  - component: {fileID: 466046593}
+  m_Layer: 5
+  m_Name: 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &466046591
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466046590}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 687749645}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -75, y: -75}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &466046592
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466046590}
+  m_CullTransparentMesh: 1
+--- !u!114 &466046593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466046590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 91e5e2faf89a38e4ebbddea4c74ff28b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &477359516
 GameObject:
   m_ObjectHideFlags: 0
@@ -3220,7 +3306,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 687749645}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3322,7 +3408,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Numpad Notation
+  m_text: Hadoken!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -4157,7 +4243,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1325562791}
-  - {fileID: 1080536512}
   - {fileID: 1097331142}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -4531,6 +4616,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 466046591}
   - {fileID: 495043776}
   - {fileID: 417040133}
   - {fileID: 1780197757}
@@ -4674,7 +4760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &719177055
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5238,21 +5324,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'In order to communicate more easily through text, there is some jargon
-    used by the community.
+  m_text: '236s are usually one of the most important tools in a character''s toolkit.
 
 
-    In this mission, we''ll look at "numpad notation"
-    which is used to express directions.
-
-
-    It''s modeled after the numberpad
-    on the side of some keyboards, because it has a number for each direction on
-    a joystick
-
-
-    6 means forward, 2 means down, and neutral (meaning no direction)
-    is 5! '
+    Learning
+    how to execute the command consistently, quickly, and cleanly is one of the most
+    important skills you can learn on offense.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -5799,7 +5876,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controls: {fileID: -944628639613478452, guid: b15b80bfd25d7ac43a28e6a65e5d0138, type: 3}
-  dirImg:
+  dirNum: 0
+  misNum: 0
+  dirNumImg:
+  - {fileID: 466046593}
   - {fileID: 495043777}
   - {fileID: 417040134}
   - {fileID: 1780197758}
@@ -5814,6 +5894,7 @@ MonoBehaviour:
   promptB: {fileID: 797129847}
   sideH: {fileID: 2065212076}
   sideB: {fileID: 286546965}
+  missionP: {fileID: 2089164304}
 --- !u!4 &883590430
 Transform:
   m_ObjectHideFlags: 0
@@ -7156,36 +7237,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066414494}
   m_CullTransparentMesh: 1
---- !u!1 &1080536511
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1080536512}
-  m_Layer: 0
-  m_Name: MovesetEssentials
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1080536512
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080536511}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 628529124}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1090522092
 GameObject:
   m_ObjectHideFlags: 0
@@ -7323,7 +7374,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 628529124}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1097331143
 MonoBehaviour:
@@ -7340,7 +7391,7 @@ MonoBehaviour:
   mSelect: {fileID: 2089164304}
   clearP: {fileID: 670394662}
   promptP: {fileID: 719177054}
-  paktc: {fileID: 28590101}
+  contP: {fileID: 28590101}
   sucNumImg:
   - {fileID: 845423246}
   - {fileID: 1405886161}
@@ -7352,9 +7403,20 @@ MonoBehaviour:
   - {fileID: 1103944838}
   - {fileID: 890767077}
   - {fileID: 33981849}
-  winNum: {fileID: 997132743}
+  winNum: 3
+  winNumImg:
+  - {fileID: 1091899288}
+  - {fileID: 162162497}
+  - {fileID: 1402453279}
+  - {fileID: 997132742}
+  - {fileID: 595011997}
+  - {fileID: 557189513}
+  - {fileID: 1458141080}
+  - {fileID: 346639435}
+  - {fileID: 1743744518}
+  - {fileID: 746122252}
   pc: {fileID: 1040536905}
-  manager: {fileID: 883590429}
+  bm: {fileID: 883590429}
   sideH: Your turn!
   sideB: 'Try to do a 236 motion!
 
@@ -7367,7 +7429,11 @@ MonoBehaviour:
 
     Forward
 
-    Attack'
+    Attack
+
+
+    All
+    in one fluid motion, and without returning to neutral!'
   startH: Hadoken!
   startB: '236s are usually one of the most important tools in a character''s toolkit.
 
@@ -8298,7 +8364,7 @@ MonoBehaviour:
   mSelect: {fileID: 2089164304}
   clearP: {fileID: 670394662}
   promptP: {fileID: 719177054}
-  paktc: {fileID: 28590101}
+  contP: {fileID: 28590101}
   sucNumImg:
   - {fileID: 845423246}
   - {fileID: 1405886161}
@@ -8310,9 +8376,20 @@ MonoBehaviour:
   - {fileID: 1103944838}
   - {fileID: 890767077}
   - {fileID: 33981849}
-  winNum: {fileID: 0}
+  winNum: 9
+  winNumImg:
+  - {fileID: 1091899288}
+  - {fileID: 162162497}
+  - {fileID: 1402453279}
+  - {fileID: 997132742}
+  - {fileID: 595011997}
+  - {fileID: 557189513}
+  - {fileID: 1458141080}
+  - {fileID: 346639435}
+  - {fileID: 1743744518}
+  - {fileID: 746122252}
   pc: {fileID: 1040536905}
-  manager: {fileID: 883590429}
+  bm: {fileID: 883590429}
   sideH: Your turn!
   sideB: 'Match the highlighted directions!
 
@@ -8320,28 +8397,29 @@ MonoBehaviour:
     Remember: 6 means forward, 2 means
     down, and neutral (meaning no direction) is 5.'
   startH: Numpad Notation
-  startB: 'In order to communicate more easily through text, there is some jargon
-    used by the community.
+  startB: 'In this mission, we''ll look at "numpad notation" which is used to express
+    directions in order to communicate more easily through text.
 
 
-    In this mission, we''ll look at "numpad notation"
-    which is used to express directions.
+    It''s modeled
+    after the numberpad on the side of some keyboards, because it has a number for
+    each direction on a joystick
 
 
-    It''s modeled after the numberpad
-    on the side of some keyboards, because it has a number for each direction on
-    a joystick
-
-
-    6 means forward, 2 means down, and neutral (meaning no direction)
-    is 5! '
+    6 means forward, 2 means down, and neutral
+    (meaning no direction) is 5.'
   endH: Be Careful!
   endB: 'While everything on player 1''s side is fine and dandy, directions on player
     2''s side are mirrored.
 
 
-    Just remember that 6 is always forward, even if
-    forward is to the left.'
+    Just remember that 6 is always forward, no matter
+    if forward is to the left or to the right.
+
+
+    If you want to know more about
+    numpad notation or other terms, you can head to <link="https://glossary.infil.net/index.html">Infil''s
+    Fighting Game Glossary</link>!'
 --- !u!1 &1335376996
 GameObject:
   m_ObjectHideFlags: 0
@@ -8791,7 +8869,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1390196628}
   m_OnClick:
     m_PersistentCalls:
@@ -8808,7 +8886,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1080536511}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -9368,7 +9446,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 687749645}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9633,7 +9711,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 687749645}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10294,7 +10372,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 687749645}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10444,7 +10522,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 687749645}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10892,7 +10970,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1080536511}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -11071,7 +11149,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 687749645}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11706,7 +11784,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1080536511}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -12594,7 +12672,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2089164305
 RectTransform:
   m_ObjectHideFlags: 0

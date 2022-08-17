@@ -6,26 +6,32 @@ using NaughtyAttributes;
 
 public class M_NumpadNotation : MonoBehaviour
 {
+    // Universal mission declarations
     public GameObject mSelect;
     public GameObject clearP;
     public GameObject promptP;
-    public GameObject paktc; //PressAnyKeyToContinue
-    public GameObject[] sucNumImg;
+    public GameObject contP;
     private int sucNum;
-    public Image winNum;
+    public GameObject[] sucNumImg;
+    [SerializeField] private int winNum;
+    public GameObject[] winNumImg;
     public Player1Script pc;
-    public BattleManager manager;
+    public BattleManager bm;
+
+    private int rNum;
+
+    #region Universal mission text
     [Button] private void LoadText()
     {
-        manager.promptH.text = startH;
-        manager.promptB.text = startB;
-        manager.sideH.text = sideH;
-        manager.sideB.text = sideB;
+        bm.promptH.text = startH;
+        bm.promptB.text = startB;
+        bm.sideH.text = sideH;
+        bm.sideB.text = sideB;
     }
     [Button]private void LoadEndText()
     {
-        manager.promptH.text = endH;
-        manager.promptB.text = endB;
+        bm.promptH.text = endH;
+        bm.promptB.text = endB;
     }
     public string sideH;
     [ResizableTextArea] public string sideB;
@@ -37,73 +43,108 @@ public class M_NumpadNotation : MonoBehaviour
     [Space]
     public string endH;
     [ResizableTextArea] public string endB;
+    #endregion
 
     public void OnEnable()
     {
+        #region Universal mission enable
         pc.enabled = false;
         pc.missionMove = false;
 
-        manager.promptH.text = startH;
-        manager.promptB.text = startB;
-        manager.sideH.text = null;
-        manager.sideB.text = null;
+        bm.promptH.text = startH;
+        bm.promptB.text = startB;
+        bm.sideH.text = null;
+        bm.sideB.text = null;
 
         promptP.SetActive(true);
         StartCoroutine(InputWait());
+
+        foreach (GameObject img in sucNumImg)
+            img.SetActive(false);
         sucNum = 0;
         sucNumImg[0].SetActive(true);
+        foreach (GameObject img in winNumImg)
+            img.SetActive(false);
+        winNumImg[winNum].SetActive(true);
+        #endregion
     }
 
     IEnumerator InputWait()
     {
+        #region Universal mission start
         yield return new WaitForSeconds(2f);
-        paktc.SetActive(true);
-        yield return new WaitUntil(() => Input.anyKeyDown == true);
+        contP.SetActive(true);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.J) == true);
         //next page
-        paktc.SetActive(false);
+        contP.SetActive(false);
         promptP.SetActive(false);
-        manager.sideH.text = sideH;
-        manager.sideB.text = sideB;
+        bm.sideH.text = sideH;
+        bm.sideB.text = sideB;
         pc.enabled = true;
+        #endregion
+
+        pc.enabled = false;
+        Rint();
     }
 
     void Update()
     {
-        //if ()
-        //{
-        //    //Count();
-        //    sucNum++;
-        //    sucNumImg[sucNum].SetActive(true);
-        //    sucNumImg[sucNum - 1].SetActive(false);
-        //
-        //    if (sucNum >= 3)
-        //    {
-        //        StartCoroutine(Win());
-        //    }
-        //}
+        if (bm.misNum == bm.dirNum) // Find how to check if it's been true for 0.5 seconds
+        {
+            StartCoroutine(Count());
+        }
+    }
+
+    IEnumerator Count()
+    {
+        sucNum++;
+        sucNumImg[sucNum].SetActive(true);
+        sucNumImg[sucNum - 1].SetActive(false);
+        if (sucNum >= winNum)
+            StartCoroutine(Win());
+        else
+        {
+            bm.misNum = 0;
+            yield return new WaitForSeconds(1);
+
+            Rint();
+        }
+    }
+
+    private void Rint()
+    {
+        rNum = Random.Range(1, 10);
+        if (rNum == 5)
+            Rint();
+        bm.misNum = rNum;
     }
 
     IEnumerator Win()
     {
-        manager.promptH.text = endH;
-        manager.promptB.text = endB;
+        #region Universal mission win
+        bm.promptH.text = endH;
+        bm.promptB.text = endB;
         clearP.SetActive(true);
         yield return new WaitForSeconds(2);
+
         pc.enabled = false;
         pc.missionMove = true;
         clearP.SetActive(false);
         promptP.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        paktc.SetActive(true);
-        yield return new WaitUntil(() => Input.anyKeyDown == true);
-        paktc.SetActive(false);
-        foreach (GameObject img in sucNumImg)
-            img.SetActive(false);
+        yield return new WaitForSeconds(2);
+
+        contP.SetActive(true);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.J) == true);
+
+        contP.SetActive(false);
         sucNum = 0;
         sucNumImg[sucNum].SetActive(true);
         mSelect.SetActive(true);
         promptP.SetActive(false);
         clearP.SetActive(false);
         gameObject.SetActive(false);
+        #endregion
+
+        bm.misNum = 0;
     }
 }
