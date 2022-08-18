@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using NaughtyAttributes;
 
@@ -19,6 +20,7 @@ public class M_NumpadNotation : MonoBehaviour
     public BattleManager bm;
 
     private int rNum;
+    public InputActionAsset controls;
 
     #region Universal mission text
     [Button] private void LoadText()
@@ -87,9 +89,9 @@ public class M_NumpadNotation : MonoBehaviour
         Rint();
     }
 
-    void Update()
+    public void Attack()
     {
-        if (bm.misNum == bm.dirNum) // Find how to check if it's been true for 0.5 seconds
+        if (bm.misNum == bm.dirNum)
         {
             StartCoroutine(Count());
         }
