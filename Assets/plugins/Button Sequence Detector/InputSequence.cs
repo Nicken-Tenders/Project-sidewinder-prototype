@@ -325,6 +325,9 @@ public partial class CommandSequences
 
             public void Refresh(CommandSequences parent)
             {
+                //float hor = context.ReadValue<Vector2>().x;
+                //float ver = context.ReadValue<Vector2>().y;
+
                 float hor = Input.GetAxisRaw(parent.config.DigitalHorizontal + parent.config.PlayerSlotPrefix);
                 float ver = Input.GetAxisRaw(parent.config.DigitalVertical + parent.config.PlayerSlotPrefix);
 

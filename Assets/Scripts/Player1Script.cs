@@ -54,7 +54,7 @@ public class Player1Script : MonoBehaviour
     {
         if (missionMove == true)
         {
-        if (moveBool == true)
+            if (moveBool == true)
             transform.Translate(Vector2.right * moveVar.x * walkSpeed * Time.deltaTime);
         }
 

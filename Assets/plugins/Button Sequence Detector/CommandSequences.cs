@@ -8,7 +8,6 @@ using LeoLuz;
 using UnityEditor;
 #endif
 
-
 public partial class CommandSequences : MonoBehaviour
 {
     public Config config;

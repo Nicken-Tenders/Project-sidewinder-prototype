@@ -16,6 +16,7 @@ namespace LeoLuz.ButtonSequenceDetector
     [CustomEditor(typeof(CommandSequences))]
     public class CommandSequencesEditor : Editor
     {
+        
         SerializedObject serializedObj;
         SerializedProperty configProp;
         SerializedProperty InputSequencesProp;
