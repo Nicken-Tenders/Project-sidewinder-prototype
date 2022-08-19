@@ -21,6 +21,7 @@ public class M_NumpadNotation : MonoBehaviour
 
     private int rNum;
     public InputActionAsset controls;
+    private bool atkBool = false;
 
     #region Universal mission text
     [Button] private void LoadText()
@@ -89,12 +90,11 @@ public class M_NumpadNotation : MonoBehaviour
         Rint();
     }
 
-    public void Attack()
+    public void Attack(InputAction.CallbackContext context)
     {
-        if (bm.misNum == bm.dirNum)
-        {
-            StartCoroutine(Count());
-        }
+        if (context.performed)
+            if (bm.misNum == bm.dirNum)
+                StartCoroutine(Count());
     }
 
     IEnumerator Count()
