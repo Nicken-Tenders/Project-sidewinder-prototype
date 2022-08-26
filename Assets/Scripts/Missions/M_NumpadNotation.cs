@@ -21,7 +21,6 @@ public class M_NumpadNotation : MonoBehaviour
 
     private int rNum;
     public InputActionAsset controls;
-    private bool atkBool = false;
 
     #region Universal mission text
     [Button] private void LoadText()

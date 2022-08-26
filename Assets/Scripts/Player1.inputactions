@@ -79,6 +79,17 @@
                 },
                 {
                     "name": "",
+                    "id": "7290ea83-c49f-4c5c-9185-7fc059a6fbba",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LP",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "650122b4-98ba-43c5-b55a-f55a76490ba1",
                     "path": "<Keyboard>/k",
                     "interactions": "",
@@ -279,6 +290,17 @@
                     "name": "",
                     "id": "af6eef9c-8bb3-4e23-b2ff-4c3337c3d193",
                     "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3352e648-4121-4e87-ab80-0eeb4fc16cd9",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

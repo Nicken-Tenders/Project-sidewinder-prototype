@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
 
-public class M_236 : MonoBehaviour
+public class M_Intro : MonoBehaviour
 {
-    #region Universal mission call
+    // Universal mission declarations
     public GameObject mSelect;
     public GameObject clearP;
     public GameObject promptP;
@@ -17,7 +17,6 @@ public class M_236 : MonoBehaviour
     public GameObject[] winNumImg;
     public Player1Script pc;
     public BattleManager bm;
-    #endregion
 
     #region Universal mission text
     [Button] private void LoadText()
@@ -32,7 +31,6 @@ public class M_236 : MonoBehaviour
         bm.promptH.text = endH;
         bm.promptB.text = endB;
     }
-
     public string sideH;
     [ResizableTextArea] public string sideB;
     [Space]
@@ -58,6 +56,7 @@ public class M_236 : MonoBehaviour
 
         promptP.SetActive(true);
         StartCoroutine(InputWait());
+
         foreach (GameObject img in sucNumImg)
             img.SetActive(false);
         sucNum = 0;
@@ -85,12 +84,12 @@ public class M_236 : MonoBehaviour
 
     void Update()
     {
-        if (CommandSequences.SequenceIsCompleted("Taunt"))
+        //if ()
         {
             sucNum++;
             sucNumImg[sucNum].SetActive(true);
             sucNumImg[sucNum - 1].SetActive(false);
-
+        
             if (sucNum >= winNum)
             {
                 StartCoroutine(Win());
@@ -100,7 +99,6 @@ public class M_236 : MonoBehaviour
 
     IEnumerator Win()
     {
-        #region Universal mission win
         bm.promptH.text = endH;
         bm.promptB.text = endB;
         clearP.SetActive(true);
@@ -113,7 +111,7 @@ public class M_236 : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         contP.SetActive(true);
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.J) == true);
+        yield return new WaitUntil(() => Input.anyKeyDown == true);
 
         contP.SetActive(false);
         sucNum = 0;
@@ -122,6 +120,5 @@ public class M_236 : MonoBehaviour
         promptP.SetActive(false);
         clearP.SetActive(false);
         gameObject.SetActive(false);
-        #endregion
     }
 }

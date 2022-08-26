@@ -18,12 +18,15 @@ public class BattleManager : MonoBehaviour
     public TextMeshProUGUI sideH;
     public TextMeshProUGUI sideB;
     public GameObject missionP;
+    public GameObject pauseP;
+    //public GameObject currentMission;
 
     // Start is called before the first frame update
     void Start()
     {
         Application.targetFrameRate = 60;
         missionP.SetActive(true);
+        pauseP.SetActive(false);
     }
 
     void Update()
@@ -97,5 +100,29 @@ public class BattleManager : MonoBehaviour
             atkImg.color = Color.red;
         else
             atkImg.color = Color.white;
+    }
+
+    public void Pause(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (pauseP.activeInHierarchy == false)
+            {
+                //Time.timeScale = 0;
+                SetTimeScale(0);
+                pauseP.SetActive(true);
+            }
+            if (pauseP.activeInHierarchy == true)
+            {
+                //Time.timeScale = 1;
+                SetTimeScale(1);
+                pauseP.SetActive(false);
+            }
+        }
+    }
+
+    public void SetTimeScale(float scale)
+    {
+        Time.timeScale = scale;
     }
 }
