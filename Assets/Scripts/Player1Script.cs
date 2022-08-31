@@ -34,7 +34,6 @@ public class Player1Script : MonoBehaviour
     private bool canEX;
     private bool canSuper;
 
-
     #region LP
     [Header("LP variables")]
     public GameObject lpBox;
@@ -43,6 +42,15 @@ public class Player1Script : MonoBehaviour
     public float lpHitpush;
     public float lpBlockpush;
     #endregion LP
+
+    #region HK
+    [Header("HK variables")]
+    public GameObject hkBox;
+    public float hkHitstun;
+    public float hkBlockstun;
+    public float hkHitpush;
+    public float hkBlockpush;
+    #endregion HK
 
     //Outgoing variables
     private Vector2 moveVar;
@@ -74,13 +82,23 @@ public class Player1Script : MonoBehaviour
         //    Dash();
     }
 
-    public void Attack(InputAction.CallbackContext context)
+    public void LP(InputAction.CallbackContext context)
     {
         if (context.performed) //&& can move == true
         {
             if (IsGrounded() == true)
             {
                 LPAnim();
+            }
+        }
+    }
+    public void HK(InputAction.CallbackContext context)
+    {
+        if (context.performed) //&& can move == true
+        {
+            if (IsGrounded() == true)
+            {
+                HKAnim();
             }
         }
     }
@@ -139,6 +157,60 @@ public class Player1Script : MonoBehaviour
         //LPHit.enabled = false;
     }
     #endregion LP
+    #region HK
+    public void HKAnim()
+    {
+        StartCoroutine(QueueTime("HK", 3));
+    }
+    public void HKHitOn()
+    {
+        Collider2D[] hitboxes = Physics2D.OverlapBoxAll(hkBox.transform.position, hkBox.transform.localScale, hitboxLayers);
+
+        int layerHit = -1;
+        priorityHitBox = null;
+
+        foreach (Collider2D box in hitboxes)
+        {
+            if (box.gameObject.layer > layerHit)
+            {
+                layerHit = box.gameObject.layer;
+                priorityHitBox = box;
+            }
+            if (priorityHitBox.gameObject.layer == LayerMask.NameToLayer("P2 Hurt Box"))
+            {
+                HKOnHit();
+            }
+            else if (priorityHitBox.gameObject.layer == LayerMask.NameToLayer("P2 Block Box"))
+            {
+                HKOnBlock();
+            }
+            else
+            {
+                //Debug.Log("null");
+            }
+
+            if (box.gameObject.tag == "Target")
+            {
+                box.gameObject.SetActive(false);
+            }
+        }
+    }
+    public void HKOnHit()
+    {
+        hitstun = hkHitstun;
+        dc.Hitstun(hitstun);
+    }
+    public void HKOnBlock()
+    {
+        blockstun = hkBlockstun;
+        dc.Hitstun(blockstun);
+    }
+    public void HKHitOff()
+    {
+        //HKHit.enabled = false;
+    }
+    #endregion HK
+
     void Taunt()
     {
         animator.SetTrigger("Taunt");

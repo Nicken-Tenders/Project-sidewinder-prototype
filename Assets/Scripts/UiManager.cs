@@ -15,11 +15,11 @@ public class UiManager : MonoBehaviour
     public void Play()
     {
         //Resume previous mission
-        SceneManager.LoadSceneAsync("Training room");
+        SceneManager.LoadScene("Training room");
     }
     public void MainMenu()
     {
-        SceneManager.LoadSceneAsync("Main menu");
+        SceneManager.LoadScene("Main menu");
     }
     public void Quit()
     {

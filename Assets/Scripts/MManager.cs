@@ -5,18 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MManager : MonoBehaviour
 {
-    void Start()
+    public void Quit()
     {
-        
+        //Reset
+        //Disable
     }
 
     public void MissionSelect()
     {
-        SceneManager.LoadSceneAsync("Training room");
+        SceneManager.LoadScene("Training room");
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadSceneAsync("Main menu");
+        SceneManager.LoadScene("Main menu");
     }
 }

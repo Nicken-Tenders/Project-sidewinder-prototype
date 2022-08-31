@@ -19,7 +19,9 @@ public class M_Intro : MonoBehaviour
     public BattleManager bm;
     #endregion
 
-    public List<GameObject> targets;
+    public GameObject targetParent;
+    public GameObject[] targetArray;
+    private List<GameObject> targets;
 
     #region Universal mission text
     [Button] private void LoadStartText()
@@ -75,8 +77,16 @@ public class M_Intro : MonoBehaviour
             img.SetActive(false);
         #endregion
 
-        winNum = targets.Count;
+        targetArray = targetParent.GetComponentsInChildren<GameObject>();
+
+        winNum = targetArray.Length;
         winNumImg[winNum].SetActive(true);
+
+        foreach (GameObject target in targetArray)
+        {
+            target.SetActive(true);
+            targets.Add(target);
+        }
     }
 
     IEnumerator InputWait()
@@ -94,8 +104,6 @@ public class M_Intro : MonoBehaviour
         #endregion
 
         pc.missionMove = true;
-        foreach (GameObject target in targets)
-            target.SetActive(true);
     }
 
     void Update()
@@ -123,6 +131,7 @@ public class M_Intro : MonoBehaviour
 
     IEnumerator Win()
     {
+        #region Universal mission win
         bm.promptH.text = endH;
         bm.promptB.text = endB;
         clearP.SetActive(true);
@@ -144,5 +153,6 @@ public class M_Intro : MonoBehaviour
         promptP.SetActive(false);
         clearP.SetActive(false);
         gameObject.SetActive(false);
+        #endregion
     }
 }

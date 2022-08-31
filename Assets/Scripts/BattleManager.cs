@@ -84,6 +84,8 @@ public class BattleManager : MonoBehaviour
         //        img.color = Color.red;
         //    Debug.Log(misNum);
         //}
+
+       
     }
 
     public void CurrentDirection(InputAction.CallbackContext context)
@@ -112,7 +114,7 @@ public class BattleManager : MonoBehaviour
                 SetTimeScale(0);
                 pauseP.SetActive(true);
             }
-            if (pauseP.activeInHierarchy == true)
+            else if (pauseP.activeInHierarchy == true)
             {
                 //Time.timeScale = 1;
                 SetTimeScale(1);
