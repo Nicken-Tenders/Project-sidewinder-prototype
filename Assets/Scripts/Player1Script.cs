@@ -54,8 +54,8 @@ public class Player1Script : MonoBehaviour
     {
         if (missionMove == true)
         {
-        if (moveBool == true)
-            transform.Translate(Vector2.right * moveVar.x * walkSpeed * Time.deltaTime);
+            if (moveBool == true)
+                transform.Translate(Vector2.right * moveVar.x * walkSpeed * Time.deltaTime);
         }
 
         if (CommandSequences.SequenceIsCompleted("Taunt"))
@@ -116,6 +116,11 @@ public class Player1Script : MonoBehaviour
             else
             {
                 //Debug.Log("null");
+            }
+
+            if (box.gameObject.tag == "Target")
+            {
+                box.gameObject.SetActive(false);
             }
         }
     }

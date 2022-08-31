@@ -6,7 +6,7 @@ using NaughtyAttributes;
 
 public class M_236 : MonoBehaviour
 {
-    #region Universal mission call
+    #region Universal mission declarations
     public GameObject mSelect;
     public GameObject clearP;
     public GameObject promptP;
@@ -20,15 +20,21 @@ public class M_236 : MonoBehaviour
     #endregion
 
     #region Universal mission text
-    [Button] private void LoadText()
+    [Button] private void LoadStartText()
     {
+        promptP.SetActive(true);
         bm.promptH.text = startH;
         bm.promptB.text = startB;
+    }
+    [Button] private void LoadSideText()
+    {
+        promptP.SetActive(false);
         bm.sideH.text = sideH;
         bm.sideB.text = sideB;
     }
-    [Button]private void LoadEndText()
+    [Button] private void LoadEndText()
     {
+        promptP.SetActive(true);
         bm.promptH.text = endH;
         bm.promptB.text = endB;
     }
@@ -87,9 +93,9 @@ public class M_236 : MonoBehaviour
     {
         if (CommandSequences.SequenceIsCompleted("Taunt"))
         {
+            sucNumImg[sucNum].SetActive(false);
             sucNum++;
             sucNumImg[sucNum].SetActive(true);
-            sucNumImg[sucNum - 1].SetActive(false);
 
             if (sucNum >= winNum)
             {

@@ -7,7 +7,7 @@ using NaughtyAttributes;
 
 public class M_NumpadNotation : MonoBehaviour
 {
-    // Universal mission declarations
+    #region Universal mission declarations
     public GameObject mSelect;
     public GameObject clearP;
     public GameObject promptP;
@@ -18,23 +18,31 @@ public class M_NumpadNotation : MonoBehaviour
     public GameObject[] winNumImg;
     public Player1Script pc;
     public BattleManager bm;
+    #endregion
 
     private int rNum;
     public InputActionAsset controls;
 
     #region Universal mission text
-    [Button] private void LoadText()
+    [Button] private void LoadStartText()
     {
+        promptP.SetActive(true);
         bm.promptH.text = startH;
         bm.promptB.text = startB;
+    }
+    [Button] private void LoadSideText()
+    {
+        promptP.SetActive(false);
         bm.sideH.text = sideH;
         bm.sideB.text = sideB;
     }
-    [Button]private void LoadEndText()
+    [Button] private void LoadEndText()
     {
+        promptP.SetActive(true);
         bm.promptH.text = endH;
         bm.promptB.text = endB;
     }
+
     public string sideH;
     [ResizableTextArea] public string sideB;
     [Space]

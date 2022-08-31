@@ -6,7 +6,7 @@ using NaughtyAttributes;
 
 public class M_Intro : MonoBehaviour
 {
-    // Universal mission declarations
+    #region Universal mission declarations
     public GameObject mSelect;
     public GameObject clearP;
     public GameObject promptP;
@@ -17,20 +17,30 @@ public class M_Intro : MonoBehaviour
     public GameObject[] winNumImg;
     public Player1Script pc;
     public BattleManager bm;
+    #endregion
+
+    public List<GameObject> targets;
 
     #region Universal mission text
-    [Button] private void LoadText()
+    [Button] private void LoadStartText()
     {
+        promptP.SetActive(true);
         bm.promptH.text = startH;
         bm.promptB.text = startB;
+    }
+    [Button] private void LoadSideText()
+    {
+        promptP.SetActive(false);
         bm.sideH.text = sideH;
         bm.sideB.text = sideB;
     }
-    [Button]private void LoadEndText()
+    [Button] private void LoadEndText()
     {
+        promptP.SetActive(true);
         bm.promptH.text = endH;
         bm.promptB.text = endB;
     }
+
     public string sideH;
     [ResizableTextArea] public string sideB;
     [Space]
@@ -63,8 +73,10 @@ public class M_Intro : MonoBehaviour
         sucNumImg[0].SetActive(true);
         foreach (GameObject img in winNumImg)
             img.SetActive(false);
-        winNumImg[winNum].SetActive(true);
         #endregion
+
+        winNum = targets.Count;
+        winNumImg[winNum].SetActive(true);
     }
 
     IEnumerator InputWait()
@@ -80,19 +92,31 @@ public class M_Intro : MonoBehaviour
         bm.sideB.text = sideB;
         pc.enabled = true;
         #endregion
+
+        pc.missionMove = true;
+        foreach (GameObject target in targets)
+            target.SetActive(true);
     }
 
     void Update()
     {
-        //if ()
+        if (promptP.activeInHierarchy == false)
         {
-            sucNum++;
-            sucNumImg[sucNum].SetActive(true);
-            sucNumImg[sucNum - 1].SetActive(false);
-        
-            if (sucNum >= winNum)
+            for (int i = targets.Count - 1; i >= 0; i--)
             {
-                StartCoroutine(Win());
+                if (targets[i].activeInHierarchy == false)
+                {
+                    targets.RemoveAt(i);
+
+                    sucNumImg[sucNum].SetActive(false);
+                    sucNum++;
+                    sucNumImg[sucNum].SetActive(true);
+
+                    if (sucNum >= winNum)
+                    {
+                        StartCoroutine(Win());
+                    }
+                }
             }
         }
     }
