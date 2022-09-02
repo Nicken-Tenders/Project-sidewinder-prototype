@@ -20,7 +20,7 @@ public class M_Intro : MonoBehaviour
     #endregion
 
     public GameObject targetParent;
-    public GameObject[] targetArray;
+    public List<GameObject> targetArray;
     private List<GameObject> targets;
 
     #region Universal mission text
@@ -55,6 +55,11 @@ public class M_Intro : MonoBehaviour
     [ResizableTextArea] public string endB;
     #endregion
 
+    public void OnAwake()
+    {
+        
+    }
+
     public void OnEnable()
     {
         #region Universal mission enable
@@ -66,27 +71,43 @@ public class M_Intro : MonoBehaviour
         bm.sideH.text = null;
         bm.sideB.text = null;
 
-        promptP.SetActive(true);
-        StartCoroutine(InputWait());
-
         foreach (GameObject img in sucNumImg)
             img.SetActive(false);
         sucNum = 0;
         sucNumImg[0].SetActive(true);
         foreach (GameObject img in winNumImg)
             img.SetActive(false);
+
+        promptP.SetActive(true);
         #endregion
 
-        targetArray = targetParent.GetComponentsInChildren<GameObject>();
+        targets = new List<GameObject>();
 
-        winNum = targetArray.Length;
+        foreach (Transform child in targetParent.transform)
+        {
+            targets.Add(child.gameObject);
+        }
+
+        //targetArray = new GameObject[targetParent.transform.childCount];
+        //targetArray = targetParent.transform.GetChild;
+        //foreach (GameObject child in targetParent.transform)
+        //{
+        //    targetArray
+        //}
+        //targetArray = new List<GameObject>();//Transform[targetParent.transform.GetComponents<Transform>().Length];
+        //targetArray = targetParent.GetComponents<Transform>();
+
+        //foreach (Transform target in targetArray)
+        //{
+        //    Debug.Log(target.name);
+        //    target.gameObject.SetActive(true);
+        //    targets.Add(target.gameObject);
+        //}
+
+        winNum = targetArray.Count;
         winNumImg[winNum].SetActive(true);
 
-        foreach (GameObject target in targetArray)
-        {
-            target.SetActive(true);
-            targets.Add(target);
-        }
+        StartCoroutine(InputWait());
     }
 
     IEnumerator InputWait()
@@ -108,22 +129,19 @@ public class M_Intro : MonoBehaviour
 
     void Update()
     {
-        if (promptP.activeInHierarchy == false)
+        for (int i = targets.Count - 1; i >= 0; i--)
         {
-            for (int i = targets.Count - 1; i >= 0; i--)
+            if (targets[i].activeInHierarchy == false)
             {
-                if (targets[i].activeInHierarchy == false)
+                targets.RemoveAt(i);
+
+                sucNumImg[sucNum].SetActive(false);
+                sucNum++;
+                sucNumImg[sucNum].SetActive(true);
+
+                if (sucNum >= winNum)
                 {
-                    targets.RemoveAt(i);
-
-                    sucNumImg[sucNum].SetActive(false);
-                    sucNum++;
-                    sucNumImg[sucNum].SetActive(true);
-
-                    if (sucNum >= winNum)
-                    {
                         StartCoroutine(Win());
-                    }
                 }
             }
         }

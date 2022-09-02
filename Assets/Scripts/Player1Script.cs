@@ -27,12 +27,12 @@ public class Player1Script : MonoBehaviour
     public bool missionMove;
     ///work out a priority system
     ///or maybe work it out in the animator
-    private bool canWalk = true;
-    private bool canNormal;
-    private bool canSP;
-    private bool canDash;
-    private bool canEX;
-    private bool canSuper;
+    //private bool canWalk = true;
+    //private bool canNormal;
+    //private bool canSP;
+    //private bool canDash;
+    //private bool canEX;
+    //private bool canSuper;
 
     #region LP
     [Header("LP variables")]

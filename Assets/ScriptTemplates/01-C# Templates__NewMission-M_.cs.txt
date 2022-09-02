@@ -62,9 +62,6 @@ public class #SCRIPTNAME# : MonoBehaviour
         bm.sideH.text = null;
         bm.sideB.text = null;
 
-        promptP.SetActive(true);
-        StartCoroutine(InputWait());
-
         foreach (GameObject img in sucNumImg)
             img.SetActive(false);
         sucNum = 0;
@@ -72,7 +69,13 @@ public class #SCRIPTNAME# : MonoBehaviour
         foreach (GameObject img in winNumImg)
             img.SetActive(false);
         winNumImg[winNum].SetActive(true);
+
+        promptP.SetActive(true);
         #endregion
+
+
+
+        StartCoroutine(InputWait());
     }
 
     IEnumerator InputWait()
@@ -107,6 +110,7 @@ public class #SCRIPTNAME# : MonoBehaviour
 
     IEnumerator Win()
     {
+        #region Universal mission win
         bm.promptH.text = endH;
         bm.promptB.text = endB;
         clearP.SetActive(true);
@@ -128,5 +132,6 @@ public class #SCRIPTNAME# : MonoBehaviour
         promptP.SetActive(false);
         clearP.SetActive(false);
         gameObject.SetActive(false);
+        #endregion
     }
 }
