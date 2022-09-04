@@ -20,8 +20,8 @@ public class M_Intro : MonoBehaviour
     #endregion
 
     public GameObject targetParent;
-    public List<GameObject> targetArray;
-    private List<GameObject> targets;
+    public List<GameObject> targets;
+    public List<GameObject> targetsActive;
 
     #region Universal mission text
     [Button] private void LoadStartText()
@@ -55,11 +55,6 @@ public class M_Intro : MonoBehaviour
     [ResizableTextArea] public string endB;
     #endregion
 
-    public void OnAwake()
-    {
-        
-    }
-
     public void OnEnable()
     {
         #region Universal mission enable
@@ -82,29 +77,32 @@ public class M_Intro : MonoBehaviour
         #endregion
 
         targets = new List<GameObject>();
+        targetsActive = new List<GameObject>();
 
         foreach (Transform child in targetParent.transform)
         {
+            child.gameObject.SetActive(true);
             targets.Add(child.gameObject);
+            targetsActive.Add(child.gameObject);
         }
 
-        //targetArray = new GameObject[targetParent.transform.childCount];
-        //targetArray = targetParent.transform.GetChild;
+        //targets = new GameObject[targetParent.transform.childCount];
+        //targets = targetParent.transform.GetChild;
         //foreach (GameObject child in targetParent.transform)
         //{
-        //    targetArray
+        //    targets
         //}
-        //targetArray = new List<GameObject>();//Transform[targetParent.transform.GetComponents<Transform>().Length];
-        //targetArray = targetParent.GetComponents<Transform>();
+        //targets = new List<GameObject>();//Transform[targetParent.transform.GetComponents<Transform>().Length];
+        //targets = targetParent.GetComponents<Transform>();
 
-        //foreach (Transform target in targetArray)
+        //foreach (Transform target in targets)
         //{
         //    Debug.Log(target.name);
         //    target.gameObject.SetActive(true);
-        //    targets.Add(target.gameObject);
+        //    targetsActive.Add(target.gameObject);
         //}
 
-        winNum = targetArray.Count;
+        winNum = targets.Count;
         winNumImg[winNum].SetActive(true);
 
         StartCoroutine(InputWait());
@@ -129,11 +127,11 @@ public class M_Intro : MonoBehaviour
 
     void Update()
     {
-        for (int i = targets.Count - 1; i >= 0; i--)
+        for (int i = targetsActive.Count - 1; i >= 0; i--)
         {
-            if (targets[i].activeInHierarchy == false)
+            if (targetsActive[i].activeInHierarchy == false)
             {
-                targets.RemoveAt(i);
+                targetsActive.RemoveAt(i);
 
                 sucNumImg[sucNum].SetActive(false);
                 sucNum++;
@@ -170,7 +168,13 @@ public class M_Intro : MonoBehaviour
         mSelect.SetActive(true);
         promptP.SetActive(false);
         clearP.SetActive(false);
-        gameObject.SetActive(false);
         #endregion
+
+        foreach (GameObject target in targets)
+            target.SetActive(false);
+        targets.Clear();
+        targetsActive.Clear();
+
+        gameObject.SetActive(false);
     }
 }

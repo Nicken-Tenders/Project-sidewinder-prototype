@@ -7980,7 +7980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6096ba37f63bac4c9d0905ec11a26c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controls: {fileID: -944628639613478452, guid: b15b80bfd25d7ac43a28e6a65e5d0138, type: 3}
+  ps: {fileID: 1040536905}
   dirNum: 0
   misNum: 0
   dirNumImg:
@@ -9642,6 +9642,7 @@ MonoBehaviour:
   hkBlockstun: 0
   hkHitpush: 0
   hkBlockpush: 0
+  moveVar: {x: 0, y: 0}
   hitstun: 0
   blockstun: 0
   knockdown: 0
@@ -17109,7 +17110,8 @@ MonoBehaviour:
   pc: {fileID: 1040536905}
   bm: {fileID: 883590429}
   targetParent: {fileID: 89947215}
-  targetArray: []
+  targets: []
+  targetsActive: []
   sideH: Break the Targets!
   sideB: Use WASD to move, and J to attack.
   startH: Welcome to Mash Theory!
@@ -17127,8 +17129,8 @@ MonoBehaviour:
 
     To
     start, let''s learn how to move and attack in a 2D space.'
-  endH: 
-  endB: 
+  endH: Null
+  endB: Null
 --- !u!1 &2044632281
 GameObject:
   m_ObjectHideFlags: 0

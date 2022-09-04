@@ -131,7 +131,10 @@ public class #SCRIPTNAME# : MonoBehaviour
         mSelect.SetActive(true);
         promptP.SetActive(false);
         clearP.SetActive(false);
-        gameObject.SetActive(false);
         #endregion
+
+
+
+        gameObject.SetActive(false);
     }
 }

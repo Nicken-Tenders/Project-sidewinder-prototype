@@ -7,8 +7,7 @@ using TMPro;
 
 public class BattleManager : MonoBehaviour
 {
-    public InputActionAsset controls;
-    private Vector2 moveVar;
+    public Player1Script ps;
     [HideInInspector] public int dirNum = 5;
     [HideInInspector] public int misNum;
     public Image[] dirNumImg;
@@ -31,39 +30,39 @@ public class BattleManager : MonoBehaviour
 
     void Update()
     {
-        if (moveVar == new Vector2(-1, -1))
+        if (ps.moveVar == new Vector2(-1, -1))
         {
             dirNum = 1;
         }
-        if (moveVar == new Vector2(0, -1))
+        if (ps.moveVar == new Vector2(0, -1))
         {
             dirNum = 2;
         }
-        if (moveVar == new Vector2(1, -1))
+        if (ps.moveVar == new Vector2(1, -1))
         {
             dirNum = 3;
         }
-        if (moveVar == new Vector2(-1, 0))
+        if (ps.moveVar == new Vector2(-1, 0))
         {
             dirNum = 4;
         }
-        if (moveVar == new Vector2(0, 0))
+        if (ps.moveVar == new Vector2(0, 0))
         {
             dirNum = 5;
         }
-        if (moveVar == new Vector2(1, 0))
+        if (ps.moveVar == new Vector2(1, 0))
         {
             dirNum = 6;
         }
-        if (moveVar == new Vector2(-1, 1))
+        if (ps.moveVar == new Vector2(-1, 1))
         {
             dirNum = 7;
         }
-        if (moveVar == new Vector2(0, 1))
+        if (ps.moveVar == new Vector2(0, 1))
         {
             dirNum = 8;
         }
-        if (moveVar == new Vector2(1, 1))
+        if (ps.moveVar == new Vector2(1, 1))
         {
             dirNum = 9;
         }
@@ -86,14 +85,6 @@ public class BattleManager : MonoBehaviour
         //}
 
        
-    }
-
-    public void CurrentDirection(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            moveVar = context.ReadValue<Vector2>();
-        }
     }
 
     public void Attack(InputAction.CallbackContext context)

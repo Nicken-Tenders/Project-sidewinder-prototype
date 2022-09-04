@@ -53,7 +53,7 @@ public class Player1Script : MonoBehaviour
     #endregion HK
 
     //Outgoing variables
-    private Vector2 moveVar;
+    public Vector2 moveVar;
     [HideInInspector] public float hitstun;
     [HideInInspector] public float blockstun;
     [HideInInspector] public float knockdown;
