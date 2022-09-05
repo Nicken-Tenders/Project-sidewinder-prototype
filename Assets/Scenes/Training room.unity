@@ -9404,9 +9404,9 @@ MonoBehaviour:
       value: 0
       axisDirection: 0
       axisInversion: 0
-      deadline: 0
-      Antecipation: 0
       LastVerifiedAnticipation: 0
+      Deadline: 50
+      Antecipation: 50
     - next: 2
       first: 1
       Or: -1
@@ -9422,9 +9422,9 @@ MonoBehaviour:
       value: 0
       axisDirection: 0
       axisInversion: 0
-      deadline: Infinity
-      Antecipation: -0.2
       LastVerifiedAnticipation: -999
+      Deadline: 50
+      Antecipation: -50
     - next: 3
       first: 2
       Or: -1
@@ -9440,9 +9440,9 @@ MonoBehaviour:
       value: 0
       axisDirection: 0
       axisInversion: 0
-      deadline: 0.2
-      Antecipation: -0.2
       LastVerifiedAnticipation: -999
+      Deadline: 30
+      Antecipation: -30
     - next: -1
       first: 3
       Or: 4
@@ -9458,9 +9458,9 @@ MonoBehaviour:
       value: 0
       axisDirection: 0
       axisInversion: 0
-      deadline: 0.2
-      Antecipation: -0.2
       LastVerifiedAnticipation: -999
+      Deadline: 30
+      Antecipation: -0.5
     - next: -1
       first: 3
       Or: -1
@@ -9476,9 +9476,9 @@ MonoBehaviour:
       value: 0
       axisDirection: 0
       axisInversion: 0
-      deadline: 0.2
-      Antecipation: -0.2
       LastVerifiedAnticipation: -999
+      Deadline: 30
+      Antecipation: -30
     CommandStepsToAntecipate: 04000000
     CurrentSequenceIndex: 0
   FacingRight: 1

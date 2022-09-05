@@ -491,11 +491,12 @@ namespace LeoLuz.ButtonSequenceDetector
                         {
                             GUI.Label(div, "Deadline", GUI.skin.label);
                             div.y += 12f;
-                            _commandSteps[i].deadline = Mathf.Clamp(EditorGUI.FloatField(div, _commandSteps[i].deadline, GUI.skin.textField), 0.017f, Mathf.Infinity);
+                            _commandSteps[i].Deadline = Mathf.Clamp(EditorGUI.FloatField(div, _commandSteps[i].Deadline, GUI.skin.textField), 0.017f, Mathf.Infinity);
                             div.y += 14f;
                             GUI.Label(div, "Anticipation", GUI.skin.label);
                             div.y += 12f;
                             _commandSteps[i].Antecipation = EditorGUI.FloatField(div, _commandSteps[i].Antecipation, GUI.skin.textField);
+
                             if (_commandSteps[i].Antecipation > 0f)
                                 _commandSteps[i].Antecipation = -_commandSteps[i].Antecipation;
 

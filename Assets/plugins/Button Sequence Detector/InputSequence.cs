@@ -33,7 +33,7 @@ public partial class CommandSequences
             public bool IsAxis; /*The variable 'HasNegative' indicates that the chosen axis has input for negative values (for example the "Horizontal" and 
                                                                * "Vertical" axis.) Axis without input for negative values are like joystick buttons (for example Fire1, Fire2, Jump
                                                                *  axis) that in fact do not This value is externally assigned by a property drawer called InputAxisListDropDrawer*/
-                                // [HideInInspector]
+            // [HideInInspector]
             public bool IsAbstractedDiretional; /* The variable 'IsAbstractedDiretional' indicates that this command uses abstracted directional class. The
                                                                          *  abstracted directional class were made in such a way as to simulate the diagonal digital imputs used 
                                                                          * in the list of commands of the fighting games moves (↗↘ → ↖↙ ← ↑ ↓). Because the axis does 
@@ -46,15 +46,18 @@ public partial class CommandSequences
             public float value;
             public AxisDirection axisDirection = AxisDirection.Positive;
             public AxisInversion axisInversion = AxisInversion.NoInvert;
-            public float deadline = 0.2f;
-            public float Antecipation = 0.2f;
             public float LastVerifiedAnticipation = -999f;
+            public float Deadline = 50.0f;
+            public float Antecipation = 50.0f;
+
+            public float DeadlineToSeconds { get => Deadline / 60; }
+            public float AntecipationToSeconds { get => Antecipation / 60; }
 
             public static bool debug;
             #region Methods
             public bool commandChainWerePerformedCMInput(CommandSequences root, commandStep[] commandSteps)
             {
-                if (Antecipation < 0f && Time.time < LastVerifiedAnticipation - Antecipation && (And == -1 || commandSteps[And].commandChainWerePerformedCMInput(root, commandSteps)))
+                if (AntecipationToSeconds < 0f && Time.time < LastVerifiedAnticipation - AntecipationToSeconds && (And == -1 || commandSteps[And].commandChainWerePerformedCMInput(root, commandSteps)))
                 {
                     if (debug)
                         Debug.Log("<color=green>ANTECIPATED " + RealAxisButtonName + " " + inputEvent + "</color>");
@@ -428,7 +431,7 @@ public partial class CommandSequences
 
             //Jump to first commandstep of this horizontal list
             //If dead line expires, reset index
-            if (CurrentSequenceIndex > 0 && TimeOfTheLastSequencePerformed + commandList[CurrentSequenceIndex].deadline < Time.time)
+            if (CurrentSequenceIndex > 0 && TimeOfTheLastSequencePerformed + commandList[CurrentSequenceIndex].DeadlineToSeconds < Time.time)
             {
                 CurrentSequenceIndex = 0;
             }
@@ -523,7 +526,7 @@ public partial class CommandSequences
                     if (commands[ib]._Operator == commandStep.Operator.Next)
                     {
                         commands[i].next = ib + 1;
-                        commands[i].deadline = commands[ib].deadline;
+                        commands[i].Deadline = commands[ib].Deadline;
                         break;
                     }
                 }
@@ -560,11 +563,11 @@ public partial class CommandSequences
             {
                 if (commands[i]._Operator == commandStep.Operator.Next || i == commands.Length - 1)
                 {
-                    lastDeadLine = commands[i].deadline;
+                    lastDeadLine = commands[i].DeadlineToSeconds;
                 }
                 else
                 {
-                    commands[i].deadline = lastDeadLine;
+                    commands[i].Deadline = lastDeadLine * 60;
                 }
             }
             //Search and normalize Antecipations links
@@ -575,13 +578,13 @@ public partial class CommandSequences
                 //commands[i].LastVerifiedAntecipation = -9999f;
                 if (commands[i]._Operator == commandStep.Operator.Next || i == commands.Length - 1)
                 {
-                    LastAntecipationTime = commands[i].Antecipation;
+                    LastAntecipationTime = commands[i].AntecipationToSeconds;
                 }
                 else
                 {
                     commands[i].Antecipation = LastAntecipationTime;
                 }
-                if (commands[i].Antecipation < 0f)
+                if (commands[i].AntecipationToSeconds < 0f)
                 {
                     if (!CommandStepsToAntecipate.Contains(i))
                     {
