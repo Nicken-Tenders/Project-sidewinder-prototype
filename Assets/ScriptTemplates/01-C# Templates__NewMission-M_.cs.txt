@@ -56,6 +56,7 @@ public class #SCRIPTNAME# : MonoBehaviour
         #region Universal mission enable
         pc.enabled = false;
         pc.missionMove = false;
+        pc.transform.position = new Vector2(-3.5f, 0f);
 
         bm.promptH.text = startH;
         bm.promptB.text = startB;
@@ -123,7 +124,7 @@ public class #SCRIPTNAME# : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         contP.SetActive(true);
-        yield return new WaitUntil(() => Input.anyKeyDown == true);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.J) == true);
 
         contP.SetActive(false);
         sucNum = 0;

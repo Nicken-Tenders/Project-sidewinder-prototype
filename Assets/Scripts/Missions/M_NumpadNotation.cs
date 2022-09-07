@@ -60,6 +60,7 @@ public class M_NumpadNotation : MonoBehaviour
         #region Universal mission enable
         pc.enabled = false;
         pc.missionMove = false;
+        pc.transform.position = new Vector2(-3.5f, 0f);
 
         bm.promptH.text = startH;
         bm.promptB.text = startB;

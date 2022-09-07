@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
 
-public class M_Intro : MonoBehaviour
+public class M_Controls : MonoBehaviour
 {
     #region Universal mission declarations
     public GameObject mSelect;
@@ -60,6 +60,7 @@ public class M_Intro : MonoBehaviour
         #region Universal mission enable
         pc.enabled = false;
         pc.missionMove = false;
+        pc.transform.position = new Vector2(-3.5f, 0f);
 
         bm.promptH.text = startH;
         bm.promptB.text = startB;
@@ -160,7 +161,7 @@ public class M_Intro : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         contP.SetActive(true);
-        yield return new WaitUntil(() => Input.anyKeyDown == true);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.J) == true);
 
         contP.SetActive(false);
         sucNum = 0;

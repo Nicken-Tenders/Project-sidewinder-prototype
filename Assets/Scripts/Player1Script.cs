@@ -11,8 +11,8 @@ public class Player1Script : MonoBehaviour
 
     //Details about the world
     public InputActionAsset controls;
-    public LayerMask groundMask;
-    public LayerMask hitboxLayers;
+    [SerializeField] private LayerMask groundMask;
+    [SerializeField] private LayerMask hitboxLayers;
     private Collider2D priorityHitBox;
     public DummyController dc;
     //public CanMove cmScript;
@@ -63,7 +63,9 @@ public class Player1Script : MonoBehaviour
         if (missionMove == true)
         {
             if (moveBool == true)
-                transform.Translate(Vector2.right * moveVar.x * walkSpeed * Time.deltaTime);
+            {
+                transform.parent.Translate(Vector2.right * moveVar.x * walkSpeed * Time.deltaTime);
+            }
         }
 
         if (CommandSequences.SequenceIsCompleted("Taunt"))
@@ -72,11 +74,7 @@ public class Player1Script : MonoBehaviour
 
     public void Walk(InputAction.CallbackContext context)
     {
-        if (context.performed)
-        {
-            /*&& IsGrounded() == true*/
-            moveVar = context.ReadValue<Vector2>();
-        }
+        moveVar = context.ReadValue<Vector2>();
 
         //if (context.interaction is MultiTapInteraction)
         //    Dash();

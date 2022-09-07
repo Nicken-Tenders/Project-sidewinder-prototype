@@ -1036,7 +1036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &90835608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2974,7 +2974,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use WASD to move, and J to attack.
+  m_text: 'Use WASD to move, and J to attack.
+
+
+    A moves you left, and D moves
+    you right.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -4706,7 +4710,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Not your style?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -4806,14 +4810,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535241700}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 89947216}
   - {fileID: 1885686222}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1090522093}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &554549036
 GameObject:
@@ -6898,7 +6902,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'If the default controls aren''t to your liking, you''ll soon be able to
+    change them in the settings.
+
+
+    That feature isn''t ready, though. Control
+    rebinding coming soon!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -8149,8 +8158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b3acac31b15b248907f38d02448bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 1040536902}
-  player2: {fileID: 90835607}
+  player1: {fileID: 1138775323}
+  player2: {fileID: 1829332819}
   focusPoint: {fileID: 883590430}
 --- !u!1 &885686703
 GameObject:
@@ -9423,7 +9432,7 @@ MonoBehaviour:
       axisDirection: 0
       axisInversion: 0
       LastVerifiedAnticipation: -999
-      Deadline: 50
+      Deadline: Infinity
       Antecipation: -50
     - next: 3
       first: 2
@@ -10316,6 +10325,7 @@ Transform:
   - {fileID: 2016104561}
   - {fileID: 168829410}
   - {fileID: 327047017}
+  - {fileID: 535241701}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10470,6 +10480,10 @@ MonoBehaviour:
   sideB: 'Try to do a 236 motion!
 
 
+    All in one fluid motion, and without returning
+    to neutral!
+
+
     Quickly:
 
     Down
@@ -10478,11 +10492,7 @@ MonoBehaviour:
 
     Forward
 
-    Attack
-
-
-    All
-    in one fluid motion, and without returning to neutral!'
+    Attack'
   startH: Hadoken!
   startB: '236s are usually one of the most important tools in a character''s moveset.
 
@@ -10494,7 +10504,12 @@ MonoBehaviour:
   endB: 'You did it! Good stuff!
 
 
-'
+    236 moves often have different effects depending
+    on the character.
+
+
+    Seeing how the move behaves can give you a good idea
+    of what that character is good at!'
 --- !u!1 &1103944838
 GameObject:
   m_ObjectHideFlags: 0
@@ -10599,7 +10614,7 @@ Transform:
   m_Children:
   - {fileID: 1040536909}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1140900242
 GameObject:
@@ -11581,7 +11596,11 @@ MonoBehaviour:
 
 
     Remember: 6 means
-    forward, 2 means down, and neutral (meaning no direction) is 5.'
+    forward, 2 means down, and neutral (meaning no direction) is 5.
+
+
+    The number
+    pad is not used to control the character'
   startH: Numpad Notation
   startB: 'In this mission, we''ll look at "numpad notation" which is used to express
     directions in order to communicate more easily through text.
@@ -15931,7 +15950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1829332820
 Transform:
   m_ObjectHideFlags: 0
@@ -15945,7 +15964,7 @@ Transform:
   m_Children:
   - {fileID: 90835613}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1836663564
 GameObject:
@@ -16843,15 +16862,7 @@ MonoBehaviour:
     lessons.
 
 
-    Clicking a mission will have it start.
-
-
-    Controls:
-
-    WASD
-    to move
-
-    J to attack'
+    Clicking a mission will have it start.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -17048,7 +17059,7 @@ GameObject:
   - component: {fileID: 2031388456}
   - component: {fileID: 2031388457}
   m_Layer: 0
-  m_Name: Intro
+  m_Name: Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17113,7 +17124,11 @@ MonoBehaviour:
   targets: []
   targetsActive: []
   sideH: Break the Targets!
-  sideB: Use WASD to move, and J to attack.
+  sideB: 'Use WASD to move, and J to attack.
+
+
+    A moves you left, and D moves
+    you right.'
   startH: Welcome to Mash Theory!
   startB: 'This is the ultimate fighting game tutorial!
 
@@ -17129,8 +17144,13 @@ MonoBehaviour:
 
     To
     start, let''s learn how to move and attack in a 2D space.'
-  endH: Null
-  endB: Null
+  endH: Not your style?
+  endB: 'If the default controls aren''t to your liking, you''ll soon be able to
+    change them in the settings.
+
+
+    That feature isn''t ready, though. Control
+    rebinding coming soon!'
 --- !u!1 &2044632281
 GameObject:
   m_ObjectHideFlags: 0
