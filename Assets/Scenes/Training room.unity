@@ -834,6 +834,63 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &44980621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 44980623}
+  - component: {fileID: 44980622}
+  m_Layer: 11
+  m_Name: 2hpBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &44980622
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44980621}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &44980623
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44980621}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.535, y: 3.635, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1040536909}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &74751952
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,7 +2966,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265568685}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: -10}
+  m_LocalPosition: {x: 0, y: 3.6999998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 554549037}
@@ -2974,11 +3031,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Use WASD to move, and J to attack.
+  m_text: 'Try to do a 236 motion!
 
 
-    A moves you left, and D moves
-    you right.'
+    All in one <color="yellow">fluid motion</color>,
+    and <color="red">without</color> returning to <color="red">neutral</color>!
+
+
+    Quickly:
+
+    Down
+
+    Down
+    Forward
+
+    Forward
+
+    Attack'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -3005,7 +3074,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
+  m_fontSize: 38.9
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4710,7 +4779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Not your style?
+  m_text: Hadoken!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -6902,12 +6971,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'If the default controls aren''t to your liking, you''ll soon be able to
-    change them in the settings.
+  m_text: '236s are usually one of the most <color="yellow">important tools</color>
+    in a character''s moveset.
 
 
-    That feature isn''t ready, though. Control
-    rebinding coming soon!'
+    Learning how to execute the command <color="yellow">consistently,
+    quickly, and cleanly</color> is one of the most important skills you can learn
+    on offense.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -9610,6 +9680,46 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9900364b-372b-4df9-83a8-a34bd0002be6
     m_ActionName: Temp/Jump[/Keyboard/w,/Keyboard/space,/XInputControllerWindows/dpad/up,/XInputControllerWindows/leftStick/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: daa9f5a0-a156-4841-a2bd-3a5e06baef12
+    m_ActionName: UI1/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ec96c698-4530-4160-bb49-684c5a1961eb
+    m_ActionName: UI1/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d9d1eafa-6cc5-4d2f-a964-a22bc0545313
+    m_ActionName: UI1/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 84c5701e-4b87-496d-9823-a56ebce40cb4
+    m_ActionName: UI1/Point[/Mouse/position,/Pen/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 763d9b9c-a38c-41d4-8f6b-137e00071d53
+    m_ActionName: UI1/Click[/Mouse/leftButton,/Pen/tip]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 12765d38-4d50-4448-9239-6615a62d9fd2
+    m_ActionName: UI1/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a5589d62-b5b7-470a-9fa7-babb4b4c8838
+    m_ActionName: UI1/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ac9ae99c-8841-4d9e-a707-13d8909aad02
+    m_ActionName: UI1/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3ed1a05a-f596-4742-b3fb-8ae9760b79f9
+    m_ActionName: UI1/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7f7b0880-04eb-4925-805f-820d17967de7
+    m_ActionName: UI1/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Battle
@@ -9651,6 +9761,16 @@ MonoBehaviour:
   hkBlockstun: 0
   hkHitpush: 0
   hkBlockpush: 0
+  clpBox: {fileID: 44980621}
+  clpHitstun: 0
+  clpBlockstun: 0
+  clpHitpush: 0
+  clpBlockpush: 0
+  chkBox: {fileID: 0}
+  chkHitstun: 0
+  chkBlockstun: 0
+  chkHitpush: 0
+  chkBlockpush: 0
   moveVar: {x: 0, y: 0}
   hitstun: 0
   blockstun: 0
@@ -9691,7 +9811,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
-    oldSize: {x: 1.92, y: 2.94}
+    oldSize: {x: 2.46, y: 3.81}
     newSize: {x: 1.98, y: 2.79}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -9764,6 +9884,7 @@ Transform:
   m_Children:
   - {fileID: 2052390310}
   - {fileID: 1732431034}
+  - {fileID: 44980623}
   m_Father: {fileID: 1138775324}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10476,40 +10597,42 @@ MonoBehaviour:
   - {fileID: 746122252}
   pc: {fileID: 1040536905}
   bm: {fileID: 883590429}
+  startH: Hadoken!
+  startB: '236s are usually one of the most <color="yellow">important tools</color>
+    in a character''s moveset.
+
+
+    Learning how to execute the command <color="yellow">consistently,
+    quickly, and cleanly</color> is one of the most important skills you can learn
+    on offense.'
   sideH: Your turn!
   sideB: 'Try to do a 236 motion!
 
 
-    All in one fluid motion, and without returning
-    to neutral!
+    All in one <color="yellow">fluid motion</color>,
+    and <color="red">without</color> returning to <color="red">neutral</color>!
 
 
     Quickly:
 
     Down
 
-    Down Forward
+    Down
+    Forward
 
     Forward
 
     Attack'
-  startH: Hadoken!
-  startB: '236s are usually one of the most important tools in a character''s moveset.
-
-
-    Learning
-    how to execute the command consistently, quickly, and cleanly is one of the most
-    important skills you can learn on offense.'
   endH: Congratulations!
   endB: 'You did it! Good stuff!
 
 
-    236 moves often have different effects depending
-    on the character.
+    236 moves often have <color="yellow">different
+    effects</color> depending on the character.
 
 
-    Seeing how the move behaves can give you a good idea
-    of what that character is good at!'
+    Seeing how the move behaves
+    can give you a good idea of <color="green">what that character is good at</color>!'
 --- !u!1 &1103944838
 GameObject:
   m_ObjectHideFlags: 0
@@ -11595,35 +11718,35 @@ MonoBehaviour:
   sideB: 'Match the highlighted directions and press attack!
 
 
-    Remember: 6 means
-    forward, 2 means down, and neutral (meaning no direction) is 5.
+    Remember: <color="yellow">6
+    means forward, 2 means down, and neutral</color> (meaning no direction) is <color="yellow">5</color>.
 
 
-    The number
-    pad is not used to control the character'
+    The
+    number pad is not used to control the character'
   startH: Numpad Notation
-  startB: 'In this mission, we''ll look at "numpad notation" which is used to express
-    directions in order to communicate more easily through text.
+  startB: 'In this mission, we''ll look at <color="red">"numpad notation"</color>
+    which is used to <color="red">express direction</color> in order to communicate
+    more easily through text.
 
 
-    It''s modeled
-    after the numberpad on the side of some keyboards, because it has a number for
-    each direction on a joystick
+    It''s modeled after the numberpad on the side
+    of some keyboards, because it has a number for each direction on a joystick
 
 
-    6 means forward, 2 means down, and neutral
-    (meaning no direction) is 5.'
+    <color="yellow">6
+    means forward, 2 means down, and neutral</color> (meaning no direction) is <color="yellow">5</color>.'
   endH: Be Careful!
-  endB: 'While everything on player 1''s side is fine and dandy, directions on player
-    2''s side are mirrored.
+  endB: 'While everything on player 1''s side is fine and dandy, <color="red">directions
+    on player 2''s side are mirrored</color>.
 
 
-    Just remember that 6 is always forward, no matter
-    if forward is to the left or to the right.
+    Just remember that <color="yellow">6
+    is always forward</color>, no matter if forward is to the left or to the right.
 
 
-    If you want to know more about
-    numpad notation or other terms, you can head to <link="https://glossary.infil.net/index.html">Infil''s
+    If
+    you want to know more about numpad notation or other terms, you can head to <link="https://glossary.infil.net/index.html">Infil''s
     Fighting Game Glossary</link>!'
 --- !u!114 &1325562793
 MonoBehaviour:
@@ -17124,26 +17247,28 @@ MonoBehaviour:
   targets: []
   targetsActive: []
   sideH: Break the Targets!
-  sideB: 'Use WASD to move, and J to attack.
+  sideB: 'Use <color="yellow">WASD</color> to move, and <color="yellow">J</color>
+    to attack.
 
 
-    A moves you left, and D moves
-    you right.'
+    A moves you left, and D moves you right.'
   startH: Welcome to Mash Theory!
   startB: 'This is the ultimate fighting game tutorial!
 
 
     What you learn here
-    is meant to prep you for fighting games you enjoy or are interested in.
+    is <color="yellow">meant to prep</color> you for fighting games you enjoy or
+    are interested in.
 
 
-    Each
-    mission has info that is supposed to apply to as many fighting games as possible,
-    and bringing what you learned will help you get a head-start learning any game.
+    Each mission has info that is supposed to apply to as
+    <color="yellow">many fighting games</color> as possible, and bringing what you
+    learned will help you get a <color="yellow">head-start learning</color> any game.
 
 
     To
-    start, let''s learn how to move and attack in a 2D space.'
+    start, let''s learn how to <color="red">move</color> and <color="red">attack</color>
+    in a 2D space.'
   endH: Not your style?
   endB: 'If the default controls aren''t to your liking, you''ll soon be able to
     change them in the settings.
@@ -17934,7 +18059,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Break the Targets!
+  m_text: Your turn!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbafc564945a324887820e6aefad012, type: 2}
   m_sharedMaterial: {fileID: -1758226762149063149, guid: 9dbafc564945a324887820e6aefad012, type: 2}
@@ -17961,7 +18086,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.7
+  m_fontSize: 51.4
   m_fontSizeBase: 54
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -18142,7 +18267,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 883590430}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 4
@@ -18166,7 +18291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072004915}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2000427, z: -10}
+  m_LocalPosition: {x: 0, y: 3.6999998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 972539417}

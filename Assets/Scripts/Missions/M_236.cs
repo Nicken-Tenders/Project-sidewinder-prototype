@@ -20,6 +20,16 @@ public class M_236 : MonoBehaviour
     #endregion
 
     #region Universal mission text
+    public string startH;
+    [ResizableTextArea] public string startB;
+    [Space]
+    [Space]
+    public string sideH;
+    [ResizableTextArea] public string sideB;
+    [Space]
+    [Space]
+    public string endH;
+    [ResizableTextArea] public string endB;
     [Button] private void LoadStartText()
     {
         promptP.SetActive(true);
@@ -38,17 +48,6 @@ public class M_236 : MonoBehaviour
         bm.promptH.text = endH;
         bm.promptB.text = endB;
     }
-
-    public string sideH;
-    [ResizableTextArea] public string sideB;
-    [Space]
-    [Space]
-    public string startH;
-    [ResizableTextArea] public string startB;
-    [Space]
-    [Space]
-    public string endH;
-    [ResizableTextArea] public string endB;
     #endregion
 
     public void OnEnable()

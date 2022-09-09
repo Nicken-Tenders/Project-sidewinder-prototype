@@ -13,8 +13,8 @@ public class MiddlePoint : MonoBehaviour
     {
         if (player2.activeInHierarchy == true)
         {
-            float x = (player1.gameObject.transform.position.x + player2.transform.position.x) / 2;
-            float y = (player1.gameObject.transform.position.y + player2.transform.position.y) / 2;
+            float x = (player1.transform.position.x + player2.transform.position.x) / 2;
+            float y = (player1.transform.position.y + player2.transform.position.y) / 2;
 
             focusPoint.position = new Vector3(x, y, focusPoint.position.z);
 
@@ -31,7 +31,7 @@ public class MiddlePoint : MonoBehaviour
         }
         else
         {
-            focusPoint.position = new Vector3(player1.gameObject.transform.position.x + 3.5f, (player1.gameObject.transform.position.y / 2) + 2, focusPoint.position.z);
+            focusPoint.position = new Vector3(player1.transform.position.x + 3.5f, (player1.transform.position.y / 2) + 2, focusPoint.position.z);
         }
     }
 }

@@ -42,7 +42,6 @@ public class Player1Script : MonoBehaviour
     public float lpHitpush;
     public float lpBlockpush;
     #endregion LP
-
     #region HK
     [Header("HK variables")]
     public GameObject hkBox;
@@ -51,6 +50,22 @@ public class Player1Script : MonoBehaviour
     public float hkHitpush;
     public float hkBlockpush;
     #endregion HK
+    #region cLP
+    [Header("2LP variables")]
+    public GameObject clpBox;
+    public float clpHitstun;
+    public float clpBlockstun;
+    public float clpHitpush;
+    public float clpBlockpush;
+    #endregion cLP
+    #region cHK
+    [Header("2HK variables")]
+    public GameObject chkBox;
+    public float chkHitstun;
+    public float chkBlockstun;
+    public float chkHitpush;
+    public float chkBlockpush;
+    #endregion cHK
 
     //Outgoing variables
     public Vector2 moveVar;
@@ -60,21 +75,31 @@ public class Player1Script : MonoBehaviour
 
     void Update()
     {
-        if (missionMove == true)
+        if (IsGrounded() == true)
         {
-            if (moveBool == true)
+            if (moveVar.y == -1)
             {
-                transform.parent.Translate(Vector2.right * moveVar.x * walkSpeed * Time.deltaTime);
+                animator.SetBool("isCrouching", true);
+            }
+            else
+            {
+                animator.SetBool("isCrouching", false);
+                if (missionMove == true)
+                {
+                    if (moveBool == true)
+                        transform.parent.Translate(Vector2.right * moveVar.x * walkSpeed * Time.deltaTime);
+                }
+
+                if (CommandSequences.SequenceIsCompleted("Taunt"))
+                    Taunt();
             }
         }
-
-        if (CommandSequences.SequenceIsCompleted("Taunt"))
-            Taunt();
     }
 
     public void Walk(InputAction.CallbackContext context)
     {
-        moveVar = context.ReadValue<Vector2>();
+        if (context.performed)
+            moveVar = context.ReadValue<Vector2>();
 
         //if (context.interaction is MultiTapInteraction)
         //    Dash();
@@ -86,6 +111,10 @@ public class Player1Script : MonoBehaviour
         {
             if (IsGrounded() == true)
             {
+                if (moveVar.y == -1)
+                {
+                    CLPAnim();
+                }
                 LPAnim();
             }
         }
@@ -208,6 +237,112 @@ public class Player1Script : MonoBehaviour
         //HKHit.enabled = false;
     }
     #endregion HK
+    #region 2LP
+    public void CLPAnim()
+    {
+        StartCoroutine(QueueTime("2HP", 3));
+    }
+    public void CLPHitOn()
+    {
+        Collider2D[] hitboxes = Physics2D.OverlapBoxAll(clpBox.transform.position, clpBox.transform.localScale, hitboxLayers);
+
+        int layerHit = -1;
+        priorityHitBox = null;
+
+        foreach (Collider2D box in hitboxes)
+        {
+            if (box.gameObject.layer > layerHit)
+            {
+                layerHit = box.gameObject.layer;
+                priorityHitBox = box;
+            }
+            if (priorityHitBox.gameObject.layer == LayerMask.NameToLayer("P2 Hurt Box"))
+            {
+                CLPOnHit();
+            }
+            else if (priorityHitBox.gameObject.layer == LayerMask.NameToLayer("P2 Block Box"))
+            {
+                CLPOnBlock();
+            }
+            else
+            {
+                //Debug.Log("null");
+            }
+
+            if (box.gameObject.tag == "Target")
+            {
+                box.gameObject.SetActive(false);
+            }
+        }
+    }
+    public void CLPOnHit()
+    {
+        hitstun = clpHitstun;
+        dc.Hitstun(hitstun);
+    }
+    public void CLPOnBlock()
+    {
+        blockstun = clpBlockstun;
+        dc.Hitstun(blockstun);
+    }
+    public void CLPHitOff()
+    {
+        //LPHit.enabled = false;
+    }
+    #endregion 2LP
+    #region 2HK
+    public void CHKAnim()
+    {
+        StartCoroutine(QueueTime("2HK", 3));
+    }
+    public void CHKHitOn()
+    {
+        Collider2D[] hitboxes = Physics2D.OverlapBoxAll(chkBox.transform.position, chkBox.transform.localScale, hitboxLayers);
+
+        int layerHit = -1;
+        priorityHitBox = null;
+
+        foreach (Collider2D box in hitboxes)
+        {
+            if (box.gameObject.layer > layerHit)
+            {
+                layerHit = box.gameObject.layer;
+                priorityHitBox = box;
+            }
+            if (priorityHitBox.gameObject.layer == LayerMask.NameToLayer("P2 Hurt Box"))
+            {
+                CHKOnHit();
+            }
+            else if (priorityHitBox.gameObject.layer == LayerMask.NameToLayer("P2 Block Box"))
+            {
+                CHKOnBlock();
+            }
+            else
+            {
+                //Debug.Log("null");
+            }
+
+            if (box.gameObject.tag == "Target")
+            {
+                box.gameObject.SetActive(false);
+            }
+        }
+    }
+    public void CHKOnHit()
+    {
+        hitstun = chkHitstun;
+        dc.Hitstun(hitstun);
+    }
+    public void CHKOnBlock()
+    {
+        blockstun = chkBlockstun;
+        dc.Hitstun(blockstun);
+    }
+    public void CHKHitOff()
+    {
+        //LPHit.enabled = false;
+    }
+    #endregion 2HK
 
     void Taunt()
     {
