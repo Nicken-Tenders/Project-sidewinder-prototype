@@ -20,6 +20,17 @@ public class #SCRIPTNAME# : MonoBehaviour
     #endregion
 
     #region Universal mission text
+    public string sideH;
+    [ResizableTextArea] public string sideB;
+    [Space]
+    [Space]
+    public string startH;
+    [ResizableTextArea] public string startB;
+    [Space]
+    [Space]
+    public string endH;
+    [ResizableTextArea] public string endB;
+
     [Button] private void LoadStartText()
     {
         promptP.SetActive(true);
@@ -38,17 +49,6 @@ public class #SCRIPTNAME# : MonoBehaviour
         bm.promptH.text = endH;
         bm.promptB.text = endB;
     }
-
-    public string sideH;
-    [ResizableTextArea] public string sideB;
-    [Space]
-    [Space]
-    public string startH;
-    [ResizableTextArea] public string startB;
-    [Space]
-    [Space]
-    public string endH;
-    [ResizableTextArea] public string endB;
     #endregion
 
     public void OnEnable()
@@ -84,7 +84,7 @@ public class #SCRIPTNAME# : MonoBehaviour
         #region Universal mission start
         yield return new WaitForSeconds(2f);
         contP.SetActive(true);
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.J) == true);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) == true);
         //next page
         contP.SetActive(false);
         promptP.SetActive(false);
@@ -92,6 +92,10 @@ public class #SCRIPTNAME# : MonoBehaviour
         bm.sideB.text = sideB;
         pc.enabled = true;
         #endregion
+
+        pc.missionMove = ;
+
+
     }
 
     void Update()
@@ -118,13 +122,12 @@ public class #SCRIPTNAME# : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         pc.enabled = false;
-        pc.missionMove = true;
         clearP.SetActive(false);
         promptP.SetActive(true);
         yield return new WaitForSeconds(2f);
 
         contP.SetActive(true);
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.J) == true);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) == true);
 
         contP.SetActive(false);
         sucNum = 0;

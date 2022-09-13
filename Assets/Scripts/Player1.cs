@@ -27,33 +27,17 @@ public class @Player1 : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""LP"",
+                    ""name"": ""P"",
                     ""type"": ""Button"",
-                    ""id"": ""5319bc47-1074-4d58-bae1-e4586c660db8"",
+                    ""id"": ""7bda990d-edec-41be-abcf-0710c7149c1c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""HP"",
+                    ""name"": ""K"",
                     ""type"": ""Button"",
-                    ""id"": ""f48ef7e5-4ed1-4523-a9f3-a8a7b0446e46"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""LK"",
-                    ""type"": ""Button"",
-                    ""id"": ""524c4cbd-4ad4-4f7e-8e3b-436c2a9c0acb"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""HK"",
-                    ""type"": ""Button"",
-                    ""id"": ""f8fe335f-063c-45a3-9513-1f6527344c53"",
+                    ""id"": ""fbb9b4ce-ec93-4001-8db0-041ba903a54d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -68,105 +52,6 @@ public class @Player1 : IInputActionCollection, IDisposable
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""bd359115-2361-47ab-82e7-42727388fb0a"",
-                    ""path"": ""<Keyboard>/j"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LP"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""71e272c5-d50f-42cd-979a-63f59be7686d"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LP"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7290ea83-c49f-4c5c-9185-7fc059a6fbba"",
-                    ""path"": ""<Keyboard>/p"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LP"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""650122b4-98ba-43c5-b55a-f55a76490ba1"",
-                    ""path"": ""<Keyboard>/k"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HP"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8dd5e2bd-5bcf-4fe7-b318-2fbaf1130428"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HP"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fbd1f8a3-409a-4326-a968-0dbe1240dd4e"",
-                    ""path"": ""<Keyboard>/n"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LK"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ce67d2fa-2b33-4737-a9a3-403ac4511d5b"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LK"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8318eee9-db0c-4e97-9fa7-4d9e53708d62"",
-                    ""path"": ""<Keyboard>/m"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HK"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""62fd8d78-7b29-4e18-aaf3-823be29134ed"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HK"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": ""WASD"",
                     ""id"": ""fbded3c9-d1fa-4dd6-a2bf-69da0324e49f"",
@@ -318,6 +203,61 @@ public class @Player1 : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61ad3a55-b60c-45b4-811a-76652d36ba18"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""K"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b30661f7-335c-4f97-89da-7cbaf7db2c3e"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""K"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e068bf11-80f2-4649-b277-2815ef7ca5d9"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b50e340d-eed5-4fc6-9f7d-73f2b08a2e20"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""43cd1638-d269-454d-8711-037f1a7c76f7"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1157,6 +1097,38 @@ public class @Player1 : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Digital"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""HK"",
+                    ""type"": ""Button"",
+                    ""id"": ""8f6fbb83-af78-4248-9d39-abdedc0f6032"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""LP"",
+                    ""type"": ""Button"",
+                    ""id"": ""d57ead66-4a0e-4e4c-a6df-4d6a436f2c5a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""HP"",
+                    ""type"": ""Button"",
+                    ""id"": ""da25d20c-8c70-4cc2-961d-657ff1ee27f9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""LK"",
+                    ""type"": ""Button"",
+                    ""id"": ""ecb76f6d-10f2-4f57-950a-caf4a5b87f39"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -1335,6 +1307,105 @@ public class @Player1 : IInputActionCollection, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""56873c8a-d4bb-4e95-bf48-1f4ca812decc"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HK"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""57223f10-075b-4cf8-a4b7-5b617ffdfa74"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HK"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a1df81c2-29ff-4b4c-9cf7-8e14de3c5388"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LP"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""316bcf69-fc77-4df7-bcec-20d9552ca167"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LP"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1a39bf08-e0fb-4a3e-b1ea-2369f3ea4925"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LP"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9447b1bb-fa16-4dc1-906c-964e45e8faaa"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HP"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""606e8f3e-51cc-4dc8-b94b-e0adcc1a4a44"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HP"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b6e6b458-b331-4328-af30-bfdd5b8b3098"",
+                    ""path"": ""<Keyboard>/n"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LK"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ec37f0f0-1093-4ec9-afd8-e9f3a5037292"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LK"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1344,10 +1415,8 @@ public class @Player1 : IInputActionCollection, IDisposable
         // Battle
         m_Battle = asset.FindActionMap("Battle", throwIfNotFound: true);
         m_Battle_Movement = m_Battle.FindAction("Movement", throwIfNotFound: true);
-        m_Battle_LP = m_Battle.FindAction("LP", throwIfNotFound: true);
-        m_Battle_HP = m_Battle.FindAction("HP", throwIfNotFound: true);
-        m_Battle_LK = m_Battle.FindAction("LK", throwIfNotFound: true);
-        m_Battle_HK = m_Battle.FindAction("HK", throwIfNotFound: true);
+        m_Battle_P = m_Battle.FindAction("P", throwIfNotFound: true);
+        m_Battle_K = m_Battle.FindAction("K", throwIfNotFound: true);
         m_Battle_Pause = m_Battle.FindAction("Pause", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -1373,6 +1442,10 @@ public class @Player1 : IInputActionCollection, IDisposable
         m_Temp_WalkDash = m_Temp.FindAction("Walk & Dash", throwIfNotFound: true);
         m_Temp_Crouch = m_Temp.FindAction("Crouch", throwIfNotFound: true);
         m_Temp_Jump = m_Temp.FindAction("Jump", throwIfNotFound: true);
+        m_Temp_HK = m_Temp.FindAction("HK", throwIfNotFound: true);
+        m_Temp_LP = m_Temp.FindAction("LP", throwIfNotFound: true);
+        m_Temp_HP = m_Temp.FindAction("HP", throwIfNotFound: true);
+        m_Temp_LK = m_Temp.FindAction("LK", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1423,20 +1496,16 @@ public class @Player1 : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Battle;
     private IBattleActions m_BattleActionsCallbackInterface;
     private readonly InputAction m_Battle_Movement;
-    private readonly InputAction m_Battle_LP;
-    private readonly InputAction m_Battle_HP;
-    private readonly InputAction m_Battle_LK;
-    private readonly InputAction m_Battle_HK;
+    private readonly InputAction m_Battle_P;
+    private readonly InputAction m_Battle_K;
     private readonly InputAction m_Battle_Pause;
     public struct BattleActions
     {
         private @Player1 m_Wrapper;
         public BattleActions(@Player1 wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Battle_Movement;
-        public InputAction @LP => m_Wrapper.m_Battle_LP;
-        public InputAction @HP => m_Wrapper.m_Battle_HP;
-        public InputAction @LK => m_Wrapper.m_Battle_LK;
-        public InputAction @HK => m_Wrapper.m_Battle_HK;
+        public InputAction @P => m_Wrapper.m_Battle_P;
+        public InputAction @K => m_Wrapper.m_Battle_K;
         public InputAction @Pause => m_Wrapper.m_Battle_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Battle; }
         public void Enable() { Get().Enable(); }
@@ -1450,18 +1519,12 @@ public class @Player1 : IInputActionCollection, IDisposable
                 @Movement.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnMovement;
-                @LP.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnLP;
-                @LP.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnLP;
-                @LP.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnLP;
-                @HP.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnHP;
-                @HP.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnHP;
-                @HP.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnHP;
-                @LK.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnLK;
-                @LK.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnLK;
-                @LK.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnLK;
-                @HK.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnHK;
-                @HK.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnHK;
-                @HK.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnHK;
+                @P.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnP;
+                @P.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnP;
+                @P.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnP;
+                @K.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnK;
+                @K.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnK;
+                @K.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnK;
                 @Pause.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnPause;
@@ -1472,18 +1535,12 @@ public class @Player1 : IInputActionCollection, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
-                @LP.started += instance.OnLP;
-                @LP.performed += instance.OnLP;
-                @LP.canceled += instance.OnLP;
-                @HP.started += instance.OnHP;
-                @HP.performed += instance.OnHP;
-                @HP.canceled += instance.OnHP;
-                @LK.started += instance.OnLK;
-                @LK.performed += instance.OnLK;
-                @LK.canceled += instance.OnLK;
-                @HK.started += instance.OnHK;
-                @HK.performed += instance.OnHK;
-                @HK.canceled += instance.OnHK;
+                @P.started += instance.OnP;
+                @P.performed += instance.OnP;
+                @P.canceled += instance.OnP;
+                @K.started += instance.OnK;
+                @K.performed += instance.OnK;
+                @K.canceled += instance.OnK;
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
@@ -1668,6 +1725,10 @@ public class @Player1 : IInputActionCollection, IDisposable
     private readonly InputAction m_Temp_WalkDash;
     private readonly InputAction m_Temp_Crouch;
     private readonly InputAction m_Temp_Jump;
+    private readonly InputAction m_Temp_HK;
+    private readonly InputAction m_Temp_LP;
+    private readonly InputAction m_Temp_HP;
+    private readonly InputAction m_Temp_LK;
     public struct TempActions
     {
         private @Player1 m_Wrapper;
@@ -1675,6 +1736,10 @@ public class @Player1 : IInputActionCollection, IDisposable
         public InputAction @WalkDash => m_Wrapper.m_Temp_WalkDash;
         public InputAction @Crouch => m_Wrapper.m_Temp_Crouch;
         public InputAction @Jump => m_Wrapper.m_Temp_Jump;
+        public InputAction @HK => m_Wrapper.m_Temp_HK;
+        public InputAction @LP => m_Wrapper.m_Temp_LP;
+        public InputAction @HP => m_Wrapper.m_Temp_HP;
+        public InputAction @LK => m_Wrapper.m_Temp_LK;
         public InputActionMap Get() { return m_Wrapper.m_Temp; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1693,6 +1758,18 @@ public class @Player1 : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_TempActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_TempActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_TempActionsCallbackInterface.OnJump;
+                @HK.started -= m_Wrapper.m_TempActionsCallbackInterface.OnHK;
+                @HK.performed -= m_Wrapper.m_TempActionsCallbackInterface.OnHK;
+                @HK.canceled -= m_Wrapper.m_TempActionsCallbackInterface.OnHK;
+                @LP.started -= m_Wrapper.m_TempActionsCallbackInterface.OnLP;
+                @LP.performed -= m_Wrapper.m_TempActionsCallbackInterface.OnLP;
+                @LP.canceled -= m_Wrapper.m_TempActionsCallbackInterface.OnLP;
+                @HP.started -= m_Wrapper.m_TempActionsCallbackInterface.OnHP;
+                @HP.performed -= m_Wrapper.m_TempActionsCallbackInterface.OnHP;
+                @HP.canceled -= m_Wrapper.m_TempActionsCallbackInterface.OnHP;
+                @LK.started -= m_Wrapper.m_TempActionsCallbackInterface.OnLK;
+                @LK.performed -= m_Wrapper.m_TempActionsCallbackInterface.OnLK;
+                @LK.canceled -= m_Wrapper.m_TempActionsCallbackInterface.OnLK;
             }
             m_Wrapper.m_TempActionsCallbackInterface = instance;
             if (instance != null)
@@ -1706,6 +1783,18 @@ public class @Player1 : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @HK.started += instance.OnHK;
+                @HK.performed += instance.OnHK;
+                @HK.canceled += instance.OnHK;
+                @LP.started += instance.OnLP;
+                @LP.performed += instance.OnLP;
+                @LP.canceled += instance.OnLP;
+                @HP.started += instance.OnHP;
+                @HP.performed += instance.OnHP;
+                @HP.canceled += instance.OnHP;
+                @LK.started += instance.OnLK;
+                @LK.performed += instance.OnLK;
+                @LK.canceled += instance.OnLK;
             }
         }
     }
@@ -1713,10 +1802,8 @@ public class @Player1 : IInputActionCollection, IDisposable
     public interface IBattleActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnLP(InputAction.CallbackContext context);
-        void OnHP(InputAction.CallbackContext context);
-        void OnLK(InputAction.CallbackContext context);
-        void OnHK(InputAction.CallbackContext context);
+        void OnP(InputAction.CallbackContext context);
+        void OnK(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
     }
     public interface IUIActions
@@ -1745,5 +1832,9 @@ public class @Player1 : IInputActionCollection, IDisposable
         void OnWalkDash(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnHK(InputAction.CallbackContext context);
+        void OnLP(InputAction.CallbackContext context);
+        void OnHP(InputAction.CallbackContext context);
+        void OnLK(InputAction.CallbackContext context);
     }
 }

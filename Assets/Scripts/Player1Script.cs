@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
+using NaughtyAttributes;
 
 
 public class Player1Script : MonoBehaviour
@@ -35,7 +36,7 @@ public class Player1Script : MonoBehaviour
     //private bool canSuper;
 
     #region LP
-    [Header("LP variables")]
+    [Foldout("LP variables")]
     public GameObject lpBox;
     public float lpHitstun;
     public float lpBlockstun;
@@ -43,7 +44,7 @@ public class Player1Script : MonoBehaviour
     public float lpBlockpush;
     #endregion LP
     #region HK
-    [Header("HK variables")]
+    [Foldout("HK variables")]
     public GameObject hkBox;
     public float hkHitstun;
     public float hkBlockstun;
@@ -51,7 +52,7 @@ public class Player1Script : MonoBehaviour
     public float hkBlockpush;
     #endregion HK
     #region cLP
-    [Header("2LP variables")]
+    [Foldout("2LP variables")]
     public GameObject clpBox;
     public float clpHitstun;
     public float clpBlockstun;
@@ -59,7 +60,7 @@ public class Player1Script : MonoBehaviour
     public float clpBlockpush;
     #endregion cLP
     #region cHK
-    [Header("2HK variables")]
+    [Foldout("2HK variables")]
     public GameObject chkBox;
     public float chkHitstun;
     public float chkBlockstun;
@@ -105,7 +106,7 @@ public class Player1Script : MonoBehaviour
         //    Dash();
     }
 
-    public void LP(InputAction.CallbackContext context)
+    public void AtkP(InputAction.CallbackContext context)
     {
         if (context.performed) //&& can move == true
         {
@@ -119,7 +120,7 @@ public class Player1Script : MonoBehaviour
             }
         }
     }
-    public void HK(InputAction.CallbackContext context)
+    public void AtkK(InputAction.CallbackContext context)
     {
         if (context.performed) //&& can move == true
         {

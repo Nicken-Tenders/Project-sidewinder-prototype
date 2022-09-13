@@ -6,12 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class UiManager : MonoBehaviour
 {
-
-    void Start()
-    {
-
-    }
-
     public void Play()
     {
         //Resume previous mission

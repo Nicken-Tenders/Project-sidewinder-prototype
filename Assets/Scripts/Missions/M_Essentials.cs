@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
 
-public class M_Controls : MonoBehaviour
+public class M_Essentials : MonoBehaviour
 {
     #region Universal mission declarations
     public GameObject mSelect;
@@ -20,6 +20,17 @@ public class M_Controls : MonoBehaviour
     #endregion
 
     #region Universal mission text
+    public string sideH;
+    [ResizableTextArea] public string sideB;
+    [Space]
+    [Space]
+    public string startH;
+    [ResizableTextArea] public string startB;
+    [Space]
+    [Space]
+    public string endH;
+    [ResizableTextArea] public string endB;
+
     [Button] private void LoadStartText()
     {
         promptP.SetActive(true);
@@ -38,20 +49,8 @@ public class M_Controls : MonoBehaviour
         bm.promptH.text = endH;
         bm.promptB.text = endB;
     }
-
-    public string sideH;
-    [ResizableTextArea] public string sideB;
-    [Space]
-    [Space]
-    public string startH;
-    [ResizableTextArea] public string startB;
-    [Space]
-    [Space]
-    public string endH;
-    [ResizableTextArea] public string endB;
     #endregion
 
-    public GameObject targetParent;
     public List<GameObject> targets;
     public List<GameObject> targetsActive;
 
@@ -73,6 +72,7 @@ public class M_Controls : MonoBehaviour
         sucNumImg[0].SetActive(true);
         foreach (GameObject img in winNumImg)
             img.SetActive(false);
+        winNumImg[winNum].SetActive(true);
 
         promptP.SetActive(true);
         #endregion
@@ -80,10 +80,9 @@ public class M_Controls : MonoBehaviour
         targets = new List<GameObject>();
         targetsActive = new List<GameObject>();
 
-        foreach (Transform child in targetParent.transform)
+        foreach (GameObject child in targets)
         {
             child.gameObject.SetActive(true);
-            targets.Add(child.gameObject);
             targetsActive.Add(child.gameObject);
         }
 
@@ -107,7 +106,9 @@ public class M_Controls : MonoBehaviour
         pc.enabled = true;
         #endregion
 
-        pc.missionMove = true;
+        pc.missionMove = false;
+
+
     }
 
     void Update()
@@ -124,7 +125,7 @@ public class M_Controls : MonoBehaviour
 
                 if (sucNum >= winNum)
                 {
-                        StartCoroutine(Win());
+                    StartCoroutine(Win());
                 }
             }
         }

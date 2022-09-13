@@ -30,6 +30,7 @@ public class M_236 : MonoBehaviour
     [Space]
     public string endH;
     [ResizableTextArea] public string endB;
+
     [Button] private void LoadStartText()
     {
         promptP.SetActive(true);
@@ -63,7 +64,6 @@ public class M_236 : MonoBehaviour
         bm.sideB.text = null;
 
         promptP.SetActive(true);
-        StartCoroutine(InputWait());
         foreach (GameObject img in sucNumImg)
             img.SetActive(false);
         sucNum = 0;
@@ -72,6 +72,8 @@ public class M_236 : MonoBehaviour
             img.SetActive(false);
         winNumImg[winNum].SetActive(true);
         #endregion
+
+        StartCoroutine(InputWait());
     }
 
     IEnumerator InputWait()
@@ -79,7 +81,7 @@ public class M_236 : MonoBehaviour
         #region Universal mission start
         yield return new WaitForSeconds(2f);
         contP.SetActive(true);
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.J) == true);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) == true);
         //next page
         contP.SetActive(false);
         promptP.SetActive(false);
@@ -87,6 +89,10 @@ public class M_236 : MonoBehaviour
         bm.sideB.text = sideB;
         pc.enabled = true;
         #endregion
+
+        pc.missionMove = false;
+
+
     }
 
     void Update()
@@ -119,7 +125,7 @@ public class M_236 : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         contP.SetActive(true);
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.J) == true);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) == true);
 
         contP.SetActive(false);
         sucNum = 0;
@@ -127,7 +133,10 @@ public class M_236 : MonoBehaviour
         mSelect.SetActive(true);
         promptP.SetActive(false);
         clearP.SetActive(false);
-        gameObject.SetActive(false);
         #endregion
+
+
+
+        gameObject.SetActive(false);
     }
 }

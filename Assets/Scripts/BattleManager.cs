@@ -87,7 +87,14 @@ public class BattleManager : MonoBehaviour
        
     }
 
-    public void Attack(InputAction.CallbackContext context)
+    public void AtkP(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            atkImg.color = Color.red;
+        else
+            atkImg.color = Color.white;
+    }
+    public void AtkK(InputAction.CallbackContext context)
     {
         if (context.performed)
             atkImg.color = Color.red;
