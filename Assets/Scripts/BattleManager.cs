@@ -11,13 +11,15 @@ public class BattleManager : MonoBehaviour
     [HideInInspector] public int dirNum = 5;
     [HideInInspector] public int misNum;
     public Image[] dirNumImg;
-    public Image atkImg;
+    public Image pImg;
+    public Image kImg;
     public TextMeshProUGUI promptH;
     public TextMeshProUGUI promptB;
     public TextMeshProUGUI sideH;
     public TextMeshProUGUI sideB;
     public GameObject missionP;
     public GameObject pauseP;
+    public float lastTimeScale;
     //public GameObject currentMission;
 
     // Start is called before the first frame update
@@ -90,32 +92,31 @@ public class BattleManager : MonoBehaviour
     public void AtkP(InputAction.CallbackContext context)
     {
         if (context.performed)
-            atkImg.color = Color.red;
+            pImg.color = Color.red;
         else
-            atkImg.color = Color.white;
+            pImg.color = Color.white;
     }
     public void AtkK(InputAction.CallbackContext context)
     {
         if (context.performed)
-            atkImg.color = Color.red;
+            kImg.color = Color.red;
         else
-            atkImg.color = Color.white;
+            kImg.color = Color.white;
     }
 
     public void Pause(InputAction.CallbackContext context)
     {
         if (context.performed)
-        {
+        {;
             if (pauseP.activeInHierarchy == false)
             {
-                //Time.timeScale = 0;
+                lastTimeScale = Time.timeScale;
                 SetTimeScale(0);
                 pauseP.SetActive(true);
             }
             else if (pauseP.activeInHierarchy == true)
             {
-                //Time.timeScale = 1;
-                SetTimeScale(1);
+                SetTimeScale(lastTimeScale);
                 pauseP.SetActive(false);
             }
         }

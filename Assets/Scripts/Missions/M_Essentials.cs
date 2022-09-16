@@ -51,8 +51,42 @@ public class M_Essentials : MonoBehaviour
     }
     #endregion
 
-    public List<GameObject> targets;
-    public List<GameObject> targetsActive;
+    [Space]
+    [Space]
+    public string quickH;
+    [ResizableTextArea] public string quickB;
+    [Space]
+    [Space]
+    public string longH;
+    [ResizableTextArea] public string longB;
+    [Space]
+    [Space]
+    public string aaH;
+    [ResizableTextArea] public string aaB;
+    [Button] private void LoadQuickText()
+    {
+        promptP.SetActive(true);
+        bm.promptH.text = quickH;
+        bm.promptB.text = quickB;
+    }
+    [Button] private void LoadLongText()
+    {
+        promptP.SetActive(true);
+        bm.promptH.text = longH;
+        bm.promptB.text = longB;
+    }
+    [Button] private void LoadAAText()
+    {
+        promptP.SetActive(true);
+        bm.promptH.text = aaH;
+        bm.promptB.text = aaB;
+    }
+
+    public GameObject[] targets;
+    public bool active0;
+    public bool active1;
+    public bool active2;
+    public bool won = false;
 
     public void OnEnable()
     {
@@ -77,16 +111,16 @@ public class M_Essentials : MonoBehaviour
         promptP.SetActive(true);
         #endregion
 
-        targets = new List<GameObject>();
-        targetsActive = new List<GameObject>();
-
-        foreach (GameObject child in targets)
+        foreach (GameObject target in targets)
         {
-            child.gameObject.SetActive(true);
-            targetsActive.Add(child.gameObject);
+            target.SetActive(true);
         }
 
-        winNum = targets.Count;
+        active0 = true;
+        active1 = true;
+        active2 = true;
+
+        winNum = targets.Length;
         winNumImg[winNum].SetActive(true);
 
         StartCoroutine(InputWait());
@@ -95,7 +129,8 @@ public class M_Essentials : MonoBehaviour
     IEnumerator InputWait()
     {
         #region Universal mission start
-        yield return new WaitForSeconds(2f);
+        bm.SetTimeScale(0);
+        yield return new WaitForSecondsRealtime(2f);
         contP.SetActive(true);
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) == true);
         //next page
@@ -104,6 +139,7 @@ public class M_Essentials : MonoBehaviour
         bm.sideH.text = sideH;
         bm.sideB.text = sideB;
         pc.enabled = true;
+        bm.SetTimeScale(1);
         #endregion
 
         pc.missionMove = false;
@@ -113,19 +149,78 @@ public class M_Essentials : MonoBehaviour
 
     void Update()
     {
-        for (int i = targetsActive.Count - 1; i >= 0; i--)
-        {
-            if (targetsActive[i].activeInHierarchy == false)
-            {
-                targetsActive.RemoveAt(i);
 
+        if (targets[0].activeInHierarchy == false)
+        {
+            if (active0 == true)
+            {
+                active0 = false;
+                pc.enabled = false;
+                bm.promptH.text = quickH;
+                bm.promptB.text = quickB;
+                promptP.SetActive(true);
+                StartCoroutine(InputWait());
+                pc.enabled = true;
                 sucNumImg[sucNum].SetActive(false);
                 sucNum++;
                 sucNumImg[sucNum].SetActive(true);
-
                 if (sucNum >= winNum)
                 {
-                    StartCoroutine(Win());
+                    if (won == false)
+                    {
+                        won = true;
+                        StartCoroutine(Win());
+                    }
+                }
+            }
+        }
+
+        if (targets[1].activeInHierarchy == false)
+        {
+            if (active1 == true)
+            {
+                active1 = false;
+                pc.enabled = false;
+                bm.promptH.text = longH;
+                bm.promptB.text = longB;
+                promptP.SetActive(true);
+                StartCoroutine(InputWait());
+                pc.enabled = true;
+                sucNumImg[sucNum].SetActive(false);
+                sucNum++;
+                sucNumImg[sucNum].SetActive(true);
+                if (sucNum >= winNum)
+                {
+                    if (won == false)
+                    {
+                        won = true;
+                        StartCoroutine(Win());
+                    }
+                }
+            }
+        }
+        
+        if (targets[2].activeInHierarchy == false)
+        {
+            if (active2 == true)
+            {
+                active2 = false;
+                pc.enabled = false;
+                bm.promptH.text = aaH;
+                bm.promptB.text = aaB;
+                promptP.SetActive(true);
+                StartCoroutine(InputWait());
+                pc.enabled = true;
+                sucNumImg[sucNum].SetActive(false);
+                sucNum++;
+                sucNumImg[sucNum].SetActive(true);
+                if (sucNum >= winNum)
+                {
+                    if (won == false)
+                    {
+                        won = true;
+                        StartCoroutine(Win());
+                    }
                 }
             }
         }
@@ -155,10 +250,12 @@ public class M_Essentials : MonoBehaviour
         clearP.SetActive(false);
         #endregion
 
+        active0 = false;
+        active1 = false;
+        active2 = false;
+
         foreach (GameObject target in targets)
             target.SetActive(false);
-        targets.Clear();
-        targetsActive.Clear();
 
         gameObject.SetActive(false);
     }

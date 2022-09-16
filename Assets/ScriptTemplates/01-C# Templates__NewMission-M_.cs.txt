@@ -82,7 +82,7 @@ public class #SCRIPTNAME# : MonoBehaviour
     IEnumerator InputWait()
     {
         #region Universal mission start
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSecondsRealtime(2f);
         contP.SetActive(true);
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) == true);
         //next page
@@ -124,7 +124,7 @@ public class #SCRIPTNAME# : MonoBehaviour
         pc.enabled = false;
         clearP.SetActive(false);
         promptP.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSecondsRealtime(2f);
 
         contP.SetActive(true);
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) == true);

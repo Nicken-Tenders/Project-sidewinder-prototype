@@ -36,36 +36,32 @@ public class Player1Script : MonoBehaviour
     //private bool canSuper;
 
     #region LP
-    [Foldout("LP variables")]
-    public GameObject lpBox;
-    public float lpHitstun;
-    public float lpBlockstun;
-    public float lpHitpush;
-    public float lpBlockpush;
+    [Foldout("LP variables")] public GameObject lpBox;
+    [Foldout("LP variables")] public float lpHitstun;
+    [Foldout("LP variables")] public float lpBlockstun;
+    [Foldout("LP variables")] public float lpHitpush;
+    [Foldout("LP variables")] public float lpBlockpush;
     #endregion LP
     #region HK
-    [Foldout("HK variables")]
-    public GameObject hkBox;
-    public float hkHitstun;
-    public float hkBlockstun;
-    public float hkHitpush;
-    public float hkBlockpush;
+    [Foldout("HK variables")] public GameObject hkBox;
+    [Foldout("HK variables")] public float hkHitstun;
+    [Foldout("HK variables")] public float hkBlockstun;
+    [Foldout("HK variables")] public float hkHitpush;
+    [Foldout("HK variables")] public float hkBlockpush;
     #endregion HK
     #region cLP
-    [Foldout("2LP variables")]
-    public GameObject clpBox;
-    public float clpHitstun;
-    public float clpBlockstun;
-    public float clpHitpush;
-    public float clpBlockpush;
+    [Foldout("2LP variables")] public GameObject clpBox;
+    [Foldout("2LP variables")] public float clpHitstun;
+    [Foldout("2LP variables")] public float clpBlockstun;
+    [Foldout("2LP variables")] public float clpHitpush;
+    [Foldout("2LP variables")] public float clpBlockpush;
     #endregion cLP
     #region cHK
-    [Foldout("2HK variables")]
-    public GameObject chkBox;
-    public float chkHitstun;
-    public float chkBlockstun;
-    public float chkHitpush;
-    public float chkBlockpush;
+    [Foldout("2HK variables")] public GameObject chkBox;
+    [Foldout("2HK variables")] public float chkHitstun;
+    [Foldout("2HK variables")] public float chkBlockstun;
+    [Foldout("2HK variables")] public float chkHitpush;
+    [Foldout("2HK variables")] public float chkBlockpush;
     #endregion cHK
 
     //Outgoing variables
@@ -106,6 +102,10 @@ public class Player1Script : MonoBehaviour
         //    Dash();
     }
 
+    
+    
+
+    #region attacks
     public void AtkP(InputAction.CallbackContext context)
     {
         if (context.performed) //&& can move == true
@@ -120,18 +120,6 @@ public class Player1Script : MonoBehaviour
             }
         }
     }
-    public void AtkK(InputAction.CallbackContext context)
-    {
-        if (context.performed) //&& can move == true
-        {
-            if (IsGrounded() == true)
-            {
-                HKAnim();
-            }
-        }
-    }
-
-    #region attacks
     #region LP
     public void LPAnim()
     {
@@ -185,59 +173,6 @@ public class Player1Script : MonoBehaviour
         //LPHit.enabled = false;
     }
     #endregion LP
-    #region HK
-    public void HKAnim()
-    {
-        StartCoroutine(QueueTime("HK", 3));
-    }
-    public void HKHitOn()
-    {
-        Collider2D[] hitboxes = Physics2D.OverlapBoxAll(hkBox.transform.position, hkBox.transform.localScale, hitboxLayers);
-
-        int layerHit = -1;
-        priorityHitBox = null;
-
-        foreach (Collider2D box in hitboxes)
-        {
-            if (box.gameObject.layer > layerHit)
-            {
-                layerHit = box.gameObject.layer;
-                priorityHitBox = box;
-            }
-            if (priorityHitBox.gameObject.layer == LayerMask.NameToLayer("P2 Hurt Box"))
-            {
-                HKOnHit();
-            }
-            else if (priorityHitBox.gameObject.layer == LayerMask.NameToLayer("P2 Block Box"))
-            {
-                HKOnBlock();
-            }
-            else
-            {
-                //Debug.Log("null");
-            }
-
-            if (box.gameObject.tag == "Target")
-            {
-                box.gameObject.SetActive(false);
-            }
-        }
-    }
-    public void HKOnHit()
-    {
-        hitstun = hkHitstun;
-        dc.Hitstun(hitstun);
-    }
-    public void HKOnBlock()
-    {
-        blockstun = hkBlockstun;
-        dc.Hitstun(blockstun);
-    }
-    public void HKHitOff()
-    {
-        //HKHit.enabled = false;
-    }
-    #endregion HK
     #region 2LP
     public void CLPAnim()
     {
@@ -291,6 +226,73 @@ public class Player1Script : MonoBehaviour
         //LPHit.enabled = false;
     }
     #endregion 2LP
+    public void AtkK(InputAction.CallbackContext context)
+    {
+        if (context.performed) //&& can move == true
+        {
+            if (IsGrounded() == true)
+            {
+                if (moveVar.y == -1)
+                {
+                    CHKAnim();
+                }
+                HKAnim();
+            }
+        }
+    }
+    #region HK
+    public void HKAnim()
+    {
+        StartCoroutine(QueueTime("HK", 3));
+    }
+    public void HKHitOn()
+    {
+        Collider2D[] hitboxes = Physics2D.OverlapBoxAll(hkBox.transform.position, hkBox.transform.localScale, hitboxLayers);
+
+        int layerHit = -1;
+        priorityHitBox = null;
+
+        foreach (Collider2D box in hitboxes)
+        {
+            if (box.gameObject.layer > layerHit)
+            {
+                layerHit = box.gameObject.layer;
+                priorityHitBox = box;
+            }
+            if (priorityHitBox.gameObject.layer == LayerMask.NameToLayer("P2 Hurt Box"))
+            {
+                HKOnHit();
+            }
+            else if (priorityHitBox.gameObject.layer == LayerMask.NameToLayer("P2 Block Box"))
+            {
+                HKOnBlock();
+            }
+            else
+            {
+                //Debug.Log("null");
+            }
+
+            if (box.gameObject.tag == "Target")
+            {
+                box.gameObject.SetActive(false);
+            }
+        }
+    }
+    public void HKOnHit()
+    {
+        hitstun = hkHitstun;
+        dc.Hitstun(hitstun);
+    }
+    public void HKOnBlock()
+    {
+        blockstun = hkBlockstun;
+        dc.Hitstun(blockstun);
+    }
+    public void HKHitOff()
+    {
+        //HKHit.enabled = false;
+    }
+    #endregion HK
     #region 2HK
     public void CHKAnim()
     {
