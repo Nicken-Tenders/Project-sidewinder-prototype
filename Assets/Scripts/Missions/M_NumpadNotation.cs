@@ -95,7 +95,7 @@ public class M_NumpadNotation : MonoBehaviour
         pc.enabled = true;
         #endregion
 
-        pc.missionMove = true;
+        pc.missionMove = false;
 
         Rint();
     }

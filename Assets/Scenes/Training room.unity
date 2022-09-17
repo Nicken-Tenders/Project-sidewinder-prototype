@@ -12390,11 +12390,35 @@ MonoBehaviour:
     m_ActionId: 9900364b-372b-4df9-83a8-a34bd0002be6
     m_ActionName: Temp/Jump[/Keyboard/w,/Keyboard/space,/XInputControllerWindows/dpad/up,/XInputControllerWindows/leftStick/up]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1325562792}
+        m_TargetAssemblyTypeName: M_NumpadNotation, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 7bda990d-edec-41be-abcf-0710c7149c1c
     m_ActionName: Battle/P[/Keyboard/j,/XInputControllerWindows/buttonWest,/Keyboard/p]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1325562792}
+        m_TargetAssemblyTypeName: M_NumpadNotation, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: fbb9b4ce-ec93-4001-8db0-041ba903a54d
     m_ActionName: Battle/K[/Keyboard/k,/XInputControllerWindows/buttonNorth]
   - m_PersistentCalls:
