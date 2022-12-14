@@ -16753,7 +16753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1836663565
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18365,12 +18365,12 @@ MonoBehaviour:
 
     Pressing
     this when an opponent is nearby is your best shot at hitting first.'
-  longH: Far Attacks
-  longB: 'This attack is best for limiting options from far away.
+  farH: Far Attacks
+  farB: 'This attack is best for limiting options from far away.
 
 
-    Pressing
-    this when an opponent is walking in will threaten them with damage.'
+    Pressing this
+    when an opponent is walking in will threaten them with damage.'
   aaH: High Attacks
   aaB: 'This kind of attack is best for hitting anything directly above you.
 

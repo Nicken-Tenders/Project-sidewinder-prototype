@@ -57,8 +57,8 @@ public class M_Essentials : MonoBehaviour
     [ResizableTextArea] public string quickB;
     [Space]
     [Space]
-    public string longH;
-    [ResizableTextArea] public string longB;
+    public string farH;
+    [ResizableTextArea] public string farB;
     [Space]
     [Space]
     public string aaH;
@@ -72,8 +72,8 @@ public class M_Essentials : MonoBehaviour
     [Button] private void LoadLongText()
     {
         promptP.SetActive(true);
-        bm.promptH.text = longH;
-        bm.promptB.text = longB;
+        bm.promptH.text = farH;
+        bm.promptB.text = farB;
     }
     [Button] private void LoadAAText()
     {
@@ -149,6 +149,17 @@ public class M_Essentials : MonoBehaviour
 
     void Update()
     {
+        if (sucNum >= winNum)
+        {
+            if (won == false)
+            {
+                if (Time.timeScale == 1)
+                {
+                    won = true;
+                    StartCoroutine(Win());
+                }
+            }
+        }
 
         if (targets[0].activeInHierarchy == false)
         {
@@ -164,14 +175,6 @@ public class M_Essentials : MonoBehaviour
                 sucNumImg[sucNum].SetActive(false);
                 sucNum++;
                 sucNumImg[sucNum].SetActive(true);
-                if (sucNum >= winNum)
-                {
-                    if (won == false)
-                    {
-                        won = true;
-                        StartCoroutine(Win());
-                    }
-                }
             }
         }
 
@@ -181,22 +184,14 @@ public class M_Essentials : MonoBehaviour
             {
                 active1 = false;
                 pc.enabled = false;
-                bm.promptH.text = longH;
-                bm.promptB.text = longB;
+                bm.promptH.text = farH;
+                bm.promptB.text = farB;
                 promptP.SetActive(true);
                 StartCoroutine(InputWait());
                 pc.enabled = true;
                 sucNumImg[sucNum].SetActive(false);
                 sucNum++;
                 sucNumImg[sucNum].SetActive(true);
-                if (sucNum >= winNum)
-                {
-                    if (won == false)
-                    {
-                        won = true;
-                        StartCoroutine(Win());
-                    }
-                }
             }
         }
         
@@ -214,14 +209,6 @@ public class M_Essentials : MonoBehaviour
                 sucNumImg[sucNum].SetActive(false);
                 sucNum++;
                 sucNumImg[sucNum].SetActive(true);
-                if (sucNum >= winNum)
-                {
-                    if (won == false)
-                    {
-                        won = true;
-                        StartCoroutine(Win());
-                    }
-                }
             }
         }
     }
