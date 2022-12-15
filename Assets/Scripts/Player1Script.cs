@@ -84,7 +84,10 @@ public class Player1Script : MonoBehaviour
                 if (missionMove == true)
                 {
                     if (moveBool == true)
+                    {
                         transform.parent.Translate(Vector2.right * moveVar.x * walkSpeed * Time.deltaTime);
+                        animator.SetInteger("Walk", (int)moveVar.x);
+                    }
                 }
 
                 if (CommandSequences.SequenceIsCompleted("Taunt"))
