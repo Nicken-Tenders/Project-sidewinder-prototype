@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
 
-public class BattleManager : MonoBehaviour
+public class BattleManagerOld : MonoBehaviour
 {
     public Player1Script ps;
     [HideInInspector] public int dirNum = 5;
