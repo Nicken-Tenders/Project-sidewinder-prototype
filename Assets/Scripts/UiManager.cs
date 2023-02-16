@@ -6,10 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class UiManager : MonoBehaviour
 {
-    public void Play()
+    public void LoadScene(string Scene)
     {
-        //Resume previous mission
-        SceneManager.LoadScene("Training room");
+        SceneManager.LoadScene(Scene);
     }
     public void MainMenu()
     {
