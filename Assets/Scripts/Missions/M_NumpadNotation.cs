@@ -17,7 +17,7 @@ public class M_NumpadNotation : MonoBehaviour
     [SerializeField] private int winNum;
     public GameObject[] winNumImg;
     public Player1Script pc;
-    public BattleManagerOld bm;
+    public BattleManager bm;
     #endregion
 
     private int rNum;

@@ -16,7 +16,7 @@ public class M_236 : MonoBehaviour
     [SerializeField] private int winNum;
     public GameObject[] winNumImg;
     public Player1Script pc;
-    public BattleManagerOld bm;
+    public BattleManager bm;
     #endregion
 
     #region Universal mission text
