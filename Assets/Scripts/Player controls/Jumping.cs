@@ -7,7 +7,7 @@ public class Jumping : MonoBehaviour
 {
     public Basecontroller bc;
 
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpForce = 5;
 
     public void Jump(InputAction.CallbackContext context)
     {

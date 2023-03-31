@@ -7,7 +7,7 @@ public class Walking : MonoBehaviour
 {
     public Basecontroller bc;
 
-    [SerializeField] private float walkSpeed;
+    [SerializeField] private float walkSpeed = 4;
 
     void Update()
     {
