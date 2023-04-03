@@ -5842,6 +5842,18 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 265568686}
+    - target: {fileID: 2140241244380603156, guid: d26b8839eaf1ba84c8fed87a62c2ba60, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2140241245421139552}
+    - target: {fileID: 2140241244380603156, guid: d26b8839eaf1ba84c8fed87a62c2ba60, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Walk
+      objectReference: {fileID: 0}
+    - target: {fileID: 2140241244380603156, guid: d26b8839eaf1ba84c8fed87a62c2ba60, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Walking, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2140241244380603157, guid: d26b8839eaf1ba84c8fed87a62c2ba60, type: 3}
       propertyPath: dc
       value: 
@@ -5896,7 +5908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2140241246463402823, guid: d26b8839eaf1ba84c8fed87a62c2ba60, type: 3}
       propertyPath: m_Name
-      value: Player 1
+      value: Player 1 Parent
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d26b8839eaf1ba84c8fed87a62c2ba60, type: 3}
