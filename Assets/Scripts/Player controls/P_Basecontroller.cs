@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Basecontroller : MonoBehaviour
+public class P_Basecontroller : MonoBehaviour
 {
     [SerializeField] private LayerMask groundMask;
 

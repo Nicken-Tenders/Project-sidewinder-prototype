@@ -5843,6 +5843,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 265568686}
     - target: {fileID: 2140241244380603156, guid: d26b8839eaf1ba84c8fed87a62c2ba60, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2140241244380603156, guid: d26b8839eaf1ba84c8fed87a62c2ba60, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2140241245421139552}
@@ -5919,13 +5923,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2140241245421139550 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2173662510885053499, guid: d26b8839eaf1ba84c8fed87a62c2ba60, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6386995586311521779, guid: d26b8839eaf1ba84c8fed87a62c2ba60, type: 3}
   m_PrefabInstance: {fileID: 2140241245421139548}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140241245421139549}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b94e03c4ee258434abbc46e2cf883aef, type: 3}
+  m_Script: {fileID: 11500000, guid: 526ec82755e9b7948a2482372906b8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2140241245421139551
@@ -5940,7 +5944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6ff8a7462d49b4296268bad1606fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bc: {fileID: 2140241245421139550}
+  pbc: {fileID: 2140241245421139550}
   jumpForce: 5
 --- !u!114 &2140241245421139552
 MonoBehaviour:
@@ -5954,5 +5958,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef7330baa8b1a447a0e28f8fe89ab76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bc: {fileID: 2140241245421139550}
+  pbc: {fileID: 2140241245421139550}
   walkSpeed: 4

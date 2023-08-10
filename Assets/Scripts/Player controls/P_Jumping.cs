@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Jumping : MonoBehaviour
+public class P_Jumping : MonoBehaviour
 {
-    public Basecontroller bc;
+    public P_Basecontroller pbc;
 
     [SerializeField] private float jumpForce = 5;
 
@@ -13,9 +13,9 @@ public class Jumping : MonoBehaviour
     {
         if (context.performed)
         {
-            if (bc.IsGrounded() == true)
+            if (pbc.IsGrounded() == true)
             {
-                bc.rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                pbc.rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
         }
     }
